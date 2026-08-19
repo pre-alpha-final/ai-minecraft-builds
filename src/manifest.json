@@ -4,14 +4,14 @@
     "name": "ai-minecraft-builds",
     "description": "AI creates builds by generating .*mcfunction files",
     "uuid": "25d6c7bf-0c76-4fb5-9c69-8cf3c37e3293",
-    "version": [1, 0, 3],
+    "version": [1, 0, 7],
     "min_engine_version": [1, 21, 0]
   },
   "modules": [
     {
       "type": "data",
       "uuid": "89258b18-3480-4710-b6f6-352a62545c77",
-      "version": [1, 0, 0]
+      "version": [1, 0, 7]
     }
   ]
 }

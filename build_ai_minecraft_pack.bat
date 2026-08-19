@@ -2,8 +2,8 @@
 setlocal
 
 set "ROOT=%~dp0"
-set "MANIFEST=%ROOT%manifest.json"
-set "FUNCTIONS=%ROOT%functions"
+set "MANIFEST=%ROOT%src\manifest.json"
+set "FUNCTIONS=%ROOT%src\functions"
 set "ZIPFILE=%ROOT%ai-minecraft-builds.zip"
 set "PACKFILE=%ROOT%ai-minecraft-builds.mcpack"
 
@@ -12,14 +12,14 @@ echo === AI Minecraft Builds Packager ===
 echo.
 
 if not exist "%MANIFEST%" (
-    echo ERROR: manifest.json was not found next to this BAT file.
+    echo ERROR: manifest.json was not found in the src folder.
     echo Expected: "%MANIFEST%"
     pause
     exit /b 1
 )
 
 if not exist "%FUNCTIONS%\" (
-    echo ERROR: functions folder was not found next to this BAT file.
+    echo ERROR: functions folder was not found in the src folder.
     echo Expected: "%FUNCTIONS%"
     pause
     exit /b 1
