@@ -35,4 +35,4 @@ On Windows, double-click `build_ai_minecraft_pack.bat` or run it from a terminal
 build_ai_minecraft_pack.bat
 ```
 
-The script validates the manifest and functions directory, removes an older generated archive if present, creates a ZIP archive, and renames it to `ai-minecraft-builds.mcpack` for import into Minecraft.
+The script validates the manifest, functions, and structures directories, removes an older generated archive if present, creates a ZIP archive, and renames it to `ai-minecraft-builds.mcpack` for import into Minecraft.

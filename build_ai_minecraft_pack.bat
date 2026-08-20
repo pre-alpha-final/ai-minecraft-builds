@@ -4,6 +4,7 @@ setlocal
 set "ROOT=%~dp0"
 set "MANIFEST=%ROOT%src\manifest.json"
 set "FUNCTIONS=%ROOT%src\functions"
+set "STRUCTURES=%ROOT%src\structures"
 set "ZIPFILE=%ROOT%ai-minecraft-builds.zip"
 set "PACKFILE=%ROOT%ai-minecraft-builds.mcpack"
 
@@ -25,13 +26,20 @@ if not exist "%FUNCTIONS%\" (
     exit /b 1
 )
 
+if not exist "%STRUCTURES%\" (
+    echo ERROR: structures folder was not found in the src folder.
+    echo Expected: "%STRUCTURES%"
+    pause
+    exit /b 1
+)
+
 if exist "%ZIPFILE%" del /f /q "%ZIPFILE%"
 if exist "%PACKFILE%" del /f /q "%PACKFILE%"
 
-echo Packaging manifest.json and functions folder...
+echo Packaging manifest.json, functions, and structures folders...
 
 powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-  "Compress-Archive -Path '%MANIFEST%','%FUNCTIONS%' -DestinationPath '%ZIPFILE%' -Force"
+  "Compress-Archive -Path '%MANIFEST%','%FUNCTIONS%','%STRUCTURES%' -DestinationPath '%ZIPFILE%' -Force"
 
 if errorlevel 1 (
     echo.
