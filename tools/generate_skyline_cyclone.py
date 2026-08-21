@@ -605,8 +605,8 @@ def validate_functions(
         raise ValueError("cleanup callback removes the wrong ticking area")
 
     manifest = json.loads((ROOT / "src" / "manifest.json").read_text(encoding="utf-8"))
-    if manifest["header"]["version"] != [1, 0, 11] or manifest["modules"][0]["version"] != [1, 0, 11]:
-        raise ValueError("manifest header/module versions are not synchronized at 1.0.11")
+    if manifest["header"]["version"] != [1, 0, 12] or manifest["modules"][0]["version"] != [1, 0, 12]:
+        raise ValueError("manifest header/module versions are not synchronized at 1.0.12")
 
 
 def main() -> None:

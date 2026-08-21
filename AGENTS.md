@@ -193,9 +193,9 @@ The existing large controller conversion is the reference implementation:
 
 Every build large enough to require `.mcstructure` assets must use exactly three `.mcfunction` files for its loader lifecycle:
 
-1. `<build_name>.mcfunction`: the only public entry point. It runs in the player's context, manages stale state and the temporary ticking area, registers the area-loaded callback, and issues all cardinally selected `structure load` commands.
+1. `<build_name>.mcfunction`: the only public entry point. It runs in the player's context, manages stale state and the temporary ticking area or areas, registers the area-loaded callback, and issues all cardinally selected `structure load` commands.
 2. `_<build_name>_tickingarea_loaded.mcfunction`: an internal callback registered with `schedule on_area_loaded`. It schedules the delayed cleanup and does not place structures.
-3. `_<build_name>_remove_tickingarea.mcfunction`: an internal delayed callback that removes only this build's ticking area.
+3. `_<build_name>_remove_tickingarea.mcfunction`: an internal delayed callback that removes only this build's ticking area or areas.
 
 Both internal callback filenames and all command references to them must begin with `_`. Start each internal file with an `INTERNAL CALLBACK - do not run manually` comment. Do not create unprefixed callback aliases, combine the lifecycle into the public loader, or require the player to invoke either callback. Use unique callback paths and a unique ticking-area name for every build.
 
@@ -266,14 +266,14 @@ The wrapper itself must remain comfortably below 10,000 commands. Run it as a pl
 
 Bedrock requires every target chunk for a `structure load` request to be fully loaded before placement. A large footprint can extend beyond the player's simulation distance even when every individual `.mcstructure` is within the structure dimension limits. In that case Bedrock reports `A placement request has been queued and it will be executed when the specified area is fully loaded.` This message does not by itself indicate a corrupt structure. If the player remains stationary and the missing chunks never load, the request can appear to hang indefinitely.
 
-Make every structure-backed loader self-contained by managing a temporary preloaded ticking area through the required three-function convention:
+Make every structure-backed loader self-contained by managing one or more temporary preloaded ticking areas through the required three-function convention:
 
-1. Choose one unique, static ticking-area name and unique cleanup function paths per loader. Never use `tickingarea remove_all`, because that would interfere with unrelated builds and world systems.
-2. In the player-executed wrapper, clear any stale callback for that loader and remove only its own stale ticking area.
-3. Add one preloaded rectangular ticking area whose caret-relative corners cover the complete horizontal build footprint: `tickingarea add <from> <to> <unique_name> true`.
-4. Register a callback with `schedule on_area_loaded add tickingarea <unique_name> <loaded_callback>`.
+1. Choose one unique, static ticking-area name per preload rectangle and unique cleanup function paths per loader. Never use `tickingarea remove_all`, because that would interfere with unrelated builds and world systems.
+2. In the player-executed wrapper, clear any stale callback for that loader and remove only its own stale ticking areas.
+3. Prefer one preloaded rectangular ticking area whose caret-relative corners cover the complete horizontal build footprint: `tickingarea add <from> <to> <unique_name> true`. If the conservative footprint exceeds 100 chunks, partition it into the fewest nonoverlapping rectangles that each remain at or below 100 chunks and give every rectangle a unique name.
+4. Register the same loaded callback for every rectangle with `schedule on_area_loaded add tickingarea <unique_name> <loaded_callback>`.
 5. Issue the cardinally selected `structure load` commands immediately in the original player context. They may queue briefly, but the ticking area will cause their target chunks to load. Do not move placement into the scheduled callback, because a scheduled function does not preserve the player's original position and rotation.
-6. In the loaded callback, schedule a short delayed cleanup, such as `schedule delay add <remove_function> 100 replace`. The cleanup function must remove only `<unique_name>`. The delay gives queued placements time to finish after the area becomes fully loaded.
+6. In the loaded callback, schedule a short delayed cleanup with `replace`, such as `schedule delay add <remove_function> 100 replace`. With multiple areas, every area-loaded invocation refreshes the same delayed cleanup, so removal occurs after the final rectangle becomes ready. The cleanup function must remove every name owned by this loader and no others. The delay gives queued placements time to finish after the area becomes fully loaded.
 
 Use this command lifecycle as the reference pattern:
 
@@ -297,7 +297,7 @@ schedule delay add _<build_name>_remove_tickingarea 100 replace
 tickingarea remove <unique_name>
 ```
 
-A world supports at most 10 command-created ticking areas, with at most 100 chunks in each area. Account for worst-case world-chunk alignment when checking a rectangular footprint. A conservative maximum chunk count for a `width` by `depth` block rectangle is `ceil((width + 15) / 16) * ceil((depth + 15) / 16)`. Keep the area as small as possible for performance. The 159 by 53 large-controller footprint can touch at most 11 by 5, or 55, chunks.
+A world supports at most 10 command-created ticking areas, with at most 100 chunks in each area. Account for worst-case world-chunk alignment when checking a rectangular footprint. A conservative maximum chunk count for a `width` by `depth` block rectangle is `ceil((width + 15) / 16) * ceil((depth + 15) / 16)`. Keep each area as small as possible for performance and count every partition against the world limit. The 159 by 53 large-controller footprint can touch at most 11 by 5, or 55, chunks. The 302 by 238 Skyline Colossus footprint requires four 151 by 119 quadrants; each can touch at most 11 by 9, or 99, chunks, so the loader temporarily consumes four ticking-area slots.
 
 Different loaders with distinct ticking-area and callback names can run sequentially and can briefly overlap, subject to the 10-area limit and device performance. Do not invoke the same loader concurrently at different locations: its second invocation will reuse the same static name and can interrupt the first invocation's preload or cleanup. For reliable bulk use, wait until one placement and its cleanup complete before invoking that same loader again.
 
