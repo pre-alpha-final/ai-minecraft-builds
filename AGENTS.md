@@ -189,6 +189,13 @@ The existing large controller conversion is the reference implementation:
 - Assets: `src/structures/ai_minecraft_builds/ps5_controller_large_*.mcstructure`
 - Packager: `build_ai_minecraft_pack.bat`
 
+The Jungle Leviathan coaster is the reference for a near-limit prompt-authored loader with many structure assets and ticking areas:
+
+- Loader: `src/functions/theme_park_jungle_leviathan_roller_coaster.mcfunction`
+- Callbacks: `src/functions/_theme_park_jungle_leviathan_roller_coaster_tickingarea_loaded.mcfunction` and `src/functions/_theme_park_jungle_leviathan_roller_coaster_remove_tickingarea.mcfunction`
+- Assets: `src/structures/ai_minecraft_builds/theme_park_jungle_leviathan_roller_coaster_x*_z*.mcstructure`
+- Generator and validator: `tools/generate_jungle_leviathan.py`
+
 ### Required three-function loader convention
 
 Every build large enough to require `.mcstructure` assets must use exactly three `.mcfunction` files for its loader lifecycle:
@@ -297,7 +304,9 @@ schedule delay add _<build_name>_remove_tickingarea 100 replace
 tickingarea remove <unique_name>
 ```
 
-A world supports at most 10 command-created ticking areas, with at most 100 chunks in each area. Account for worst-case world-chunk alignment when checking a rectangular footprint. A conservative maximum chunk count for a `width` by `depth` block rectangle is `ceil((width + 15) / 16) * ceil((depth + 15) / 16)`. Keep each area as small as possible for performance and count every partition against the world limit. The 159 by 53 large-controller footprint can touch at most 11 by 5, or 55, chunks. The 302 by 238 Skyline Colossus footprint requires four 151 by 119 quadrants; each can touch at most 11 by 9, or 99, chunks, so the loader temporarily consumes four ticking-area slots.
+A world supports at most 10 command-created ticking areas, with at most 100 chunks in each area. Account for worst-case world-chunk alignment when checking a rectangular footprint. A conservative maximum chunk count for a `width` by `depth` block rectangle is `ceil((width + 15) / 16) * ceil((depth + 15) / 16)`. Keep each area as small as possible for performance and count every partition against the world limit. The 159 by 53 large-controller footprint can touch at most 11 by 5, or 55, chunks. The 302 by 238 Skyline Colossus footprint requires four 151 by 119 quadrants; each can touch at most 11 by 9, or 99, chunks, so the loader temporarily consumes four ticking-area slots. The 460 by 313 Jungle Leviathan footprint uses eight 115 by 157-or-156 rectangles; each can touch at most 9 by 11, or 99, chunks, so it temporarily consumes eight slots and leaves only two available for other systems.
+
+Evaluate preload feasibility before interpreting requests such as "twice the size." Literal doubling of every horizontal dimension can exceed the ten-area ceiling even when every structure asset is valid: doubling Skyline Colossus to 604 by 476 has a conservative 39 by 31, or 1,209-chunk footprint, requiring at least 13 areas under the 100-chunk limit. When the requested metric is ambiguous, choose and disclose a measurable feasible interpretation such as approximately twice the footprint, track length, or occupied voxel count; record the exact ratio in generated validation output and state the chosen metric in the public header. If the user explicitly requires doubled linear dimensions, do not silently reduce them—explain that a self-contained loader cannot preload the full footprint under Bedrock's limits and ask which tradeoff they want.
 
 Different loaders with distinct ticking-area and callback names can run sequentially and can briefly overlap, subject to the 10-area limit and device performance. Do not invoke the same loader concurrently at different locations: its second invocation will reuse the same static name and can interrupt the first invocation's preload or cleanup. For reliable bulk use, wait until one placement and its cleanup complete before invoking that same loader again.
 
