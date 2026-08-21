@@ -10,6 +10,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
+import cardinal_snap
 import generate_skyline_cyclone as skyline
 
 
@@ -153,7 +154,7 @@ def validate_functions(
     public = function_dir / f"{BASE_NAME}.mcfunction"
     loaded = function_dir / f"_{BASE_NAME}_tickingarea_loaded.mcfunction"
     cleanup = function_dir / f"_{BASE_NAME}_remove_tickingarea.mcfunction"
-    expected_counts = {public: 113, loaded: 1, cleanup: 4}
+    expected_counts = {public: 113 + len(cardinal_snap.SNAP_COMMANDS), loaded: 1, cleanup: 4}
     allowed_verbs = {"execute", "schedule", "tickingarea"}
     for path, expected_count in expected_counts.items():
         data = path.read_bytes()
@@ -174,21 +175,23 @@ def validate_functions(
     if f"# Best tested exact gap-preserving cuboid compression: {best_compression:,} commands" not in public_text:
         raise ValueError("public loader compression count is stale")
     expected_preload = {
-        f"schedule on_area_loaded clear function _{BASE_NAME}_tickingarea_loaded",
+        cardinal_snap.reanchor(f"schedule on_area_loaded clear function _{BASE_NAME}_tickingarea_loaded"),
     }
     for name, x0, x1, z0, z1 in TICKING_AREAS:
         expected_preload.update(
             {
-                f"tickingarea remove {name}",
-                f"tickingarea add ^{x0} ^0 ^{z0} ^{x1} ^0 ^{z1} {name} true",
-                f"schedule on_area_loaded add tickingarea {name} _{BASE_NAME}_tickingarea_loaded",
+                cardinal_snap.reanchor(f"tickingarea remove {name}"),
+                cardinal_snap.reanchor(f"tickingarea add ^{x0} ^0 ^{z0} ^{x1} ^0 ^{z1} {name} true"),
+                cardinal_snap.reanchor(
+                    f"schedule on_area_loaded add tickingarea {name} _{BASE_NAME}_tickingarea_loaded"
+                ),
             }
         )
     if not expected_preload.issubset(set(public_text.splitlines())):
         raise ValueError("public loader is missing part of the four-area preload lifecycle")
 
     pattern = re.compile(
-        rf"^execute if entity @s\[[^]]+\] run structure load {NAMESPACE}:([^ ]+) "
+        rf"^{re.escape(cardinal_snap.REANCHOR_PREFIX)}execute if entity @s\[[^]]+\] run structure load {NAMESPACE}:([^ ]+) "
         r"\^(-?\d+) \^(-?\d+) \^(-?\d+) (0_degrees|90_degrees|180_degrees|270_degrees) none$"
     )
     actual: Counter[tuple[str, int, int, int, str]] = Counter()
@@ -212,8 +215,8 @@ def validate_functions(
         raise ValueError("cleanup callback removes the wrong ticking areas")
 
     manifest = json.loads((ROOT / "src" / "manifest.json").read_text(encoding="utf-8"))
-    if manifest["header"]["version"] != [1, 0, 12] or manifest["modules"][0]["version"] != [1, 0, 12]:
-        raise ValueError("manifest header/module versions are not synchronized at 1.0.12")
+    if manifest["header"]["version"] != [1, 0, 17] or manifest["modules"][0]["version"] != [1, 0, 17]:
+        raise ValueError("manifest header/module versions are not synchronized at 1.0.17")
 
 
 def main() -> None:

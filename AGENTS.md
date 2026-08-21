@@ -43,6 +43,28 @@ All generated builds must use Minecraft Bedrock commands, syntax, block identifi
 
 The pack currently declares Minecraft Bedrock 1.21 or newer in `src/manifest.json`.
 
+## Public-function cardinal snap
+
+Every public `.mcfunction` must begin its executable work by centering the player on the current block, leveling pitch, and snapping yaw to the closest cardinal direction. Use this exact ordered sequence; the order makes boundary ties deterministic and prevents a teleport from cascading into a later yaw branch:
+
+```mcfunction
+execute if entity @s[rym=-45,ry=45] as @s at @s align xz run tp @s ~0.5 ~ ~0.5 0 0
+execute if entity @s[rym=45,ry=135] as @s at @s align xz run tp @s ~0.5 ~ ~0.5 90 0
+execute if entity @s[rym=135,ry=180] as @s at @s align xz run tp @s ~0.5 ~ ~0.5 180 0
+execute if entity @s[rym=-180,ry=-135] as @s at @s align xz run tp @s ~0.5 ~ ~0.5 180 0
+execute if entity @s[rym=-135,ry=-45] as @s at @s align xz run tp @s ~0.5 ~ ~0.5 -90 0
+```
+
+After the snap, re-anchor every remaining public-function command at the player's updated position and rotation with:
+
+`execute as @s at @s rotated as @s run <original command>`
+
+This re-anchoring is required even for commands that do not visibly use coordinates so the convention remains mechanically checkable. If the original command is itself an `execute`, nesting it after `run` is valid and preserves its deliberately repositioned subcontext. Count the five snap commands when applying the function limit and documenting wrapper totals.
+
+Use `tools/cardinal_snap.py` to apply or check the convention across public functions. Generators that write public functions must pass their output lines through `cardinal_snap.transform_public_lines` so regeneration cannot remove the snap. Preserve each function's existing line endings when applying the transformation.
+
+Never add the snap sequence to underscore-prefixed internal callbacks. Scheduled callbacks do not preserve a player executor, position, or rotation, and must remain player-independent.
+
 ## Choose the build representation
 
 Use the simplest representation that faithfully implements the build:
@@ -65,12 +87,28 @@ Before adding or substantially changing a generated blueprint:
 3. Establish the build's coordinate bounds, footprint, maximum height, player origin, entrance direction, and required clearance before writing commands.
 4. Break complex builds into clearly labeled sections such as foundation, structure, ride or focal geometry, scenery, lighting, and finishing details.
 5. Decide whether the build is static or functional. Do not imply that decorative rides animate unless commands actually implement animation.
+6. Plan for the standard public-function cardinal snap and the re-anchored execution prefix on every subsequent command.
+
+### Coaster layout, theme, and scale
+
+For prompt-authored roller coasters, design quality and thematic identity take priority over maximizing track or occupied-block counts.
+
+- When a user asks for the "scale of" an existing attraction without naming a metric, interpret scale as a comparable physical envelope, landmark size, visual ambition, and overall experience. Do not assume they want the same rail count, occupied-voxel count, or another hidden numerical target.
+- Treat track length as a consequence of the route, not the design objective. Never add repeated close parallel rows, a dense serpentine or snake, filler track, hidden mass, or scenery-free detours merely to increase a metric unless the user explicitly requests that exact metric.
+- Begin with the theme. Establish a small set of recognizable landmarks or districts, reserve deliberate open space around them, and route the coaster to reveal, approach, cross, frame, or pass through those scenes.
+- A large coaster should use its volume in three dimensions: include meaningful bends, climbs, drops, elevation reversals, crossings with safe separation, broad runs, and changing sightlines. Avoid layouts that read primarily as a packed rectangular grid.
+- Open space is part of the build, not unused capacity. Preserve courtyards, lagoons, canyons, forests, plazas, or other negative space when they strengthen composition and make landmarks legible.
+- Keep the ride continuously connected and functional. Plan flat station track, powered straight rails, supported elevated sections, safe corner approaches, and sufficient rider clearance through every themed set piece.
+- Validate and report design metrics that describe the experience, such as curve count, major climb and drop count, track elevation range, footprint, and named landmarks. Rail count remains useful for validation but should not be presented as the primary measure of quality.
+- Render and inspect at least a top-down route projection for a large generated coaster. Reject or redesign obvious track cramming, accidental repetitive striping, weak landmark composition, or large areas whose only purpose is increasing counts.
+
+Jungle Leviathan is the positive layout reference. It uses a large footprint for bends, elevation changes, scenery, and open space. When a request compares scale to another attraction but prioritizes art direction and ride design, preserve the comparable physical envelope and landmark ambition without treating track length as the target.
 
 ### 2. Author the build
 
 - Prefer `fill` for exact cuboids and straight runs, and `setblock` for isolated or irregular detail.
 - Keep commands grouped in construction order. Build supporting terrain and shells before fragile blocks, rails, liquids, entities, or final effects that depend on neighboring blocks.
-- Caret coordinates may be bare (`^`) or numeric (`^-3`, `^12`). If an `execute positioned` subcommand changes the local origin, document why and use tilde coordinates only inside the deliberately repositioned context.
+- Caret coordinates may be bare (`^`) or numeric (`^-3`, `^12`). If an `execute positioned` subcommand changes the local origin, document why and use tilde coordinates only inside the deliberately repositioned context. Keep that original command intact after the standard re-anchoring prefix.
 - Large foundations may extend below the player's feet, but avoid enclosing or obstructing the player at the function origin. Forward-offset sculptures should keep their nearest occupied block safely away from the player.
 - Use comments for navigation and placement information, not to disguise invalid, speculative, or omitted commands.
 - Messages, sounds, and entity summons are optional. If used, keep selectors and ranges intentional and ensure the build remains useful when those cosmetic commands are removed.
@@ -196,6 +234,8 @@ The Jungle Leviathan coaster is the reference for a near-limit prompt-authored l
 - Assets: `src/structures/ai_minecraft_builds/theme_park_jungle_leviathan_roller_coaster_x*_z*.mcstructure`
 - Generator and validator: `tools/generate_jungle_leviathan.py`
 
+For a theme-first coaster, treat the physical envelope as room for broad runs, open scenic courts, repeated elevation reversals, and landmark-framing bends rather than as a mandate for raw track length. Keep those goals explicit in the generator and validate them in its reported design metrics and route projection.
+
 ### Required three-function loader convention
 
 Every build large enough to require `.mcstructure` assets must use exactly three `.mcfunction` files for its loader lifecycle:
@@ -304,13 +344,15 @@ schedule delay add _<build_name>_remove_tickingarea 100 replace
 tickingarea remove <unique_name>
 ```
 
-A world supports at most 10 command-created ticking areas, with at most 100 chunks in each area. Account for worst-case world-chunk alignment when checking a rectangular footprint. A conservative maximum chunk count for a `width` by `depth` block rectangle is `ceil((width + 15) / 16) * ceil((depth + 15) / 16)`. Keep each area as small as possible for performance and count every partition against the world limit. The 159 by 53 large-controller footprint can touch at most 11 by 5, or 55, chunks. The 302 by 238 Skyline Colossus footprint requires four 151 by 119 quadrants; each can touch at most 11 by 9, or 99, chunks, so the loader temporarily consumes four ticking-area slots. The 460 by 313 Jungle Leviathan footprint uses eight 115 by 157-or-156 rectangles; each can touch at most 9 by 11, or 99, chunks, so it temporarily consumes eight slots and leaves only two available for other systems.
+A world supports at most 10 command-created ticking areas, with at most 100 chunks in each area. Account for worst-case world-chunk alignment when checking a rectangular footprint. A conservative maximum chunk count for a `width` by `depth` block rectangle is `ceil((width + 15) / 16) * ceil((depth + 15) / 16)`. Keep each area as small as possible for performance and count every partition against the world limit. The 159 by 53 large-controller footprint can touch at most 11 by 5, or 55, chunks. The 302 by 238 Skyline Colossus footprint requires four 151 by 119 quadrants; each can touch at most 11 by 9, or 99, chunks, so the loader temporarily consumes four ticking-area slots. A 460 by 313 footprint, such as Jungle Leviathan's, requires eight 115 by 157-or-156 rectangles; each can touch at most 9 by 11, or 99, chunks, so the loader temporarily consumes eight slots and leaves only two available for other systems.
 
-Evaluate preload feasibility before interpreting requests such as "twice the size." Literal doubling of every horizontal dimension can exceed the ten-area ceiling even when every structure asset is valid: doubling Skyline Colossus to 604 by 476 has a conservative 39 by 31, or 1,209-chunk footprint, requiring at least 13 areas under the 100-chunk limit. When the requested metric is ambiguous, choose and disclose a measurable feasible interpretation such as approximately twice the footprint, track length, or occupied voxel count; record the exact ratio in generated validation output and state the chosen metric in the public header. If the user explicitly requires doubled linear dimensions, do not silently reduce them—explain that a self-contained loader cannot preload the full footprint under Bedrock's limits and ask which tradeoff they want.
+Evaluate preload feasibility before interpreting requests such as "twice the size." Literal doubling of every horizontal dimension can exceed the ten-area ceiling even when every structure asset is valid: doubling Skyline Colossus to 604 by 476 has a conservative 39 by 31, or 1,209-chunk footprint, requiring at least 13 areas under the 100-chunk limit. For attractions, an ambiguous scale comparison defaults to a comparable feasible footprint, height, landmark ambition, and visual experience—not track length or occupied voxel count. Disclose the chosen physical interpretation in the public header and report its measured dimensions. Use track length, occupied voxels, or another exact-ratio target only when the user explicitly requests that metric. If the user explicitly requires doubled linear dimensions, do not silently reduce them—explain that a self-contained loader cannot preload the full footprint under Bedrock's limits and ask which tradeoff they want.
+
+When a user explicitly requests an exact scale ratio across multiple metrics, validate and report every metric independently; do not infer one ratio from another. Track count and occupied-voxel count can change independently while the physical footprint remains fixed. Never use a densely serpentine, count-driven route as a layout template merely to satisfy those totals; preserve the theme-first principles and references above.
 
 Different loaders with distinct ticking-area and callback names can run sequentially and can briefly overlap, subject to the 10-area limit and device performance. Do not invoke the same loader concurrently at different locations: its second invocation will reuse the same static name and can interrupt the first invocation's preload or cleanup. For reliable bulk use, wait until one placement and its cleanup complete before invoking that same loader again.
 
-Validate that all callback and cleanup `.mcfunction` files use LF endings, contain only Bedrock commands, and are included in the generated `.mcpack`. Count their commands as part of the loader implementation. If ticking-area creation can fail because the world already uses all 10 slots, disclose that limitation in the handoff.
+Validate that all callback and cleanup `.mcfunction` files contain only Bedrock commands and are included in the generated `.mcpack`. New callbacks use LF; preserve the existing line-ending style of older callbacks when editing them. Count their commands as part of the loader implementation. If ticking-area creation can fail because the world already uses all 10 slots, disclose that limitation in the handoff.
 
 Official references:
 
@@ -356,6 +398,7 @@ Keep `build_ai_minecraft_pack.bat` and `README.md` accurate whenever the pack la
 - When preparing changed pack contents for reimport, increment the manifest version and keep `header.version` and `modules[0].version` identical. Preserve the existing UUIDs unless intentionally creating a separate pack identity.
 - Treat `src/` as the package source of truth. Do not hand-edit the generated `.mcpack`.
 - Run the Windows packager or create an equivalent temporary ZIP during validation. Confirm the archive root contains `manifest.json`, `functions/`, and `structures/`, not an extra `src/` directory.
+- When inspecting archive entry names on Windows, normalize `\` to `/` before comparing paths. Windows PowerShell's `Compress-Archive` may store directory separators as backslashes even though other ZIP writers and readers expose forward slashes.
 - Confirm every new public function, internal callback, and namespaced structure asset is present in the archive. Source models and `docs/` media must remain outside it.
 - The packager deletes and recreates `ai-minecraft-builds.zip` and `ai-minecraft-builds.mcpack`; do not run it if overwriting a user's uncommitted generated archive would be surprising.
 

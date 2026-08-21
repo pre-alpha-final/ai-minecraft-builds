@@ -10,6 +10,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
+import cardinal_snap
 import generate_skyline_cyclone as structure_tools
 
 
@@ -428,7 +429,7 @@ def write_functions(
 ) -> None:
     curve_count = sum(structure_tools.rail_state(path, index)[1] for index in range(len(path)))
     powered_count = len(path) - curve_count
-    wrapper_count = 1 + 3 * len(TICKING_AREAS) + 5 * len(specs)
+    wrapper_count = len(cardinal_snap.SNAP_COMMANDS) + 1 + 3 * len(TICKING_AREAS) + 5 * len(specs)
     complete_count = wrapper_count + 1 + len(TICKING_AREAS)
     header = [
         "# JUNGLE LEVIATHAN ROLLER COASTER - Minecraft Bedrock structure loader",
@@ -458,7 +459,8 @@ def write_functions(
         f"schedule on_area_loaded add tickingarea {name} _{BASE_NAME}_tickingarea_loaded"
         for name, *_ in TICKING_AREAS
     )
-    public_text = "\n".join(header + load_lines(specs)) + "\n"
+    public_lines = cardinal_snap.transform_public_lines(header + load_lines(specs))
+    public_text = "\n".join(public_lines) + "\n"
     loaded_text = (
         "# INTERNAL CALLBACK - do not run manually. Refresh cleanup after each jungle preload rectangle becomes ready.\n"
         f"schedule delay add _{BASE_NAME}_remove_tickingarea 300 replace\n"
@@ -493,7 +495,7 @@ def validate_functions(specs: list[tuple[int, int, int, int, int, int]], best_co
     loaded = FUNCTIONS / f"_{BASE_NAME}_tickingarea_loaded.mcfunction"
     cleanup = FUNCTIONS / f"_{BASE_NAME}_remove_tickingarea.mcfunction"
     expected_counts = {
-        public: 1 + 3 * len(TICKING_AREAS) + 5 * len(specs),
+        public: len(cardinal_snap.SNAP_COMMANDS) + 1 + 3 * len(TICKING_AREAS) + 5 * len(specs),
         loaded: 1,
         cleanup: len(TICKING_AREAS),
     }
@@ -522,15 +524,17 @@ def validate_functions(specs: list[tuple[int, int, int, int, int, int]], best_co
         if worst_chunks > 100:
             raise ValueError(f"ticking area {name} may touch {worst_chunks} chunks")
         required = {
-            f"tickingarea remove {name}",
-            f"tickingarea add ^{x0} ^0 ^{z0} ^{x1} ^0 ^{z1} {name} true",
-            f"schedule on_area_loaded add tickingarea {name} _{BASE_NAME}_tickingarea_loaded",
+            cardinal_snap.reanchor(f"tickingarea remove {name}"),
+            cardinal_snap.reanchor(f"tickingarea add ^{x0} ^0 ^{z0} ^{x1} ^0 ^{z1} {name} true"),
+            cardinal_snap.reanchor(
+                f"schedule on_area_loaded add tickingarea {name} _{BASE_NAME}_tickingarea_loaded"
+            ),
         }
         if not required.issubset(set(public_text.splitlines())):
             raise ValueError(f"public loader is missing preload lifecycle for {name}")
 
     pattern = re.compile(
-        rf"^execute if entity @s\[[^]]+\] run structure load {NAMESPACE}:([^ ]+) "
+        rf"^{re.escape(cardinal_snap.REANCHOR_PREFIX)}execute if entity @s\[[^]]+\] run structure load {NAMESPACE}:([^ ]+) "
         r"\^(-?\d+) \^(-?\d+) \^(-?\d+) (0_degrees|90_degrees|180_degrees|270_degrees) none$"
     )
     actual: Counter[tuple[str, int, int, int, str]] = Counter()
@@ -554,8 +558,8 @@ def validate_functions(specs: list[tuple[int, int, int, int, int, int]], best_co
         raise ValueError("cleanup callback removes the wrong ticking areas")
 
     manifest = json.loads((ROOT / "src" / "manifest.json").read_text(encoding="utf-8"))
-    if manifest["header"]["version"] != [1, 0, 13] or manifest["modules"][0]["version"] != [1, 0, 13]:
-        raise ValueError("manifest header/module versions are not synchronized at 1.0.13")
+    if manifest["header"]["version"] != [1, 0, 17] or manifest["modules"][0]["version"] != [1, 0, 17]:
+        raise ValueError("manifest header/module versions are not synchronized at 1.0.17")
 
 
 def main() -> None:

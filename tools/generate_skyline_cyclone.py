@@ -12,6 +12,7 @@ from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
+import cardinal_snap
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "src" / "structures" / "ai_minecraft_builds"
@@ -541,12 +542,12 @@ def validate_functions(
     public = function_dir / f"{BASE_NAME}.mcfunction"
     loaded_callback = function_dir / f"_{BASE_NAME}_tickingarea_loaded.mcfunction"
     cleanup_callback = function_dir / f"_{BASE_NAME}_remove_tickingarea.mcfunction"
-    expected_counts = {public: 34, loaded_callback: 1, cleanup_callback: 1}
+    expected_counts = {public: 34 + len(cardinal_snap.SNAP_COMMANDS), loaded_callback: 1, cleanup_callback: 1}
     allowed_verbs = {"execute", "schedule", "tickingarea"}
     for path, expected_count in expected_counts.items():
         data = path.read_bytes()
-        if b"\r" in data or not data.endswith(b"\n") or data.endswith(b"\n\n"):
-            raise ValueError(f"{path.name}: expected LF endings and exactly one final newline")
+        if data.count(b"\r\n") != data.count(b"\n") or not data.endswith(b"\r\n") or data.endswith(b"\r\n\r\n"):
+            raise ValueError(f"{path.name}: expected preserved CRLF endings and exactly one final newline")
         text = data.decode("utf-8")
         if any(line.rstrip() != line for line in text.splitlines()):
             raise ValueError(f"{path.name}: trailing whitespace")
@@ -562,15 +563,17 @@ def validate_functions(
     if f"# Best tested exact gap-preserving cuboid compression: {best_compression:,} commands" not in public_text:
         raise ValueError("public loader compression count is stale")
     expected_preload = {
-        f"schedule on_area_loaded clear function _{BASE_NAME}_tickingarea_loaded",
-        "tickingarea remove skyline_cyclone",
-        "tickingarea add ^-75 ^0 ^24 ^75 ^0 ^142 skyline_cyclone true",
-        f"schedule on_area_loaded add tickingarea skyline_cyclone _{BASE_NAME}_tickingarea_loaded",
+        cardinal_snap.reanchor(f"schedule on_area_loaded clear function _{BASE_NAME}_tickingarea_loaded"),
+        cardinal_snap.reanchor("tickingarea remove skyline_cyclone"),
+        cardinal_snap.reanchor("tickingarea add ^-75 ^0 ^24 ^75 ^0 ^142 skyline_cyclone true"),
+        cardinal_snap.reanchor(
+            f"schedule on_area_loaded add tickingarea skyline_cyclone _{BASE_NAME}_tickingarea_loaded"
+        ),
     }
     if not expected_preload.issubset(set(public_text.splitlines())):
         raise ValueError("public loader is missing part of the required ticking-area lifecycle")
     pattern = re.compile(
-        r"^execute if entity @s\[[^]]+\] run structure load "
+        rf"^{re.escape(cardinal_snap.REANCHOR_PREFIX)}execute if entity @s\[[^]]+\] run structure load "
         r"ai_minecraft_builds:([^ ]+) \^(-?\d+) \^(-?\d+) \^(-?\d+) "
         r"(0_degrees|90_degrees|180_degrees|270_degrees) none$"
     )
@@ -605,8 +608,8 @@ def validate_functions(
         raise ValueError("cleanup callback removes the wrong ticking area")
 
     manifest = json.loads((ROOT / "src" / "manifest.json").read_text(encoding="utf-8"))
-    if manifest["header"]["version"] != [1, 0, 12] or manifest["modules"][0]["version"] != [1, 0, 12]:
-        raise ValueError("manifest header/module versions are not synchronized at 1.0.12")
+    if manifest["header"]["version"] != [1, 0, 17] or manifest["modules"][0]["version"] != [1, 0, 17]:
+        raise ValueError("manifest header/module versions are not synchronized at 1.0.17")
 
 
 def main() -> None:

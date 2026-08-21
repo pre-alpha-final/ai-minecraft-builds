@@ -22,8 +22,9 @@ Minecraft function files are plain-text lists of commands. An LLM can translate 
 
 ## Placement and compatibility details
 
-- Scripts generate the build in the direction you are facing. Face one of the four cardinal directions—north, south, east, or west—and look straight ahead before running a function.
-- To look straight ahead, point the crosshair directly at the horizon. Looking up or down can change how caret-relative coordinates are interpreted and distort the build.
+- Public build functions automatically move the player to the center of their current block, level the view, and snap the yaw to the closest cardinal direction before placing anything. Stand on the ground block that should be the documented origin and face broadly toward the intended north, south, east, or west build direction before running a function.
+- The snap removes fractional-position, yaw, and pitch drift that can skew large caret-relative builds. Exact diagonal ties resolve consistently to one of the two neighboring cardinal directions.
+- Run public functions as a player. Internal functions whose names begin with `_` are scheduled callbacks and must not be invoked manually.
 - LLMs sometimes confuse Bedrock and Java assets or command syntax. After generation, tell the LLM to check that the function uses only resources supported by the Minecraft version you want.
 - Generated functions can place many blocks at once. Test new blueprints in a disposable world or make a backup before running them in a world you care about.
 

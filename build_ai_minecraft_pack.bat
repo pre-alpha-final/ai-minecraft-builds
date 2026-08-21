@@ -39,7 +39,7 @@ if exist "%PACKFILE%" del /f /q "%PACKFILE%"
 echo Packaging manifest.json, functions, and structures folders...
 
 powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-  "Compress-Archive -Path '%MANIFEST%','%FUNCTIONS%','%STRUCTURES%' -DestinationPath '%ZIPFILE%' -Force"
+  "$ErrorActionPreference='Stop'; Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::CreateFromDirectory('%ROOT%src','%ZIPFILE%',[System.IO.Compression.CompressionLevel]::Optimal,$false)"
 
 if errorlevel 1 (
     echo.
