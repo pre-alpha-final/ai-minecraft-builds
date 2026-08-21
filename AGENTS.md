@@ -12,7 +12,6 @@ This repository collects AI-generated Minecraft Bedrock build blueprints. Most p
 - `src/manifest.json` defines a behavior pack for Minecraft Bedrock 1.21 or newer. Keep the header and data-module versions identical.
 - `src/functions/` contains all callable functions and internal callbacks. Public function filenames use lowercase snake case and are invoked without the extension, for example `/function theme_park_ferris_wheel`.
 - Most `theme_park_*.mcfunction` files are standalone generated builds. They establish the current conventions for section comments, caret-relative placement, large foundations, decorative detail, and optional start/completion messages.
-- `src/functions/ps5_controller_large.mcfunction` plus its two underscore-prefixed callbacks demonstrate the structure-backed path for a conversion that cannot fit under the function command limit.
 - `src/structures/ai_minecraft_builds/` is the behavior-pack structure namespace. The folder name and identifiers used by `structure load` must agree.
 - Imported source models are optional working inputs and may not be committed after conversion. Record their filenames and relevant metadata in the generated build header; source assets outside `src/` and media under `docs/` are not included by the packager.
 - `build_ai_minecraft_pack.bat` packages only `src/manifest.json`, `src/functions`, and `src/structures` into the repository-root `ai-minecraft-builds.mcpack`.
@@ -74,7 +73,7 @@ Use the simplest representation that faithfully implements the build:
 - For a build above 10,000 commands, use namespaced `.mcstructure` assets and the required three-function loader lifecycle described below.
 - Do not convert an ordinary readable function into a binary structure merely because a structure is possible. Keep hand-authored builds inspectable unless command limits, fidelity, or load reliability justify the binary format.
 
-Count executable lines, not comments or blank lines, when applying the function limit. The current standalone examples range from hundreds to roughly 7,000 commands; `ps5_controller_large` is the reference structure-backed exception.
+Count executable lines, not comments or blank lines, when applying the function limit. The current standalone examples range from hundreds to roughly 7,000 commands.
 
 ## Prompt-authored mcfunction workflow
 
@@ -219,14 +218,6 @@ Official references:
 
 A `.mcstructure` can place tens of thousands of blocks through one `structure load` command, so the number of voxels is no longer tied to the number of commands. Use this for high-detail conversions that exceed the function limit.
 
-The existing large controller conversion is the reference implementation:
-
-- Loader: `src/functions/ps5_controller_large.mcfunction`
-- Area-loaded callback: `src/functions/_ps5_controller_large_tickingarea_loaded.mcfunction`
-- Cleanup callback: `src/functions/_ps5_controller_large_remove_tickingarea.mcfunction`
-- Assets: `src/structures/ai_minecraft_builds/ps5_controller_large_*.mcstructure`
-- Packager: `build_ai_minecraft_pack.bat`
-
 The Jungle Leviathan coaster is the reference for a near-limit prompt-authored loader with many structure assets and ticking areas:
 
 - Loader: `src/functions/theme_park_jungle_leviathan_roller_coaster.mcfunction`
@@ -344,7 +335,7 @@ schedule delay add _<build_name>_remove_tickingarea 100 replace
 tickingarea remove <unique_name>
 ```
 
-A world supports at most 10 command-created ticking areas, with at most 100 chunks in each area. Account for worst-case world-chunk alignment when checking a rectangular footprint. A conservative maximum chunk count for a `width` by `depth` block rectangle is `ceil((width + 15) / 16) * ceil((depth + 15) / 16)`. Keep each area as small as possible for performance and count every partition against the world limit. The 159 by 53 large-controller footprint can touch at most 11 by 5, or 55, chunks. The 302 by 238 Skyline Colossus footprint requires four 151 by 119 quadrants; each can touch at most 11 by 9, or 99, chunks, so the loader temporarily consumes four ticking-area slots. A 460 by 313 footprint, such as Jungle Leviathan's, requires eight 115 by 157-or-156 rectangles; each can touch at most 9 by 11, or 99, chunks, so the loader temporarily consumes eight slots and leaves only two available for other systems.
+A world supports at most 10 command-created ticking areas, with at most 100 chunks in each area. Account for worst-case world-chunk alignment when checking a rectangular footprint. A conservative maximum chunk count for a `width` by `depth` block rectangle is `ceil((width + 15) / 16) * ceil((depth + 15) / 16)`. Keep each area as small as possible for performance and count every partition against the world limit. The 302 by 238 Skyline Colossus footprint requires four 151 by 119 quadrants; each can touch at most 11 by 9, or 99, chunks, so the loader temporarily consumes four ticking-area slots. A 460 by 313 footprint, such as Jungle Leviathan's, requires eight 115 by 157-or-156 rectangles; each can touch at most 9 by 11, or 99, chunks, so the loader temporarily consumes eight slots and leaves only two available for other systems.
 
 Evaluate preload feasibility before interpreting requests such as "twice the size." Literal doubling of every horizontal dimension can exceed the ten-area ceiling even when every structure asset is valid: doubling Skyline Colossus to 604 by 476 has a conservative 39 by 31, or 1,209-chunk footprint, requiring at least 13 areas under the 100-chunk limit. For attractions, an ambiguous scale comparison defaults to a comparable feasible footprint, height, landmark ambition, and visual experience—not track length or occupied voxel count. Disclose the chosen physical interpretation in the public header and report its measured dimensions. Use track length, occupied voxels, or another exact-ratio target only when the user explicitly requests that metric. If the user explicitly requires doubled linear dimensions, do not silently reduce them—explain that a self-contained loader cannot preload the full footprint under Bedrock's limits and ask which tradeoff they want.
 
