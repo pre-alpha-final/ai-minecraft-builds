@@ -1,0 +1,1428 @@
+{
+  "name": "Themed Haunted House / Grand Estate",
+  "function": "theme_park_themed_haunted_house",
+  "representation": "native structures",
+  "dimensions": {
+    "width": 225,
+    "depth": 239,
+    "height": 98
+  },
+  "caret_bounds": [
+    [
+      -112,
+      -1,
+      24
+    ],
+    [
+      112,
+      96,
+      262
+    ]
+  ],
+  "previous_dimensions": {
+    "width": 65,
+    "depth": 77,
+    "height": 41
+  },
+  "footprint_ratio": 10.744255744255744,
+  "solid_blocks": 680192,
+  "air_cells": 905324,
+  "exact_cuboid_commands": {
+    "xyz": 31120,
+    "xzy": 30929,
+    "yxz": 31322,
+    "yzx": 30976,
+    "zxy": 29980,
+    "zyx": 30026
+  },
+  "rooms": [
+    {
+      "name": "Whispering library",
+      "kind": "library",
+      "bounds": [
+        -35,
+        9,
+        73,
+        -13,
+        19,
+        107
+      ]
+    },
+    {
+      "name": "Seance salon",
+      "kind": "seance",
+      "bounds": [
+        -35,
+        9,
+        109,
+        -13,
+        19,
+        143
+      ]
+    },
+    {
+      "name": "Music room",
+      "kind": "music",
+      "bounds": [
+        -35,
+        9,
+        145,
+        -13,
+        19,
+        179
+      ]
+    },
+    {
+      "name": "Embalmer study",
+      "kind": "study",
+      "bounds": [
+        -35,
+        9,
+        181,
+        -13,
+        19,
+        215
+      ]
+    },
+    {
+      "name": "Ghost banquet",
+      "kind": "banquet",
+      "bounds": [
+        13,
+        9,
+        73,
+        35,
+        19,
+        107
+      ]
+    },
+    {
+      "name": "Abandoned kitchen",
+      "kind": "kitchen",
+      "bounds": [
+        13,
+        9,
+        109,
+        35,
+        19,
+        143
+      ]
+    },
+    {
+      "name": "Winter parlor",
+      "kind": "gallery",
+      "bounds": [
+        13,
+        9,
+        145,
+        35,
+        19,
+        179
+      ]
+    },
+    {
+      "name": "Poison conservatory",
+      "kind": "conservatory",
+      "bounds": [
+        13,
+        9,
+        181,
+        35,
+        19,
+        215
+      ]
+    },
+    {
+      "name": "Grand ballroom",
+      "kind": "ballroom",
+      "bounds": [
+        -87,
+        9,
+        93,
+        -38,
+        19,
+        123
+      ]
+    },
+    {
+      "name": "Hall of mirrors",
+      "kind": "mirrors",
+      "bounds": [
+        -87,
+        9,
+        125,
+        -38,
+        19,
+        155
+      ]
+    },
+    {
+      "name": "Funeral theater",
+      "kind": "theater",
+      "bounds": [
+        -87,
+        9,
+        157,
+        -38,
+        19,
+        187
+      ]
+    },
+    {
+      "name": "Servants dining hall",
+      "kind": "banquet",
+      "bounds": [
+        38,
+        9,
+        93,
+        87,
+        19,
+        123
+      ]
+    },
+    {
+      "name": "Armor gallery",
+      "kind": "armor",
+      "bounds": [
+        38,
+        9,
+        125,
+        87,
+        19,
+        155
+      ]
+    },
+    {
+      "name": "Winter orangery",
+      "kind": "conservatory",
+      "bounds": [
+        38,
+        9,
+        157,
+        87,
+        19,
+        187
+      ]
+    },
+    {
+      "name": "Occult archive",
+      "kind": "archive",
+      "bounds": [
+        -35,
+        21,
+        73,
+        -13,
+        31,
+        107
+      ]
+    },
+    {
+      "name": "Velvet bedchamber",
+      "kind": "bedroom",
+      "bounds": [
+        -35,
+        21,
+        109,
+        -13,
+        31,
+        143
+      ]
+    },
+    {
+      "name": "Watchful portraits",
+      "kind": "gallery",
+      "bounds": [
+        -35,
+        21,
+        145,
+        -13,
+        31,
+        179
+      ]
+    },
+    {
+      "name": "Moon study",
+      "kind": "study",
+      "bounds": [
+        -35,
+        21,
+        181,
+        -13,
+        31,
+        215
+      ]
+    },
+    {
+      "name": "Forgotten nursery",
+      "kind": "nursery",
+      "bounds": [
+        13,
+        21,
+        73,
+        35,
+        31,
+        107
+      ]
+    },
+    {
+      "name": "Guest bedchamber",
+      "kind": "bedroom",
+      "bounds": [
+        13,
+        21,
+        109,
+        35,
+        31,
+        143
+      ]
+    },
+    {
+      "name": "Alchemist laboratory",
+      "kind": "laboratory",
+      "bounds": [
+        13,
+        21,
+        145,
+        35,
+        31,
+        179
+      ]
+    },
+    {
+      "name": "Broken mirrors",
+      "kind": "mirrors",
+      "bounds": [
+        13,
+        21,
+        181,
+        35,
+        31,
+        215
+      ]
+    },
+    {
+      "name": "Long library",
+      "kind": "library",
+      "bounds": [
+        -87,
+        21,
+        93,
+        -38,
+        31,
+        123
+      ]
+    },
+    {
+      "name": "Royal apartments",
+      "kind": "bedroom",
+      "bounds": [
+        -87,
+        21,
+        125,
+        -38,
+        31,
+        155
+      ]
+    },
+    {
+      "name": "Masked ball salon",
+      "kind": "ballroom",
+      "bounds": [
+        -87,
+        21,
+        157,
+        -38,
+        31,
+        187
+      ]
+    },
+    {
+      "name": "Servants quarters",
+      "kind": "servants",
+      "bounds": [
+        38,
+        21,
+        93,
+        87,
+        31,
+        123
+      ]
+    },
+    {
+      "name": "Family portrait hall",
+      "kind": "gallery",
+      "bounds": [
+        38,
+        21,
+        125,
+        87,
+        31,
+        155
+      ]
+    },
+    {
+      "name": "Crystal laboratory",
+      "kind": "laboratory",
+      "bounds": [
+        38,
+        21,
+        157,
+        87,
+        31,
+        187
+      ]
+    },
+    {
+      "name": "Astronomer library",
+      "kind": "library",
+      "bounds": [
+        -35,
+        33,
+        73,
+        -13,
+        43,
+        107
+      ]
+    },
+    {
+      "name": "Raven bedchamber",
+      "kind": "bedroom",
+      "bounds": [
+        -35,
+        33,
+        109,
+        -13,
+        43,
+        143
+      ]
+    },
+    {
+      "name": "Cursed relics",
+      "kind": "relics",
+      "bounds": [
+        -35,
+        33,
+        145,
+        -13,
+        43,
+        179
+      ]
+    },
+    {
+      "name": "Spirit observatory",
+      "kind": "observatory",
+      "bounds": [
+        -35,
+        33,
+        181,
+        -13,
+        43,
+        215
+      ]
+    },
+    {
+      "name": "Doll nursery",
+      "kind": "nursery",
+      "bounds": [
+        13,
+        33,
+        73,
+        35,
+        43,
+        107
+      ]
+    },
+    {
+      "name": "Countess suite",
+      "kind": "bedroom",
+      "bounds": [
+        13,
+        33,
+        109,
+        35,
+        43,
+        143
+      ]
+    },
+    {
+      "name": "Forbidden experiments",
+      "kind": "laboratory",
+      "bounds": [
+        13,
+        33,
+        145,
+        35,
+        43,
+        179
+      ]
+    },
+    {
+      "name": "Midnight music",
+      "kind": "music",
+      "bounds": [
+        13,
+        33,
+        181,
+        35,
+        43,
+        215
+      ]
+    },
+    {
+      "name": "Lost manuscripts",
+      "kind": "archive",
+      "bounds": [
+        -87,
+        33,
+        93,
+        -38,
+        43,
+        123
+      ]
+    },
+    {
+      "name": "Phantom theater",
+      "kind": "theater",
+      "bounds": [
+        -87,
+        33,
+        125,
+        -38,
+        43,
+        155
+      ]
+    },
+    {
+      "name": "Astral gallery",
+      "kind": "observatory",
+      "bounds": [
+        -87,
+        33,
+        157,
+        -38,
+        43,
+        187
+      ]
+    },
+    {
+      "name": "Doll collection",
+      "kind": "nursery",
+      "bounds": [
+        38,
+        33,
+        93,
+        87,
+        43,
+        123
+      ]
+    },
+    {
+      "name": "Midnight banquet",
+      "kind": "banquet",
+      "bounds": [
+        38,
+        33,
+        125,
+        87,
+        43,
+        155
+      ]
+    },
+    {
+      "name": "Relic exhibition",
+      "kind": "relics",
+      "bounds": [
+        38,
+        33,
+        157,
+        87,
+        43,
+        187
+      ]
+    },
+    {
+      "name": "West attic / relic store",
+      "kind": "relics",
+      "bounds": [
+        -30,
+        45,
+        78,
+        -13,
+        55,
+        115
+      ]
+    },
+    {
+      "name": "West attic / forgotten archive",
+      "kind": "archive",
+      "bounds": [
+        -30,
+        45,
+        117,
+        -13,
+        55,
+        154
+      ]
+    },
+    {
+      "name": "West attic / ghost gallery",
+      "kind": "gallery",
+      "bounds": [
+        -30,
+        45,
+        156,
+        -13,
+        55,
+        210
+      ]
+    },
+    {
+      "name": "East attic / relic store",
+      "kind": "relics",
+      "bounds": [
+        13,
+        45,
+        78,
+        30,
+        55,
+        115
+      ]
+    },
+    {
+      "name": "East attic / forgotten archive",
+      "kind": "archive",
+      "bounds": [
+        13,
+        45,
+        117,
+        30,
+        55,
+        154
+      ]
+    },
+    {
+      "name": "East attic / ghost gallery",
+      "kind": "gallery",
+      "bounds": [
+        13,
+        45,
+        156,
+        30,
+        55,
+        210
+      ]
+    },
+    {
+      "name": "West crypt / ancestor vault",
+      "kind": "crypt",
+      "bounds": [
+        -34,
+        -1,
+        92,
+        -13,
+        6,
+        128
+      ]
+    },
+    {
+      "name": "West crypt / ossuary",
+      "kind": "crypt",
+      "bounds": [
+        -34,
+        -1,
+        130,
+        -13,
+        6,
+        166
+      ]
+    },
+    {
+      "name": "West crypt / sealed relics",
+      "kind": "crypt",
+      "bounds": [
+        -34,
+        -1,
+        168,
+        -13,
+        6,
+        206
+      ]
+    },
+    {
+      "name": "East crypt / ancestor vault",
+      "kind": "crypt",
+      "bounds": [
+        13,
+        -1,
+        92,
+        34,
+        6,
+        128
+      ]
+    },
+    {
+      "name": "East crypt / ossuary",
+      "kind": "crypt",
+      "bounds": [
+        13,
+        -1,
+        130,
+        34,
+        6,
+        166
+      ]
+    },
+    {
+      "name": "East crypt / sealed relics",
+      "kind": "crypt",
+      "bounds": [
+        13,
+        -1,
+        168,
+        34,
+        6,
+        206
+      ]
+    }
+  ],
+  "main_rooms": 42,
+  "attic_spaces": 6,
+  "crypt_vaults": 6,
+  "tower_rooms": 12,
+  "walking_destinations": {
+    "Cemetery": {
+      "left": 20,
+      "feet_up": 8.0,
+      "forward": 44,
+      "route_steps": 40
+    },
+    "Rose knot garden": {
+      "left": -20,
+      "feet_up": 8.0,
+      "forward": 44,
+      "route_steps": 40
+    },
+    "Rear memorial garden": {
+      "left": 0,
+      "feet_up": 8.0,
+      "forward": 231,
+      "route_steps": 223
+    },
+    "Whispering library": {
+      "left": -33,
+      "feet_up": 10.0,
+      "forward": 76,
+      "route_steps": 109
+    },
+    "Seance salon": {
+      "left": -33,
+      "feet_up": 10.0,
+      "forward": 112,
+      "route_steps": 145
+    },
+    "Music room": {
+      "left": -33,
+      "feet_up": 10.0,
+      "forward": 148,
+      "route_steps": 181
+    },
+    "Embalmer study": {
+      "left": -33,
+      "feet_up": 10.0,
+      "forward": 184,
+      "route_steps": 217
+    },
+    "Ghost banquet": {
+      "left": 15,
+      "feet_up": 10.0,
+      "forward": 76,
+      "route_steps": 91
+    },
+    "Abandoned kitchen": {
+      "left": 15,
+      "feet_up": 10.0,
+      "forward": 112,
+      "route_steps": 127
+    },
+    "Winter parlor": {
+      "left": 15,
+      "feet_up": 10.0,
+      "forward": 148,
+      "route_steps": 163
+    },
+    "Poison conservatory": {
+      "left": 15,
+      "feet_up": 10.0,
+      "forward": 184,
+      "route_steps": 199
+    },
+    "Grand ballroom": {
+      "left": -85,
+      "feet_up": 10.0,
+      "forward": 96,
+      "route_steps": 169
+    },
+    "Hall of mirrors": {
+      "left": -85,
+      "feet_up": 10.0,
+      "forward": 128,
+      "route_steps": 201
+    },
+    "Funeral theater": {
+      "left": -85,
+      "feet_up": 10.0,
+      "forward": 160,
+      "route_steps": 233
+    },
+    "Servants dining hall": {
+      "left": 40,
+      "feet_up": 10.0,
+      "forward": 96,
+      "route_steps": 124
+    },
+    "Armor gallery": {
+      "left": 40,
+      "feet_up": 10.0,
+      "forward": 128,
+      "route_steps": 168
+    },
+    "Winter orangery": {
+      "left": 40,
+      "feet_up": 10.0,
+      "forward": 160,
+      "route_steps": 188
+    },
+    "Main hall / level 1": {
+      "left": 0,
+      "feet_up": 10.0,
+      "forward": 150,
+      "route_steps": 142
+    },
+    "Occult archive": {
+      "left": -33,
+      "feet_up": 22.0,
+      "forward": 76,
+      "route_steps": 221
+    },
+    "Velvet bedchamber": {
+      "left": -33,
+      "feet_up": 22.0,
+      "forward": 112,
+      "route_steps": 185
+    },
+    "Watchful portraits": {
+      "left": -33,
+      "feet_up": 22.0,
+      "forward": 148,
+      "route_steps": 181
+    },
+    "Moon study": {
+      "left": -33,
+      "feet_up": 22.0,
+      "forward": 184,
+      "route_steps": 217
+    },
+    "Forgotten nursery": {
+      "left": 15,
+      "feet_up": 22.0,
+      "forward": 76,
+      "route_steps": 203
+    },
+    "Guest bedchamber": {
+      "left": 15,
+      "feet_up": 22.0,
+      "forward": 112,
+      "route_steps": 167
+    },
+    "Alchemist laboratory": {
+      "left": 15,
+      "feet_up": 22.0,
+      "forward": 148,
+      "route_steps": 163
+    },
+    "Broken mirrors": {
+      "left": 15,
+      "feet_up": 22.0,
+      "forward": 184,
+      "route_steps": 199
+    },
+    "Long library": {
+      "left": -85,
+      "feet_up": 22.0,
+      "forward": 96,
+      "route_steps": 277
+    },
+    "Royal apartments": {
+      "left": -85,
+      "feet_up": 22.0,
+      "forward": 128,
+      "route_steps": 233
+    },
+    "Masked ball salon": {
+      "left": -85,
+      "feet_up": 22.0,
+      "forward": 160,
+      "route_steps": 233
+    },
+    "Servants quarters": {
+      "left": 40,
+      "feet_up": 22.0,
+      "forward": 96,
+      "route_steps": 228
+    },
+    "Family portrait hall": {
+      "left": 40,
+      "feet_up": 22.0,
+      "forward": 128,
+      "route_steps": 188
+    },
+    "Crystal laboratory": {
+      "left": 40,
+      "feet_up": 22.0,
+      "forward": 160,
+      "route_steps": 188
+    },
+    "Main hall / level 2": {
+      "left": 0,
+      "feet_up": 22.0,
+      "forward": 150,
+      "route_steps": 128
+    },
+    "Astronomer library": {
+      "left": -33,
+      "feet_up": 34.0,
+      "forward": 76,
+      "route_steps": 317
+    },
+    "Raven bedchamber": {
+      "left": -33,
+      "feet_up": 34.0,
+      "forward": 112,
+      "route_steps": 281
+    },
+    "Cursed relics": {
+      "left": -33,
+      "feet_up": 34.0,
+      "forward": 148,
+      "route_steps": 245
+    },
+    "Spirit observatory": {
+      "left": -33,
+      "feet_up": 34.0,
+      "forward": 184,
+      "route_steps": 217
+    },
+    "Doll nursery": {
+      "left": 15,
+      "feet_up": 34.0,
+      "forward": 76,
+      "route_steps": 305
+    },
+    "Countess suite": {
+      "left": 15,
+      "feet_up": 34.0,
+      "forward": 112,
+      "route_steps": 269
+    },
+    "Forbidden experiments": {
+      "left": 15,
+      "feet_up": 34.0,
+      "forward": 148,
+      "route_steps": 233
+    },
+    "Midnight music": {
+      "left": 15,
+      "feet_up": 34.0,
+      "forward": 184,
+      "route_steps": 205
+    },
+    "Lost manuscripts": {
+      "left": -85,
+      "feet_up": 34.0,
+      "forward": 96,
+      "route_steps": 373
+    },
+    "Phantom theater": {
+      "left": -85,
+      "feet_up": 34.0,
+      "forward": 128,
+      "route_steps": 329
+    },
+    "Astral gallery": {
+      "left": -85,
+      "feet_up": 34.0,
+      "forward": 160,
+      "route_steps": 289
+    },
+    "Doll collection": {
+      "left": 40,
+      "feet_up": 34.0,
+      "forward": 96,
+      "route_steps": 330
+    },
+    "Midnight banquet": {
+      "left": 40,
+      "feet_up": 34.0,
+      "forward": 128,
+      "route_steps": 290
+    },
+    "Relic exhibition": {
+      "left": 40,
+      "feet_up": 34.0,
+      "forward": 160,
+      "route_steps": 250
+    },
+    "Main hall / level 3": {
+      "left": 0,
+      "feet_up": 34.0,
+      "forward": 150,
+      "route_steps": 216
+    },
+    "Front right tower / floor 1": {
+      "left": -78,
+      "feet_up": 10.0,
+      "forward": 88,
+      "route_steps": 170
+    },
+    "Front right tower / floor 13": {
+      "left": -78,
+      "feet_up": 22.0,
+      "forward": 88,
+      "route_steps": 278
+    },
+    "Front right tower / floor 25": {
+      "left": -78,
+      "feet_up": 34.0,
+      "forward": 88,
+      "route_steps": 374
+    },
+    "Front left tower / floor 1": {
+      "left": 78,
+      "feet_up": 10.0,
+      "forward": 88,
+      "route_steps": 172
+    },
+    "Front left tower / floor 13": {
+      "left": 78,
+      "feet_up": 22.0,
+      "forward": 88,
+      "route_steps": 274
+    },
+    "Front left tower / floor 25": {
+      "left": 78,
+      "feet_up": 34.0,
+      "forward": 88,
+      "route_steps": 376
+    },
+    "Rear right tower / floor 1": {
+      "left": -78,
+      "feet_up": 10.0,
+      "forward": 192,
+      "route_steps": 246
+    },
+    "Rear right tower / floor 13": {
+      "left": -78,
+      "feet_up": 22.0,
+      "forward": 192,
+      "route_steps": 246
+    },
+    "Rear right tower / floor 25": {
+      "left": -78,
+      "feet_up": 34.0,
+      "forward": 192,
+      "route_steps": 302
+    },
+    "Rear left tower / floor 1": {
+      "left": 78,
+      "feet_up": 10.0,
+      "forward": 192,
+      "route_steps": 246
+    },
+    "Rear left tower / floor 13": {
+      "left": 78,
+      "feet_up": 22.0,
+      "forward": 192,
+      "route_steps": 246
+    },
+    "Rear left tower / floor 25": {
+      "left": 78,
+      "feet_up": 34.0,
+      "forward": 192,
+      "route_steps": 308
+    },
+    "West attic / relic store": {
+      "left": -28,
+      "feet_up": 46.0,
+      "forward": 81,
+      "route_steps": 369
+    },
+    "West attic / forgotten archive": {
+      "left": -28,
+      "feet_up": 46.0,
+      "forward": 120,
+      "route_steps": 330
+    },
+    "West attic / ghost gallery": {
+      "left": -28,
+      "feet_up": 46.0,
+      "forward": 159,
+      "route_steps": 291
+    },
+    "East attic / relic store": {
+      "left": 15,
+      "feet_up": 46.0,
+      "forward": 81,
+      "route_steps": 350
+    },
+    "East attic / forgotten archive": {
+      "left": 15,
+      "feet_up": 46.0,
+      "forward": 120,
+      "route_steps": 311
+    },
+    "East attic / ghost gallery": {
+      "left": 15,
+      "feet_up": 46.0,
+      "forward": 159,
+      "route_steps": 272
+    },
+    "Attic central landing": {
+      "left": 0,
+      "feet_up": 46.0,
+      "forward": 197,
+      "route_steps": 235
+    },
+    "West crypt / ancestor vault": {
+      "left": -32,
+      "feet_up": 0.0,
+      "forward": 95,
+      "route_steps": 177
+    },
+    "West crypt / ossuary": {
+      "left": -32,
+      "feet_up": 0.0,
+      "forward": 133,
+      "route_steps": 215
+    },
+    "West crypt / sealed relics": {
+      "left": -32,
+      "feet_up": 0.0,
+      "forward": 171,
+      "route_steps": 255
+    },
+    "East crypt / ancestor vault": {
+      "left": 15,
+      "feet_up": 0.0,
+      "forward": 95,
+      "route_steps": 154
+    },
+    "East crypt / ossuary": {
+      "left": 15,
+      "feet_up": 0.0,
+      "forward": 133,
+      "route_steps": 192
+    },
+    "East crypt / sealed relics": {
+      "left": 15,
+      "feet_up": 0.0,
+      "forward": 171,
+      "route_steps": 232
+    },
+    "Front balcony": {
+      "left": 0,
+      "feet_up": 22.0,
+      "forward": 69,
+      "route_steps": 215
+    },
+    "Front door": {
+      "left": 0,
+      "feet_up": 10.0,
+      "forward": 74,
+      "route_steps": 52
+    },
+    "Terrace landing": {
+      "left": 0,
+      "feet_up": 8.0,
+      "forward": 48,
+      "route_steps": 24
+    }
+  },
+  "reachable_surfaces": 103408,
+  "stairs": [
+    {
+      "name": "Grand stair",
+      "width": 13,
+      "steps": 24,
+      "feet_from": 10,
+      "feet_to": 22
+    },
+    {
+      "name": "Upper stair",
+      "width": 6,
+      "steps": 24,
+      "feet_from": 22,
+      "feet_to": 34
+    },
+    {
+      "name": "Attic stair",
+      "width": 6,
+      "steps": 24,
+      "feet_from": 34,
+      "feet_to": 46
+    },
+    {
+      "name": "Crypt stair",
+      "width": 6,
+      "steps": 20,
+      "feet_from": 0,
+      "feet_to": 10
+    },
+    {
+      "name": "Porch",
+      "width": 15,
+      "steps": 4,
+      "feet_from": 8,
+      "feet_to": 10
+    },
+    {
+      "name": "Terrace entrance",
+      "width": 11,
+      "steps": 16,
+      "feet_from": 0,
+      "feet_to": 8
+    }
+  ],
+  "materials": {
+    "air": 905324,
+    "amethyst_block": 24,
+    "black_concrete": 378,
+    "black_stained_glass": 392,
+    "black_wool": 192,
+    "blue_wool": 3,
+    "bone_block": 511,
+    "bookshelf": 1608,
+    "chiseled_stone_bricks": 84,
+    "dark_oak_log": 9862,
+    "dark_oak_planks": 60992,
+    "dark_oak_slab [\"minecraft:vertical_half\"=\"bottom\"]": 769,
+    "deepslate_tiles": 29452,
+    "enchanting_table": 9,
+    "flower_pot": 5,
+    "gold_block": 1188,
+    "grass_block": 38671,
+    "iron_bars": 3720,
+    "lime_stained_glass": 175,
+    "moss_block": 928,
+    "mossy_stone_bricks": 10074,
+    "podzol": 525,
+    "polished_andesite": 11458,
+    "polished_blackstone_brick_slab [\"minecraft:vertical_half\"=\"bottom\"]": 136,
+    "polished_blackstone_bricks": 23827,
+    "purple_stained_glass": 4490,
+    "purple_terracotta": 40316,
+    "purple_wool": 1474,
+    "red_wool": 863,
+    "sea_lantern": 67,
+    "soul_lantern": 400,
+    "spruce_planks": 24517,
+    "stone_bricks": 411858,
+    "web": 51,
+    "white_wool": 1170,
+    "yellow_wool": 3
+  },
+  "ticking_areas": 3,
+  "maximum_chunks_per_area": [
+    90,
+    90,
+    90
+  ],
+  "public_commands": 97,
+  "callback_commands": 4,
+  "total_commands": 101,
+  "bedrock_catalog": "https://raw.githubusercontent.com/Mojang/bedrock-samples/v1.21.50.7/metadata/vanilladata_modules/mojang-blocks.json",
+  "block_palette_version": 18161159,
+  "world_height_regression_feet_y": [
+    -63,
+    -60,
+    -59,
+    -55,
+    64,
+    223
+  ],
+  "overworld_feet_y_range": [
+    -63,
+    223
+  ],
+  "terrace_height": 8,
+  "structures": [
+    {
+      "file": "theme_park_themed_haunted_house_x1_z1.mcstructure",
+      "size": [
+        64,
+        85,
+        64
+      ],
+      "cells": 70956,
+      "bytes": 2786481
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x2_z1.mcstructure",
+      "size": [
+        64,
+        86,
+        64
+      ],
+      "cells": 85709,
+      "bytes": 2819494
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x3_z1.mcstructure",
+      "size": [
+        64,
+        89,
+        64
+      ],
+      "cells": 76424,
+      "bytes": 2918003
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x4_z1.mcstructure",
+      "size": [
+        33,
+        88,
+        64
+      ],
+      "cells": 35673,
+      "bytes": 1488058
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x1_z2.mcstructure",
+      "size": [
+        64,
+        90,
+        64
+      ],
+      "cells": 153035,
+      "bytes": 2950668
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x2_z2.mcstructure",
+      "size": [
+        64,
+        86,
+        64
+      ],
+      "cells": 200457,
+      "bytes": 2819854
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x3_z2.mcstructure",
+      "size": [
+        64,
+        94,
+        64
+      ],
+      "cells": 203170,
+      "bytes": 3082106
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x4_z2.mcstructure",
+      "size": [
+        33,
+        88,
+        64
+      ],
+      "cells": 53852,
+      "bytes": 1488125
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x1_z3.mcstructure",
+      "size": [
+        64,
+        98,
+        64
+      ],
+      "cells": 141642,
+      "bytes": 3212858
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x2_z3.mcstructure",
+      "size": [
+        64,
+        86,
+        64
+      ],
+      "cells": 190705,
+      "bytes": 2819747
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x3_z3.mcstructure",
+      "size": [
+        64,
+        92,
+        64
+      ],
+      "cells": 177371,
+      "bytes": 3016359
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x4_z3.mcstructure",
+      "size": [
+        33,
+        86,
+        64
+      ],
+      "cells": 53657,
+      "bytes": 1454449
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x1_z4.mcstructure",
+      "size": [
+        64,
+        27,
+        47
+      ],
+      "cells": 39338,
+      "bytes": 650475
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x2_z4.mcstructure",
+      "size": [
+        64,
+        86,
+        47
+      ],
+      "cells": 42866,
+      "bytes": 2070791
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x3_z4.mcstructure",
+      "size": [
+        64,
+        70,
+        47
+      ],
+      "cells": 40419,
+      "bytes": 1685529
+    },
+    {
+      "file": "theme_park_themed_haunted_house_x4_z4.mcstructure",
+      "size": [
+        33,
+        14,
+        47
+      ],
+      "cells": 20242,
+      "bytes": 174339
+    }
+  ],
+  "validation": {
+    "walking_destinations": true,
+    "all_stair_treads": true,
+    "exact_cuboid_reconstruction": true,
+    "nbt_roundtrip": true,
+    "four_cardinal_voxel_maps": true,
+    "preload_coverage": true,
+    "in_game_tested": false
+  }
+}

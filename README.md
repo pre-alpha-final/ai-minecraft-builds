@@ -66,9 +66,21 @@ Run `/function theme_park_pharaohs_curse_roller_coaster` from ground level at th
 
 The build places **383,066 non-air blocks** and 121,070 explicit air cells through 30 structures, a 172-command public loader, and six internal callback commands. It needs five free ticking-area slots, released automatically after loading. Back up first or use a disposable world. Rebuild and reimport the pack after source changes, and wait for placement and cleanup before rerunning this loader. The preview shows generated blocks, not an in-game screenshot; in-game testing remains outstanding. See the [route, crypt cutaway, measured dimensions, validation, and regeneration instructions](docs/pharaohs_curse/README.md).
 
+## Themed Haunted House / Grand Estate
+
+A vast walk-through gothic mansion with **42 furnished main rooms**, six attic spaces, six crypt vaults, twelve accessible tower rooms, and haunted gardens. Three main floors plus the crypt and attic form five connected guest levels. Explore ballrooms, libraries, theaters, laboratories, bedchambers, mirror halls, and observatories. Broad half-block stairs connect the floors; all **76 named destinations and 112 stair treads** pass the walking validator. Scenery and clock-tower belfries are static.
+
+<p align="center">
+  <img src="docs/themed_haunted_house/overview.png" alt="Themed Haunted House Grand Estate: a sprawling gothic mansion with four clock towers, six projecting wing sections, a cemetery, and gardens">
+</p>
+
+Run `/function theme_park_themed_haunted_house` at ground level from the front-center observation point, facing a cardinal direction with a horizontal view. Reserve a clear flat **225 x 239 x 98-block site**, from `^-112 ^-1 ^24` through `^112 ^96 ^262`; the nearest blocks start **24 blocks ahead**. Stand with your feet at Overworld Y **-63 through 223**. Climb the new terrace entrance stairs, then follow the path to the porch steps. This estate covers about **10.7 times the original haunted house footprint**.
+
+The build places **680,192 non-air blocks** and 905,324 explicit air cells through **16 native structures**. Its best tested exact cuboid encoding needs **29,980 solid-placement commands**, exceeding the standalone limit. The public loader uses **97 commands**, with four commands across its two internal callbacks. It needs **three free ticking-area slots**, released automatically after loading. Back up first or use a disposable world; the crypt sits inside the raised terrace, so default flat-world ground is supported. Wait for placement and cleanup before rerunning it, and rebuild/reimport the pack after source changes. In-game testing remains outstanding. See the [floor plans, cutaways, metrics, and regeneration instructions](docs/themed_haunted_house/README.md).
+
 ## Placement and compatibility details
 
-- Pack version 1.0.19 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
+- Pack version 1.0.22 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
 - Public build functions automatically move the player to the center of their current block, level the view, and snap the yaw to the closest cardinal direction before placing anything. Stand on the ground block that should be the documented origin and face broadly toward the intended north, south, east, or west build direction before running a function.
 - The snap removes fractional-position, yaw, and pitch drift that can skew large caret-relative builds. Exact diagonal ties resolve consistently to one of the two neighboring cardinal directions.
 - Run public functions as a player. Internal functions whose names begin with `_` are scheduled callbacks and must not be invoked manually.
