@@ -1,0 +1,422 @@
+{
+  "rails": 1620,
+  "curves": 28,
+  "powered_rails": 1592,
+  "rail_height_above_player": [
+    8,
+    96
+  ],
+  "major_climbs": 4,
+  "major_drops": 3,
+  "largest_drop": 82,
+  "elevation_changes": [
+    18,
+    70,
+    -82,
+    28,
+    26,
+    -50,
+    36,
+    -42,
+    -4
+  ],
+  "crossings": [
+    {
+      "left": -20,
+      "forward": 105,
+      "rail_heights": [
+        23,
+        34
+      ]
+    }
+  ],
+  "dimensions": {
+    "width": 352,
+    "depth": 272,
+    "height": 101
+  },
+  "caret_bounds": [
+    [
+      -175,
+      -1,
+      32
+    ],
+    [
+      176,
+      99,
+      303
+    ]
+  ],
+  "solid_blocks": 383066,
+  "air_cells": 121070,
+  "rail_corridor_air_cells": 16360,
+  "solid_caret_bounds": [
+    [
+      -175,
+      -1,
+      32
+    ],
+    [
+      176,
+      96,
+      303
+    ]
+  ],
+  "axis_run_commands": {
+    "x": 44083,
+    "y": 233535,
+    "z": 53317
+  },
+  "landmarks": [
+    "01  TEMPLE OF THE SUN / STATION",
+    "02  THE SPHINX & OBELISK COURT",
+    "03  GOLDEN PYRAMID / BURIAL CHAMBER",
+    "04  PHARAOH'S PLUNGE",
+    "05  QUEENS' TOMBS",
+    "06  COBRA GATE",
+    "07  OASIS & PALM GROVE",
+    "08  AVENUE OF GUARDIANS"
+  ],
+  "materials": {
+    "minecraft:air": 121070,
+    "minecraft:black_concrete": 1372,
+    "minecraft:blue_concrete": 32074,
+    "minecraft:brown_concrete": 836,
+    "minecraft:chiseled_sandstone": 1161,
+    "minecraft:cut_sandstone": 103617,
+    "minecraft:cyan_concrete": 2545,
+    "minecraft:gold_block": 14423,
+    "minecraft:golden_rail": 1592,
+    "minecraft:green_concrete": 2864,
+    "minecraft:light_gray_concrete": 87,
+    "minecraft:lime_concrete": 1728,
+    "minecraft:rail": 28,
+    "minecraft:red_sandstone": 1459,
+    "minecraft:redstone_block": 1620,
+    "minecraft:sandstone": 34719,
+    "minecraft:sea_lantern": 61,
+    "minecraft:smooth_sandstone": 179094,
+    "minecraft:water": 2545,
+    "minecraft:white_concrete": 1241
+  },
+  "ticking_areas": 5,
+  "max_chunks_per_area": 99,
+  "public_commands": 172,
+  "callback_commands": 6,
+  "total_commands": 178,
+  "structures": [
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x1_z1.mcstructure",
+      "size": [
+        64,
+        30,
+        64
+      ],
+      "cells": 21891,
+      "bytes": 983967
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x2_z1.mcstructure",
+      "size": [
+        64,
+        49,
+        64
+      ],
+      "cells": 25295,
+      "bytes": 1606587
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x3_z1.mcstructure",
+      "size": [
+        64,
+        35,
+        64
+      ],
+      "cells": 17852,
+      "bytes": 1147984
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x4_z1.mcstructure",
+      "size": [
+        64,
+        33,
+        64
+      ],
+      "cells": 11287,
+      "bytes": 1082218
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x5_z1.mcstructure",
+      "size": [
+        64,
+        33,
+        64
+      ],
+      "cells": 11998,
+      "bytes": 1082015
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x6_z1.mcstructure",
+      "size": [
+        32,
+        11,
+        64
+      ],
+      "cells": 6977,
+      "bytes": 180611
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x1_z2.mcstructure",
+      "size": [
+        64,
+        32,
+        64
+      ],
+      "cells": 9578,
+      "bytes": 1049618
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x2_z2.mcstructure",
+      "size": [
+        64,
+        59,
+        64
+      ],
+      "cells": 7977,
+      "bytes": 1934394
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x3_z2.mcstructure",
+      "size": [
+        64,
+        76,
+        64
+      ],
+      "cells": 20566,
+      "bytes": 2491416
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x4_z2.mcstructure",
+      "size": [
+        64,
+        101,
+        64
+      ],
+      "cells": 38214,
+      "bytes": 3310419
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x5_z2.mcstructure",
+      "size": [
+        64,
+        101,
+        64
+      ],
+      "cells": 9301,
+      "bytes": 3310588
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x6_z2.mcstructure",
+      "size": [
+        32,
+        10,
+        64
+      ],
+      "cells": 2196,
+      "bytes": 164281
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x1_z3.mcstructure",
+      "size": [
+        64,
+        73,
+        64
+      ],
+      "cells": 17807,
+      "bytes": 2393326
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x2_z3.mcstructure",
+      "size": [
+        64,
+        33,
+        64
+      ],
+      "cells": 10072,
+      "bytes": 1082086
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x3_z3.mcstructure",
+      "size": [
+        64,
+        59,
+        64
+      ],
+      "cells": 46276,
+      "bytes": 1934732
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x4_z3.mcstructure",
+      "size": [
+        64,
+        83,
+        64
+      ],
+      "cells": 109267,
+      "bytes": 2720845
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x5_z3.mcstructure",
+      "size": [
+        64,
+        98,
+        64
+      ],
+      "cells": 13909,
+      "bytes": 3212017
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x6_z3.mcstructure",
+      "size": [
+        32,
+        9,
+        64
+      ],
+      "cells": 5011,
+      "bytes": 147897
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x1_z4.mcstructure",
+      "size": [
+        64,
+        73,
+        64
+      ],
+      "cells": 14418,
+      "bytes": 2393239
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x2_z4.mcstructure",
+      "size": [
+        64,
+        67,
+        64
+      ],
+      "cells": 19981,
+      "bytes": 2196591
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x3_z4.mcstructure",
+      "size": [
+        64,
+        59,
+        64
+      ],
+      "cells": 23415,
+      "bytes": 1934383
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x4_z4.mcstructure",
+      "size": [
+        64,
+        67,
+        64
+      ],
+      "cells": 26301,
+      "bytes": 2196436
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x5_z4.mcstructure",
+      "size": [
+        64,
+        34,
+        64
+      ],
+      "cells": 18500,
+      "bytes": 1115063
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x6_z4.mcstructure",
+      "size": [
+        32,
+        9,
+        64
+      ],
+      "cells": 4729,
+      "bytes": 147897
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x1_z5.mcstructure",
+      "size": [
+        64,
+        21,
+        16
+      ],
+      "cells": 1123,
+      "bytes": 172420
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x2_z5.mcstructure",
+      "size": [
+        64,
+        20,
+        16
+      ],
+      "cells": 2499,
+      "bytes": 164338
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x3_z5.mcstructure",
+      "size": [
+        64,
+        11,
+        16
+      ],
+      "cells": 3061,
+      "bytes": 90556
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x4_z5.mcstructure",
+      "size": [
+        64,
+        2,
+        16
+      ],
+      "cells": 1088,
+      "bytes": 16718
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x5_z5.mcstructure",
+      "size": [
+        64,
+        8,
+        16
+      ],
+      "cells": 2910,
+      "bytes": 65923
+    },
+    {
+      "file": "theme_park_pharaohs_curse_roller_coaster_x6_z5.mcstructure",
+      "size": [
+        32,
+        5,
+        16
+      ],
+      "cells": 637,
+      "bytes": 20867
+    }
+  ],
+  "validation": {
+    "closed_route": true,
+    "powered_supports": true,
+    "rider_clearance": true,
+    "nbt_roundtrip": true,
+    "pool_containment": true,
+    "walkable_entrance": true,
+    "crypt_enclosure": true,
+    "four_cardinal_voxel_maps": true,
+    "four_cardinal_rail_states": true,
+    "preload_coverage": true,
+    "in_game_tested": false
+  }
+}
