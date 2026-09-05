@@ -22,7 +22,7 @@ Minecraft function files are plain-text lists of commands. An LLM can translate 
 
 ## Huge structure-based roller coasters
 
-The pack includes two enormous, functional roller coasters whose size exceeds Bedrock's 10,000-command function limit. Each ride is divided into 40 sparse native `.mcstructure` assets and placed by a small loader function, preserving the open spaces between the track and scenery instead of filling the entire build volume.
+The pack includes large, functional roller coasters whose size exceeds Bedrock's 10,000-command function limit. Sparse native `.mcstructure` assets and small loader functions preserve the open spaces between the track and scenery. Jungle Leviathan and Infernal Rift each use 40 assets; Space Adventure uses 30.
 
 ### Jungle Leviathan
 
@@ -41,6 +41,18 @@ Jungle Leviathan fills a 460 x 313 x 240-block site with 2,320 connected rails, 
 Infernal Rift is a 460 x 313 x 256-block Nether-themed ride with 4,640 connected rails winding around a bastion station, lava sea, portal cathedral, wither gate, and basalt spires. Build it with `/function theme_park_infernal_rift_roller_coaster`, then place a minecart on the station track.
 
 For either coaster, stand at ground level at the front-center of a clear site, face a cardinal direction, and look horizontally. The nearest blocks begin 48 blocks ahead. Use a disposable world or make a backup: each loader overwrites a huge area and temporarily uses eight of the world's ten command-created ticking areas while its structures load. These areas are removed automatically after placement; wait for one placement to finish before running the same loader again.
+
+### Space Adventure: Odyssey
+
+<p align="center">
+  <img src="docs/space_adventure/overview.png" alt="Space Adventure: actual generated voxel preview with a ringed planet, launch rocket, jump gate, and elevated coaster">
+</p>
+
+Space Adventure takes a continuous minecart circuit from a launch terminal through illuminated ascent hoops, past a lunar crater and orbital outpost, beneath the rings of Aurelia, and through a glowing jump gate. The 352 x 272 x 169-block site has 30 curves, five major climbs, six major drops, a 142-block rail summit, and a separated crossing. The rocket, spacecraft, and planetary scenery are static.
+
+Run `/function theme_park_space_adventure_roller_coaster` from ground level at the front-center observation point, facing a cardinal direction with a horizontal view. The nearest blocks begin 32 blocks ahead; reserve a clear flat site spanning `^-175 ^-1 ^32` through `^176 ^167 ^303`, with your feet at Overworld Y -63 through 152. Follow the lit path to the terminal stairs, place a minecart on the flat station track, and push toward the long lift.
+
+This build places 248,911 non-air blocks and clears 21,828 passenger-corridor cells using 30 structures, a 172-command public loader, and two internal callbacks containing six commands. It needs five free ticking-area slots, released automatically after loading. Back up first or use a disposable world, and wait for placement and cleanup before rerunning it. Rebuild and reimport the pack after changing its source files. See the [route plan, elevation profile, exact metrics, and regeneration instructions](docs/space_adventure/README.md). The image above is a voxel preview, not an in-game screenshot.
 
 ## Placement and compatibility details
 

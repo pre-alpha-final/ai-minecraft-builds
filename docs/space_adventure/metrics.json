@@ -1,0 +1,393 @@
+{
+  "rails": 2020,
+  "curves": 30,
+  "powered_rails": 1990,
+  "rail_height_above_player": [
+    8,
+    142
+  ],
+  "major_climbs": 5,
+  "major_drops": 6,
+  "crossings": [
+    {
+      "left": -50,
+      "forward": 175,
+      "rail_heights": [
+        19,
+        67
+      ]
+    }
+  ],
+  "dimensions": {
+    "width": 352,
+    "depth": 272,
+    "height": 169
+  },
+  "caret_bounds": [
+    [
+      -175,
+      -1,
+      32
+    ],
+    [
+      176,
+      167,
+      303
+    ]
+  ],
+  "solid_blocks": 248911,
+  "air_cells": 21828,
+  "axis_run_commands": {
+    "x": 50531,
+    "y": 164791,
+    "z": 56269
+  },
+  "landmarks": [
+    "01  LAUNCH TERMINAL",
+    "02  ODYSSEY ROCKET",
+    "03  TRANSLUNAR DROP",
+    "04  SELENE CRATER",
+    "05  AURELIA / RINGED PLANET",
+    "06  ORBITAL OUTPOST",
+    "07  JUMP GATE",
+    "08  CRYSTAL GARDEN"
+  ],
+  "materials": {
+    "minecraft:air": 21828,
+    "minecraft:amethyst_block": 3587,
+    "minecraft:black_concrete": 83960,
+    "minecraft:blue_concrete": 1780,
+    "minecraft:cyan_concrete": 13141,
+    "minecraft:end_bricks": 16814,
+    "minecraft:end_stone": 5782,
+    "minecraft:golden_rail": 1990,
+    "minecraft:gray_concrete": 38944,
+    "minecraft:light_blue_stained_glass": 3566,
+    "minecraft:light_gray_concrete": 5336,
+    "minecraft:magenta_concrete": 15420,
+    "minecraft:orange_concrete": 10399,
+    "minecraft:purple_concrete": 5958,
+    "minecraft:rail": 30,
+    "minecraft:redstone_block": 2020,
+    "minecraft:sea_lantern": 5444,
+    "minecraft:white_concrete": 28336,
+    "minecraft:yellow_concrete": 6404
+  },
+  "ticking_areas": 5,
+  "max_chunks_per_area": 99,
+  "public_commands": 172,
+  "callback_commands": 6,
+  "total_commands": 178,
+  "structures": [
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x1_z1.mcstructure",
+      "size": [
+        64,
+        78,
+        64
+      ],
+      "cells": 14849,
+      "bytes": 2557141
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x2_z1.mcstructure",
+      "size": [
+        64,
+        81,
+        64
+      ],
+      "cells": 19653,
+      "bytes": 2655307
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x3_z1.mcstructure",
+      "size": [
+        64,
+        87,
+        64
+      ],
+      "cells": 9800,
+      "bytes": 2851800
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x4_z1.mcstructure",
+      "size": [
+        64,
+        141,
+        64
+      ],
+      "cells": 6913,
+      "bytes": 4621228
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x5_z1.mcstructure",
+      "size": [
+        64,
+        159,
+        64
+      ],
+      "cells": 6682,
+      "bytes": 5211199
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x6_z1.mcstructure",
+      "size": [
+        32,
+        147,
+        64
+      ],
+      "cells": 2765,
+      "bytes": 2409403
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x1_z2.mcstructure",
+      "size": [
+        64,
+        35,
+        64
+      ],
+      "cells": 6046,
+      "bytes": 1147811
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x2_z2.mcstructure",
+      "size": [
+        64,
+        88,
+        64
+      ],
+      "cells": 18276,
+      "bytes": 2884925
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x3_z2.mcstructure",
+      "size": [
+        64,
+        57,
+        64
+      ],
+      "cells": 5429,
+      "bytes": 1868569
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x4_z2.mcstructure",
+      "size": [
+        64,
+        35,
+        64
+      ],
+      "cells": 12389,
+      "bytes": 1147797
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x5_z2.mcstructure",
+      "size": [
+        64,
+        37,
+        64
+      ],
+      "cells": 14880,
+      "bytes": 1213088
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x6_z2.mcstructure",
+      "size": [
+        32,
+        143,
+        64
+      ],
+      "cells": 3731,
+      "bytes": 2343675
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x1_z3.mcstructure",
+      "size": [
+        64,
+        104,
+        64
+      ],
+      "cells": 10427,
+      "bytes": 3408749
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x2_z3.mcstructure",
+      "size": [
+        64,
+        105,
+        64
+      ],
+      "cells": 13454,
+      "bytes": 3441934
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x3_z3.mcstructure",
+      "size": [
+        64,
+        133,
+        64
+      ],
+      "cells": 11813,
+      "bytes": 4359487
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x4_z3.mcstructure",
+      "size": [
+        64,
+        142,
+        64
+      ],
+      "cells": 21131,
+      "bytes": 4654254
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x5_z3.mcstructure",
+      "size": [
+        64,
+        109,
+        64
+      ],
+      "cells": 15509,
+      "bytes": 3572997
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x6_z3.mcstructure",
+      "size": [
+        32,
+        79,
+        64
+      ],
+      "cells": 3683,
+      "bytes": 1295249
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x1_z4.mcstructure",
+      "size": [
+        64,
+        105,
+        64
+      ],
+      "cells": 8588,
+      "bytes": 3441904
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x2_z4.mcstructure",
+      "size": [
+        64,
+        120,
+        64
+      ],
+      "cells": 10276,
+      "bytes": 3933355
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x3_z4.mcstructure",
+      "size": [
+        64,
+        169,
+        64
+      ],
+      "cells": 17498,
+      "bytes": 5539036
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x4_z4.mcstructure",
+      "size": [
+        64,
+        141,
+        64
+      ],
+      "cells": 17937,
+      "bytes": 4621472
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x5_z4.mcstructure",
+      "size": [
+        64,
+        124,
+        64
+      ],
+      "cells": 9321,
+      "bytes": 4064410
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x6_z4.mcstructure",
+      "size": [
+        32,
+        66,
+        64
+      ],
+      "cells": 2563,
+      "bytes": 1082326
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x1_z5.mcstructure",
+      "size": [
+        64,
+        14,
+        16
+      ],
+      "cells": 1355,
+      "bytes": 115252
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x2_z5.mcstructure",
+      "size": [
+        64,
+        117,
+        16
+      ],
+      "cells": 1708,
+      "bytes": 958916
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x3_z5.mcstructure",
+      "size": [
+        64,
+        3,
+        16
+      ],
+      "cells": 1152,
+      "bytes": 24908
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x4_z5.mcstructure",
+      "size": [
+        64,
+        3,
+        16
+      ],
+      "cells": 1152,
+      "bytes": 24908
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x5_z5.mcstructure",
+      "size": [
+        64,
+        3,
+        16
+      ],
+      "cells": 1152,
+      "bytes": 24908
+    },
+    {
+      "file": "theme_park_space_adventure_roller_coaster_x6_z5.mcstructure",
+      "size": [
+        32,
+        4,
+        16
+      ],
+      "cells": 607,
+      "bytes": 16771
+    }
+  ],
+  "validation": {
+    "closed_route": true,
+    "powered_supports": true,
+    "rider_clearance": true,
+    "nbt_roundtrip": true,
+    "four_cardinal_voxel_maps": true,
+    "four_cardinal_rail_states": true,
+    "preload_coverage": true,
+    "in_game_tested": false
+  }
+}
