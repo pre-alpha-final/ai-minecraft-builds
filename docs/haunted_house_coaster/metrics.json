@@ -1,0 +1,734 @@
+{
+  "rails": 1724,
+  "powered_rails": 1702,
+  "curves": 22,
+  "major_climbs": 4,
+  "major_drops": 3,
+  "elevation_changes": [
+    18,
+    66,
+    -80,
+    34,
+    26,
+    -52,
+    36,
+    -42,
+    -6
+  ],
+  "largest_drop": 80,
+  "rail_height": [
+    9,
+    93
+  ],
+  "bounds": [
+    [
+      -175,
+      -1,
+      32
+    ],
+    [
+      176,
+      99,
+      303
+    ]
+  ],
+  "dimensions": [
+    352,
+    101,
+    272
+  ],
+  "non_air_blocks": 386757,
+  "material_counts": {
+    "black_concrete": 619,
+    "bone_block": 1432,
+    "bookshelf": 810,
+    "coarse_dirt": 1809,
+    "dark_oak_log": 5637,
+    "dark_oak_planks": 37616,
+    "deepslate_tiles": 37306,
+    "golden_rail": 1702,
+    "grass_block": 92851,
+    "green_concrete": 364,
+    "iron_bars": 2476,
+    "light_blue_stained_glass": 134,
+    "lime_stained_glass": 1736,
+    "mossy_stone_bricks": 47535,
+    "polished_blackstone_bricks": 40865,
+    "polished_blackstone_slab [\"minecraft:vertical_half\"=\"bottom\"]": 97,
+    "polished_blackstone_slab [\"minecraft:vertical_half\"=\"top\"]": 96,
+    "purple_stained_glass": 3736,
+    "rail": 22,
+    "red_concrete": 274,
+    "redstone_block": 1724,
+    "sea_lantern": 19,
+    "soul_lantern": 65,
+    "soul_lantern [\"hanging\"=true]": 12,
+    "spruce_planks": 35244,
+    "stone_bricks": 44587,
+    "water [\"liquid_depth\"=0]": 2470,
+    "web": 186,
+    "white_concrete": 25333
+  },
+  "maximum_fill_volume": 30267,
+  "walkable_station": true,
+  "landmarks": [
+    "01  RAVEN GATE / ARRIVAL AVENUE",
+    "02  CARRIAGE-HOUSE STATION",
+    "03  FOUR-TOWER MANOR / ROSE COURT",
+    "04  SKULL GATE / WIDOW'S PLUNGE",
+    "05  ANCESTOR CRYPT / MIRROR HALL",
+    "06  GRAVEYARD MAUSOLEUM",
+    "07  SPECTRAL MEMORIAL / CEMETERY",
+    "08  TWISTED FOREST / GHOST LAGOON"
+  ],
+  "crossings": [
+    {
+      "left": -15,
+      "forward": 112,
+      "rail_heights": [
+        15,
+        33
+      ],
+      "separation": 18
+    }
+  ],
+  "direct_placement_commands": 21163,
+  "air_cells": 1111522,
+  "commands": 174,
+  "callback_commands": 6,
+  "loader_lifecycle_commands": 180,
+  "ticking_areas": 5,
+  "maximum_preload_chunks": 99,
+  "preload_chunks": [
+    99,
+    99,
+    99,
+    96,
+    96
+  ],
+  "structures": 30,
+  "scale_interpretation": "Pharaoh's Curse physical envelope and landmark ambition",
+  "reference_dimensions": {
+    "width": 352,
+    "depth": 272,
+    "height": 101
+  },
+  "assets": [
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x1_z1.mcstructure",
+      "size": [
+        64,
+        35,
+        64
+      ],
+      "cells": 19383,
+      "bytes": 1148281,
+      "local_min": [
+        -175,
+        -1,
+        32
+      ],
+      "local_max": [
+        -112,
+        33,
+        95
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x2_z1.mcstructure",
+      "size": [
+        64,
+        35,
+        64
+      ],
+      "cells": 13257,
+      "bytes": 1148162,
+      "local_min": [
+        -111,
+        -1,
+        32
+      ],
+      "local_max": [
+        -48,
+        33,
+        95
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x3_z1.mcstructure",
+      "size": [
+        64,
+        29,
+        64
+      ],
+      "cells": 7429,
+      "bytes": 951468,
+      "local_min": [
+        -47,
+        -1,
+        32
+      ],
+      "local_max": [
+        16,
+        27,
+        95
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x4_z1.mcstructure",
+      "size": [
+        64,
+        20,
+        64
+      ],
+      "cells": 6292,
+      "bytes": 656129,
+      "local_min": [
+        17,
+        -1,
+        32
+      ],
+      "local_max": [
+        80,
+        18,
+        95
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x5_z1.mcstructure",
+      "size": [
+        64,
+        22,
+        64
+      ],
+      "cells": 5552,
+      "bytes": 722141,
+      "local_min": [
+        81,
+        -1,
+        32
+      ],
+      "local_max": [
+        144,
+        20,
+        95
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x6_z1.mcstructure",
+      "size": [
+        32,
+        7,
+        64
+      ],
+      "cells": 2434,
+      "bytes": 115268,
+      "local_min": [
+        145,
+        -1,
+        32
+      ],
+      "local_max": [
+        176,
+        5,
+        95
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x1_z2.mcstructure",
+      "size": [
+        64,
+        27,
+        64
+      ],
+      "cells": 5978,
+      "bytes": 885914,
+      "local_min": [
+        -175,
+        -1,
+        96
+      ],
+      "local_max": [
+        -112,
+        25,
+        159
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x2_z2.mcstructure",
+      "size": [
+        64,
+        99,
+        64
+      ],
+      "cells": 69951,
+      "bytes": 3245716,
+      "local_min": [
+        -111,
+        -1,
+        96
+      ],
+      "local_max": [
+        -48,
+        97,
+        159
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x3_z2.mcstructure",
+      "size": [
+        64,
+        100,
+        64
+      ],
+      "cells": 171918,
+      "bytes": 3278720,
+      "local_min": [
+        -47,
+        -1,
+        96
+      ],
+      "local_max": [
+        16,
+        98,
+        159
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x4_z2.mcstructure",
+      "size": [
+        64,
+        101,
+        64
+      ],
+      "cells": 137089,
+      "bytes": 3311090,
+      "local_min": [
+        17,
+        -1,
+        96
+      ],
+      "local_max": [
+        80,
+        99,
+        159
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x5_z2.mcstructure",
+      "size": [
+        64,
+        98,
+        64
+      ],
+      "cells": 11716,
+      "bytes": 3212515,
+      "local_min": [
+        81,
+        -1,
+        96
+      ],
+      "local_max": [
+        144,
+        96,
+        159
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x6_z2.mcstructure",
+      "size": [
+        32,
+        98,
+        64
+      ],
+      "cells": 2849,
+      "bytes": 1606505,
+      "local_min": [
+        145,
+        -1,
+        96
+      ],
+      "local_max": [
+        176,
+        96,
+        159
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x1_z3.mcstructure",
+      "size": [
+        64,
+        65,
+        64
+      ],
+      "cells": 7005,
+      "bytes": 2131122,
+      "local_min": [
+        -175,
+        -1,
+        160
+      ],
+      "local_max": [
+        -112,
+        63,
+        223
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x2_z3.mcstructure",
+      "size": [
+        64,
+        80,
+        64
+      ],
+      "cells": 80935,
+      "bytes": 2623028,
+      "local_min": [
+        -111,
+        -1,
+        160
+      ],
+      "local_max": [
+        -48,
+        78,
+        223
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x3_z3.mcstructure",
+      "size": [
+        64,
+        100,
+        64
+      ],
+      "cells": 348857,
+      "bytes": 3278513,
+      "local_min": [
+        -47,
+        -1,
+        160
+      ],
+      "local_max": [
+        16,
+        98,
+        223
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x4_z3.mcstructure",
+      "size": [
+        64,
+        86,
+        64
+      ],
+      "cells": 226346,
+      "bytes": 2819541,
+      "local_min": [
+        17,
+        -1,
+        160
+      ],
+      "local_max": [
+        80,
+        84,
+        223
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x5_z3.mcstructure",
+      "size": [
+        64,
+        82,
+        64
+      ],
+      "cells": 17631,
+      "bytes": 2687919,
+      "local_min": [
+        81,
+        -1,
+        160
+      ],
+      "local_max": [
+        144,
+        80,
+        223
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x6_z3.mcstructure",
+      "size": [
+        32,
+        98,
+        64
+      ],
+      "cells": 16293,
+      "bytes": 1606678,
+      "local_min": [
+        145,
+        -1,
+        160
+      ],
+      "local_max": [
+        176,
+        96,
+        223
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x1_z4.mcstructure",
+      "size": [
+        64,
+        78,
+        64
+      ],
+      "cells": 7918,
+      "bytes": 2557106,
+      "local_min": [
+        -175,
+        -1,
+        224
+      ],
+      "local_max": [
+        -112,
+        76,
+        287
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x2_z4.mcstructure",
+      "size": [
+        64,
+        95,
+        64
+      ],
+      "cells": 53151,
+      "bytes": 3114547,
+      "local_min": [
+        -111,
+        -1,
+        224
+      ],
+      "local_max": [
+        -48,
+        93,
+        287
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x3_z4.mcstructure",
+      "size": [
+        64,
+        100,
+        64
+      ],
+      "cells": 116656,
+      "bytes": 3278560,
+      "local_min": [
+        -47,
+        -1,
+        224
+      ],
+      "local_max": [
+        16,
+        98,
+        287
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x4_z4.mcstructure",
+      "size": [
+        64,
+        97,
+        64
+      ],
+      "cells": 140027,
+      "bytes": 3180097,
+      "local_min": [
+        17,
+        -1,
+        224
+      ],
+      "local_max": [
+        80,
+        95,
+        287
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x5_z4.mcstructure",
+      "size": [
+        64,
+        82,
+        64
+      ],
+      "cells": 16302,
+      "bytes": 2687883,
+      "local_min": [
+        81,
+        -1,
+        224
+      ],
+      "local_max": [
+        144,
+        80,
+        287
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x6_z4.mcstructure",
+      "size": [
+        32,
+        37,
+        64
+      ],
+      "cells": 3256,
+      "bytes": 607290,
+      "local_min": [
+        145,
+        -1,
+        224
+      ],
+      "local_max": [
+        176,
+        35,
+        287
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x1_z5.mcstructure",
+      "size": [
+        64,
+        7,
+        16
+      ],
+      "cells": 1346,
+      "bytes": 57924,
+      "local_min": [
+        -175,
+        -1,
+        288
+      ],
+      "local_max": [
+        -112,
+        5,
+        303
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x2_z5.mcstructure",
+      "size": [
+        64,
+        8,
+        16
+      ],
+      "cells": 1607,
+      "bytes": 66034,
+      "local_min": [
+        -111,
+        -1,
+        288
+      ],
+      "local_max": [
+        -48,
+        6,
+        303
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x3_z5.mcstructure",
+      "size": [
+        64,
+        39,
+        16
+      ],
+      "cells": 3169,
+      "bytes": 320114,
+      "local_min": [
+        -47,
+        -1,
+        288
+      ],
+      "local_max": [
+        16,
+        37,
+        303
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x4_z5.mcstructure",
+      "size": [
+        64,
+        5,
+        16
+      ],
+      "cells": 1280,
+      "bytes": 41403,
+      "local_min": [
+        17,
+        -1,
+        288
+      ],
+      "local_max": [
+        80,
+        3,
+        303
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x5_z5.mcstructure",
+      "size": [
+        64,
+        34,
+        16
+      ],
+      "cells": 1873,
+      "bytes": 279146,
+      "local_min": [
+        81,
+        -1,
+        288
+      ],
+      "local_max": [
+        144,
+        32,
+        303
+      ]
+    },
+    {
+      "file": "theme_park_haunted_house_roller_coaster_x6_z5.mcstructure",
+      "size": [
+        32,
+        34,
+        16
+      ],
+      "cells": 779,
+      "bytes": 139975,
+      "local_min": [
+        145,
+        -1,
+        288
+      ],
+      "local_max": [
+        176,
+        32,
+        303
+      ]
+    }
+  ],
+  "validation": {
+    "continuous_loop": true,
+    "supported_and_powered": true,
+    "passenger_clearance": true,
+    "no_unintended_junctions": true,
+    "four_cardinal_rail_states": true,
+    "complete_command_replay": true,
+    "nbt_roundtrip": true,
+    "four_cardinal_voxel_maps": true,
+    "complete_site_preloaded": true,
+    "world_height_bounds": true,
+    "required_three_function_lifecycle": true,
+    "contained_lagoon": true,
+    "crypt_enclosure": true,
+    "pharaoh_physical_scale": true
+  }
+}

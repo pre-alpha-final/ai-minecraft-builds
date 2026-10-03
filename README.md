@@ -66,6 +66,18 @@ Run `/function theme_park_pharaohs_curse_roller_coaster` from ground level at th
 
 The build places **383,066 non-air blocks** and 121,070 explicit air cells through 30 structures, a 172-command public loader, and six internal callback commands. It needs five free ticking-area slots, released automatically after loading. Back up first or use a disposable world. Rebuild and reimport the pack after source changes, and wait for placement and cleanup before rerunning this loader. The preview shows generated blocks, not an in-game screenshot; in-game testing remains outstanding. See the [route, crypt cutaway, measured dimensions, validation, and regeneration instructions](docs/pharaohs_curse/README.md).
 
+## Raven Manor: The Widow's Plunge
+
+A haunted-house minecart coaster at **Pharaoh's Curse's physical scale: 352 x 272 x 101 blocks**. Its four-clock-tower mansion, ancestor crypt, mirror gallery, giant skull gate, mausoleum, spectral memorial, twisted forest, and ghost lagoon frame a continuous route with 22 curves, four major climbs, three major drops, an 80-block plunge, and an 18-block-separated crossing. Haunted figures, raven, and clock hands are static scenery.
+
+<p align="center">
+  <img src="docs/haunted_house_coaster/overview.png" alt="Raven Manor at Pharaoh's Curse's scale: a grand four-tower gothic mansion, giant skull gate, ghost gardens, and elevated coaster">
+</p>
+
+Run `/function theme_park_haunted_house_roller_coaster` at ground level from the front-center observation point, facing a cardinal direction with a horizontal view. Choose a new clear, flat **352 x 272 x 101-block site**, from `^-175 ^-1 ^32` through `^176 ^99 ^303`; nearest blocks begin **32 blocks ahead**. Stand with your feet at Overworld Y **-63 through 220**. The loader preloads the whole site and needs **five free ticking-area slots**. Follow the right path and eighteen half-block steps to the carriage-house platform, place a minecart on the adjacent flat rail, enter it, and push left toward the ascent.
+
+The build places **386,757 non-air blocks** and 1,111,522 explicit air cells through **30 native structures**, a **174-command public loader**, and six callback commands. Its 1,724 rails reach heights 9 through 93. The scale comparison means the physical envelope and landmark ambition; the route was designed around its haunted scenes. Back up first or use a disposable world. Wait for queued placement and cleanup before rerunning the loader, and rebuild/reimport after source changes. In-game testing remains outstanding; the image is a generated-block preview. See the [route, elevation profile, crypt cutaway, metrics, and regeneration instructions](docs/haunted_house_coaster/README.md).
+
 ## Themed Haunted House / Grand Estate
 
 A vast walk-through gothic mansion with **42 furnished main rooms**, six attic spaces, six crypt vaults, twelve accessible tower rooms, and haunted gardens. Three main floors plus the crypt and attic form five connected guest levels. Explore ballrooms, libraries, theaters, laboratories, bedchambers, mirror halls, and observatories. Broad half-block stairs connect the floors; all **76 named destinations and 112 stair treads** pass the walking validator. Scenery and clock-tower belfries are static.
@@ -80,7 +92,7 @@ The build places **680,192 non-air blocks** and 905,324 explicit air cells throu
 
 ## Placement and compatibility details
 
-- Pack version 1.0.22 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
+- Pack version 1.0.25 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
 - Public build functions automatically move the player to the center of their current block, level the view, and snap the yaw to the closest cardinal direction before placing anything. Stand on the ground block that should be the documented origin and face broadly toward the intended north, south, east, or west build direction before running a function.
 - The snap removes fractional-position, yaw, and pitch drift that can skew large caret-relative builds. Exact diagonal ties resolve consistently to one of the two neighboring cardinal directions.
 - Run public functions as a player. Internal functions whose names begin with `_` are scheduled callbacks and must not be invoked manually.
