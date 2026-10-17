@@ -8,9 +8,9 @@ The images in this folder render the actual generated block map. They are neithe
 
 ## Build and ride
 
-1. Import the repository-root `ai-minecraft-builds.mcpack` and activate the behavior pack in a disposable world, or back up your world. Enable cheats. Pack version **1.0.19** requires **Bedrock 1.21.50+**.
+1. Import the repository-root `ai-minecraft-builds.mcpack` and activate the behavior pack in a disposable world, or back up your world. Enable cheats. Pack version **1.0.26 or newer** requires **Bedrock 1.21.50+**.
 2. Choose a clear, flat Overworld site. Stand at the front-center observation point at ground level, with your feet at Y **-63 through 220**, face a cardinal direction, and look horizontally. The function centers your position and snaps your facing automatically.
-3. Run `/function theme_park_pharaohs_curse_roller_coaster` as a player.
+3. Run `/function 15_theme_park_pharaohs_curse_roller_coaster` as a player.
 4. Wait for structure placement. The loader needs **five free ticking-area slots**. Cleanup runs 300 ticks after the last area-loaded callback, approximately 15 seconds at normal tick rate. Wait for placement and cleanup before running the same function elsewhere.
 5. Walk through the winged-sun entrance along the guardian avenue, turn toward the sun temple, and climb its broad stairs. Place a minecart on the flat station rails near `^-120 ^8 ^60` relative to the original build position, board, and push toward increasing local left, toward the departure lift.
 

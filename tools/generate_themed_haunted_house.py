@@ -18,6 +18,7 @@ import haunted_house_geometry as geo
 
 ROOT = Path(__file__).resolve().parents[1]
 NAME = "theme_park_themed_haunted_house"
+PUBLIC_NAME = f"16_{NAME}"
 DOCS = ROOT / "docs" / "themed_haunted_house"
 ASSETS = ROOT / "src" / "structures" / "ai_minecraft_builds"
 FUNCTIONS = ROOT / "src" / "functions"
@@ -216,7 +217,7 @@ def preload_check():
 def loader(metrics):
     loaded=f"_{NAME}_tickingarea_loaded";cleanup=f"_{NAME}_remove_tickingarea"
     header=["# THEMED HAUNTED HOUSE - GRAND ESTATE / Minecraft Bedrock Edition 1.21.50+",
-            f"# Run /function {NAME} as a player at ground level, facing a cardinal direction with a horizontal view.",
+            f"# Run /function {PUBLIC_NAME} as a player at ground level, facing a cardinal direction with a horizontal view.",
             "# Origin: front-center observation point; nearest blocks start 24 forward. Door: ^0 ^10 ^72.",
             "# Bounds: ^-112 ^-1 ^24 through ^112 ^96 ^262. Width 225, depth 239, vertical extent 98 blocks.",
             "# Stand with feet at Overworld Y -63 through 223. Default flat-world ground is supported.",
@@ -249,7 +250,7 @@ def loader(metrics):
     public=snap.transform_public_lines(header+commands)
     snap.validate_public_lines(public)
     assert sum(snap.is_command(c) for c in public)==97
-    return {f"{NAME}.mcfunction":"\n".join(public),
+    return {f"{PUBLIC_NAME}.mcfunction":"\n".join(public),
             f"{loaded}.mcfunction":f"# INTERNAL CALLBACK - do not run manually. Refresh cleanup after each area loads.\nschedule delay add {cleanup} 300 replace",
             f"{cleanup}.mcfunction":"# INTERNAL CALLBACK - do not run manually. Remove only this estate's three areas.\n"+
             "\n".join(f"tickingarea remove {name}" for name,*_ in AREAS)}
@@ -285,7 +286,7 @@ def validate_functions(texts):
 def validate_rotations(scene,texts):
     # Parse anchors from actual public text. Simulate each chunk's rotated local
     # bounding box, then undo player yaw to compare every material in caret space.
-    public=texts[f"{NAME}.mcfunction"]
+    public=texts[f"{PUBLIC_NAME}.mcfunction"]
     for angle in (0,90,180,270):
         seen=set()
         for i,j,x0,x1,z0,z1 in specs():
@@ -313,7 +314,7 @@ def validate_world_heights(texts,assets):
     the structure bounding box, not only the non-air cells inside it.
     """
     sizes={a['file'].removesuffix('.mcstructure'):a['size'] for a in assets}
-    placements=re.findall(r"structure load ai_minecraft_builds:(\w+) \^-?\d+ \^(-?\d+) \^\d+ (?:0|90|180|270)_degrees",texts[f"{NAME}.mcfunction"])
+    placements=re.findall(r"structure load ai_minecraft_builds:(\w+) \^-?\d+ \^(-?\d+) \^\d+ (?:0|90|180|270)_degrees",texts[f"{PUBLIC_NAME}.mcfunction"])
     assert len(placements)==80
     tested=(-63,-60,-59,-55,64,223)
     for feet in tested:
@@ -419,7 +420,7 @@ def main():
     assert [min(p[a] for p in scene) for a in range(3)]+[max(p[a] for p in scene) for a in range(3)]==list(geo.BOUNDS)
     solids={p:b for p,b in scene.items() if b!="air"}
     assert [min(p[a] for p in solids) for a in range(3)]+[max(p[a] for p in solids) for a in range(3)]==list(geo.BOUNDS)
-    metrics=dict(name="Themed Haunted House / Grand Estate",function=NAME,representation="native structures",
+    metrics=dict(name="Themed Haunted House / Grand Estate",function=PUBLIC_NAME,representation="native structures",
                  dimensions=dict(width=225,depth=239,height=98),caret_bounds=[list(geo.BOUNDS[:3]),list(geo.BOUNDS[3:])],
                  previous_dimensions=dict(width=65,depth=77,height=41),footprint_ratio=225*239/(65*77),
                  solid_blocks=len(solids),air_cells=len(scene)-len(solids),exact_cuboid_commands=compression,

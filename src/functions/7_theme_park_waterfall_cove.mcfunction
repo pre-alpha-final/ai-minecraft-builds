@@ -1,4 +1,5 @@
 # WATERFALL COVE PARK ATTRACTION - Minecraft Bedrock Edition
+# Run: /function 7_theme_park_waterfall_cove
 # Stand at ground level at the CENTER, face a cardinal direction, and look horizontally, then run this function.
 # Coordinates use your view: ^left, ^up, ^forward. The entrance is behind you and the cliff rises ahead.
 # Approximate footprint: 125 x 121 blocks. Approximate maximum height: 62 blocks.

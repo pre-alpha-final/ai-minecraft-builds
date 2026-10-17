@@ -1,4 +1,5 @@
 # SKYLINE CYCLONE ROLLER COASTER - Minecraft Bedrock structure loader
+# Run: /function 10_theme_park_skyline_cyclone_roller_coaster
 # Run as a player at ground level while facing north, south, east, or west and looking horizontally.
 # Stand at the front-center of a clear site; the nearest block is 24 blocks ahead.
 # Size: 151 blocks wide, 119 deep, and 80 high; relative bounds are ^-75 ^-1 ^24 through ^75 ^78 ^142.

@@ -27,6 +27,7 @@ import generate_skyline_cyclone as nbt
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "theme_park_space_adventure_roller_coaster"
+PUBLIC_NAME = f"14_{BASE}"
 ASSETS = ROOT / "src/structures/ai_minecraft_builds"
 FUNCTIONS = ROOT / "src/functions"
 DOCS = ROOT / "docs/space_adventure"
@@ -482,7 +483,7 @@ def function_texts(metrics):
     count=sum(cardinal_snap.is_command(s) for s in commands)+5
     header=[
         "# SPACE ADVENTURE / ODYSSEY - Minecraft Bedrock Edition roller coaster",
-        f"# Run: /function {BASE}",
+        f"# Run: /function {PUBLIC_NAME}",
         "# Stand at ground level, face a cardinal direction, and look horizontally. Run as a player.",
         "# Origin: front-center observation point; nearest blocks are 32 blocks ahead.",
         "# Size: 352 wide x 272 deep x 169 high. Bounds: ^-175 ^-1 ^32 through ^176 ^167 ^303.",
@@ -502,7 +503,7 @@ def function_texts(metrics):
         "", "# === CLEAR STALE CALLBACKS AND PRELOAD ALL FIVE RECTANGLES ===",
     ]
     public=cardinal_snap.transform_public_lines(header+commands)
-    texts={f"{BASE}.mcfunction":"\n".join(public)+"\n",
+    texts={f"{PUBLIC_NAME}.mcfunction":"\n".join(public)+"\n",
            f"{loaded}.mcfunction":f"# INTERNAL CALLBACK - do not run manually. Refresh cleanup after every loaded rectangle.\nschedule delay add {cleanup} 300 replace\n",
            f"{cleanup}.mcfunction":"# INTERNAL CALLBACK - do not run manually. Remove only Space Adventure's temporary areas.\n"+
                "\n".join(f"tickingarea remove {name}" for name,*_ in AREAS)+"\n"}
@@ -522,7 +523,7 @@ def validate_functions(texts):
         if not name.startswith("_"):
             cardinal_snap.validate_public_lines(lines)
     # Validate every full command against the authored grammar, not only its verb.
-    public=texts[f"{BASE}.mcfunction"].splitlines()
+    public=texts[f"{PUBLIC_NAME}.mcfunction"].splitlines()
     for cmd in public:
         if not cardinal_snap.is_command(cmd) or cmd in cardinal_snap.SNAP_COMMANDS:
             continue

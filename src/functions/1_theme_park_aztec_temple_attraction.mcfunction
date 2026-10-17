@@ -1,4 +1,5 @@
 # AZTEC TEMPLE PARK ATTRACTION - Minecraft Bedrock Edition
+# Run: /function 1_theme_park_aztec_temple_attraction
 # Stand at ground level at the CENTER, face a cardinal direction, and look horizontally, then run this function.
 # Coordinates use your view: ^left, ^up, ^forward. The main guest entrance is behind you.
 # Approximate footprint: 104 x 112 blocks. Approximate top height: 48 blocks.

@@ -1,4 +1,5 @@
 # ================================================================
+# Run: /function 6_theme_park_water_slide
 # MEGA THEME PARK WATER SLIDE
 # Minecraft Bedrock Edition
 # BEDROCK: Put this file in your Behavior Pack's functions folder.

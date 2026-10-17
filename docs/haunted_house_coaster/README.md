@@ -15,10 +15,10 @@ design; they are not numerical scale targets.
 
 ## Placement and riding
 
-Import pack **1.0.25 or newer**, enable cheats, and run as a player:
+Import pack **1.0.26 or newer**, enable cheats, and run as a player:
 
 ```mcfunction
-/function theme_park_haunted_house_roller_coaster
+/function 17_theme_park_haunted_house_roller_coaster
 ```
 
 Choose a **new clear, flat site** for this enlarged version. Stand at ground

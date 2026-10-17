@@ -17,6 +17,7 @@ import cardinal_snap
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "src" / "structures" / "ai_minecraft_builds"
 BASE_NAME = "theme_park_skyline_cyclone_roller_coaster"
+PUBLIC_NAME = f"10_{BASE_NAME}"
 BLOCK_VERSION = 17_959_425
 X_MIN, X_MAX = -75, 75
 Z_MIN, Z_MAX = 24, 142
@@ -539,7 +540,7 @@ def validate_functions(
     best_compression: int,
 ) -> None:
     function_dir = ROOT / "src" / "functions"
-    public = function_dir / f"{BASE_NAME}.mcfunction"
+    public = function_dir / f"{PUBLIC_NAME}.mcfunction"
     loaded_callback = function_dir / f"_{BASE_NAME}_tickingarea_loaded.mcfunction"
     cleanup_callback = function_dir / f"_{BASE_NAME}_remove_tickingarea.mcfunction"
     expected_counts = {public: 34 + len(cardinal_snap.SNAP_COMMANDS), loaded_callback: 1, cleanup_callback: 1}

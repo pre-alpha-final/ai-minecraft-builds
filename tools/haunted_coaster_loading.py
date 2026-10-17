@@ -13,6 +13,7 @@ import generate_skyline_cyclone as nbt
 
 ROOT = Path(__file__).resolve().parents[1]
 NAME = "theme_park_haunted_house_roller_coaster"
+PUBLIC_NAME = f"17_{NAME}"
 LOADED = f"_{NAME}_tickingarea_loaded"
 CLEANUP = f"_{NAME}_remove_tickingarea"
 ASSETS = ROOT / "src/structures/ai_minecraft_builds"
@@ -55,7 +56,7 @@ def loader(metrics):
     counts=preload_counts()
     header=[
         "# RAVEN MANOR: THE WIDOW'S PLUNGE - Minecraft Bedrock Edition 1.21.50+",
-        f"# Run /function {NAME} as a player at ground level, facing a cardinal direction with a horizontal view.",
+        f"# Run /function {PUBLIC_NAME} as a player at ground level, facing a cardinal direction with a horizontal view.",
         "# Physical scale matches Pharaoh's Curse: width 352, depth 272, height 101; no rail-count target.",
         "# Front-center observation origin; nearest blocks begin 32 ahead. Bounds ^-175 ^-1 ^32 to ^176 ^99 ^303.",
         "# Stand with feet at Overworld Y -63 through 220. Choose a new clear flat site for this larger version.",
@@ -100,7 +101,7 @@ def loader(metrics):
                    scale_interpretation="Pharaoh's Curse physical envelope and landmark ambition",
                    reference_dimensions=dict(width=352,depth=272,height=101))
     return {
-        f"{NAME}.mcfunction":"\n".join(line.replace("COMMAND_TOTAL",str(count)) for line in lines),
+        f"{PUBLIC_NAME}.mcfunction":"\n".join(line.replace("COMMAND_TOTAL",str(count)) for line in lines),
         f"{LOADED}.mcfunction":"# INTERNAL CALLBACK - do not run manually. Refresh cleanup after every area loads.\n"
                                f"schedule delay add {CLEANUP} 300 replace",
         f"{CLEANUP}.mcfunction":"# INTERNAL CALLBACK - do not run manually. Remove only this estate's five areas.\n"+
@@ -109,7 +110,7 @@ def loader(metrics):
 
 
 def validate_loader(texts,scene,path):
-    public=texts[f"{NAME}.mcfunction"].splitlines()
+    public=texts[f"{PUBLIC_NAME}.mcfunction"].splitlines()
     snap.validate_public_lines(public)
     commands=[line.removeprefix(snap.REANCHOR_PREFIX) for line in public if snap.is_command(line)]
     expected=[f"schedule on_area_loaded clear function {LOADED}",f"schedule delay clear {CLEANUP}",

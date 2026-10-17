@@ -1,4 +1,5 @@
 # GRAND TEACUPS ATTRACTION - Minecraft Bedrock Edition
+# Run: /function 4_theme_park_teacups_attraction
 # Stand at the CENTER at ground level, face a cardinal direction, and look horizontally, then run this function.
 # Coordinates use your view: ^left, ^up, ^forward. The main entrance is behind you.
 # Approximate build footprint: 100 x 95 blocks; height: about 22 blocks.

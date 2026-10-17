@@ -11,15 +11,15 @@ Previews depict actual generated geometry with schematic materials. Thin blocks 
 Version **1.0.22** fixes the flat-world no-placement failure. The old loader started every structure nine blocks below the player; on default flat ground this put the entire structure bounding box below the Overworld limit. The estate now loads from one block below your feet, with its crypt enclosed in a raised terrace and a walkable entrance ramp. The new loader displays a v1.0.22 loading message so you can confirm the updated pack is active.
 
 
-Import the rebuilt `ai-minecraft-builds.mcpack` version **1.0.22**, activate the behavior pack, and enable commands in a disposable or backed-up Bedrock world. Reserve a clear flat site spanning `^-112 ^-1 ^24` through `^112 ^96 ^262`, using `^left ^up ^forward`. It is **225 blocks wide, 239 deep, and 98 high**, including a one-block-deep foundation; the crypt fits inside an eight-block terrace. Stand with your feet at Overworld Y **-63 through 223**.
+Import the rebuilt `ai-minecraft-builds.mcpack` version **1.0.26 or newer**, activate the behavior pack, and enable commands in a disposable or backed-up Bedrock world. Reserve a clear flat site spanning `^-112 ^-1 ^24` through `^112 ^96 ^262`, using `^left ^up ^forward`. It is **225 blocks wide, 239 deep, and 98 high**, including a one-block-deep foundation; the crypt fits inside an eight-block terrace. Stand with your feet at Overworld Y **-63 through 223**.
 
 Stand at ground level at the **front-center observation point**, face a cardinal direction, and look horizontally. Run:
 
 ```text
-/function theme_park_themed_haunted_house
+/function 16_theme_park_themed_haunted_house
 ```
 
-The function centers your position and snaps your view before building. Nearest blocks begin **24 blocks ahead**; the entrance is at `^0 ^10 ^72`. Wait for placement, climb the terrace entrance stairs, and follow the broad approach to the porch steps. The same public function name now builds the large estate.
+The function centers your position and snaps your view before building. Nearest blocks begin **24 blocks ahead**; the entrance is at `^0 ^10 ^72`. Wait for placement, climb the terrace entrance stairs, and follow the broad approach to the porch steps.
 
 This overwrites a large site and builds an eight-block retaining foundation. Use a fresh clear site: sparse exterior cells do not erase tall terrain or an older build. Interior rooms and ground-level walking clearance contain explicit air.
 
@@ -43,7 +43,7 @@ The model has **680,192 non-air blocks** plus **905,324 explicit air cells**. Th
 
 The build uses **16 namespaced `.mcstructure` assets** and exactly three functions:
 
-- `theme_park_themed_haunted_house`: public loader, **97 commands** including five snap commands.
+- `16_theme_park_themed_haunted_house`: public loader, **97 commands** including five snap commands.
 - `_theme_park_themed_haunted_house_tickingarea_loaded`: one command to schedule cleanup.
 - `_theme_park_themed_haunted_house_remove_tickingarea`: three commands to remove this estate's areas.
 

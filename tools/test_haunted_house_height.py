@@ -7,7 +7,7 @@ import generate_themed_haunted_house as estate
 
 class FlatWorldPlacement(unittest.TestCase):
     def setUp(self):
-        self.name=f"{estate.NAME}.mcfunction"
+        self.name=f"{estate.PUBLIC_NAME}.mcfunction"
         self.text=(estate.FUNCTIONS/self.name).read_text()
         self.assets=json.loads((estate.DOCS/'metrics.json').read_text())['structures']
 

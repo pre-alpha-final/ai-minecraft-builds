@@ -10,13 +10,22 @@ This repository collects AI-generated Minecraft Bedrock build blueprints. Most p
 
 - `README.md` is the user-facing overview, placement guidance, and packaging documentation.
 - `src/manifest.json` defines a behavior pack for Minecraft Bedrock 1.21 or newer. Keep the header and data-module versions identical.
-- `src/functions/` contains all callable functions and internal callbacks. Public function filenames use lowercase snake case and are invoked without the extension, for example `/function theme_park_ferris_wheel`.
-- Most `theme_park_*.mcfunction` files are standalone generated builds. They establish the current conventions for section comments, caret-relative placement, large foundations, decorative detail, and optional start/completion messages.
+- `src/functions/` contains all callable functions and internal callbacks. Public function filenames use `<number>_<lowercase_snake_case_name>.mcfunction` and are invoked without the extension, for example `/function 2_theme_park_ferris_wheel`.
+- Most numbered `*_theme_park_*.mcfunction` files are standalone generated builds. They establish the current conventions for section comments, caret-relative placement, large foundations, decorative detail, and optional start/completion messages.
 - `src/structures/ai_minecraft_builds/` is the behavior-pack structure namespace. The folder name and identifiers used by `structure load` must agree.
 - Imported source models are optional working inputs and may not be committed after conversion. Record their filenames and relevant metadata in the generated build header; source assets outside `src/` and media under `docs/` are not included by the packager.
 - `build_ai_minecraft_pack.bat` packages only `src/manifest.json`, `src/functions`, and `src/structures` into the repository-root `ai-minecraft-builds.mcpack`.
 
 Files whose names begin with `_` are internal implementation details, not public entry points. Every public build should have one obvious function name for the player to run.
+
+## Public build naming and numbering
+
+- Every public build has exactly one entry point named `<number>_<lowercase_snake_case_name>.mcfunction`, such as `2_theme_park_ferris_wheel.mcfunction`.
+- Assign positive integers starting at 1, without zero padding, in build creation order. Each number belongs to only one public build, so `/function 1_` matches exactly one entry point.
+- Keep assigned numbers stable when editing or renaming a build. Never reuse a retired number or renumber existing builds after a deletion. Use the next never-assigned number for a new build; the current catalog ends at 17, so the next build is 18. Check Git history as well as the current filenames when choosing the next number.
+- For the initial migration, creation order follows Git history, including the former `functions/` directory. Builds first recorded in the same commit are ordered alphabetically by their unnumbered public filename. The numbered catalog is listed in `README.md`.
+- Keep internal callbacks underscore-prefixed (`_<build_name>_tickingarea_loaded` and `_<build_name>_remove_tickingarea`). Never add a public alias or another function beginning with the same `<number>_` prefix. Structure identifiers and ticking-area names do not need the public number.
+- Generators must retain the assigned public name separately from asset/callback base names. Update generator outputs, validation paths, headers, metrics, and documented `/function` commands whenever an entry point is renamed.
 
 ## Line endings
 
@@ -82,7 +91,7 @@ Count executable lines, not comments or blank lines, when applying the function 
 Before adding or substantially changing a generated blueprint:
 
 1. Read `README.md`, `src/manifest.json`, and at least one existing function with a similar scale or subject.
-2. Choose a unique lowercase snake-case filename and confirm it does not collide with a public function, internal callback, structure identifier, or ticking-area name.
+2. Assign the next never-used public build number and choose `<number>_<lowercase_snake_case_name>.mcfunction` under the naming standard above. Confirm the number and name do not collide with any public function, internal callback, structure identifier, or ticking-area name.
 3. Establish the build's coordinate bounds, footprint, maximum height, player origin, entrance direction, and required clearance before writing commands.
 4. Break complex builds into clearly labeled sections such as foundation, structure, ride or focal geometry, scenery, lighting, and finishing details.
 5. Decide whether the build is static or functional. Do not imply that decorative rides animate unless commands actually implement animation.
@@ -220,7 +229,7 @@ A `.mcstructure` can place tens of thousands of blocks through one `structure lo
 
 The Jungle Leviathan coaster is the reference for a near-limit prompt-authored loader with many structure assets and ticking areas:
 
-- Loader: `src/functions/theme_park_jungle_leviathan_roller_coaster.mcfunction`
+- Loader: `src/functions/12_theme_park_jungle_leviathan_roller_coaster.mcfunction`
 - Callbacks: `src/functions/_theme_park_jungle_leviathan_roller_coaster_tickingarea_loaded.mcfunction` and `src/functions/_theme_park_jungle_leviathan_roller_coaster_remove_tickingarea.mcfunction`
 - Assets: `src/structures/ai_minecraft_builds/theme_park_jungle_leviathan_roller_coaster_x*_z*.mcstructure`
 - Generator and validator: `tools/generate_jungle_leviathan.py`
@@ -231,7 +240,7 @@ For a theme-first coaster, treat the physical envelope as room for broad runs, o
 
 Every build large enough to require `.mcstructure` assets must use exactly three `.mcfunction` files for its loader lifecycle:
 
-1. `<build_name>.mcfunction`: the only public entry point. It runs in the player's context, manages stale state and the temporary ticking area or areas, registers the area-loaded callback, and issues all cardinally selected `structure load` commands.
+1. `<number>_<build_name>.mcfunction`: the only public entry point. It runs in the player's context, manages stale state and the temporary ticking area or areas, registers the area-loaded callback, and issues all cardinally selected `structure load` commands.
 2. `_<build_name>_tickingarea_loaded.mcfunction`: an internal callback registered with `schedule on_area_loaded`. It schedules the delayed cleanup and does not place structures.
 3. `_<build_name>_remove_tickingarea.mcfunction`: an internal delayed callback that removes only this build's ticking area or areas.
 
@@ -377,7 +386,7 @@ Run these checks for every changed or new build, regardless of representation:
 6. Confirm commands have no leading slash, no trailing whitespace, no omission markers, no prose outside comments, and no blank lines after the final line.
 7. Check that placement order does not destroy earlier detail and that liquids, rails, gravity-affected blocks, and entities have the support or containment they require.
 8. For structure-backed builds, validate all NBT assets, rotation mappings, callbacks, ticking-area bounds, and namespace/path references as described above.
-9. Confirm line endings: LF for every `.mcfunction`, the pre-existing style for edited JSON, and CRLF for the current root Markdown and batch files.
+9. Confirm line endings: preserve the existing style for edited or renamed files, use LF for new `.mcfunction` files, and keep CRLF for the current root Markdown and batch files.
 10. Run `git diff --check`, inspect `git diff --stat`, and review the complete diff for accidental edits or line-ending-only churn.
 
 If Minecraft is available, test the public function in a disposable Bedrock world while facing each supported cardinal direction. Static analysis does not replace an in-game check for rail shapes, fluid flow, block-state behavior, entity spawning, or structure rotation.

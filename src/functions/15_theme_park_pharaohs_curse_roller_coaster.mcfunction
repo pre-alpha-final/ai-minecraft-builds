@@ -1,5 +1,5 @@
 # PHARAOH'S CURSE / THE AWAKENING - Minecraft Bedrock Edition roller coaster
-# Run: /function theme_park_pharaohs_curse_roller_coaster
+# Run: /function 15_theme_park_pharaohs_curse_roller_coaster
 # Stand at ground level, face a cardinal direction, and look horizontally. Run as a player.
 # Origin: front-center observation point; nearest blocks are 32 blocks ahead.
 # Size: 352 wide x 272 deep x 101 high. Bounds: ^-175 ^-1 ^32 through ^176 ^99 ^303.

@@ -1,7 +1,7 @@
 # CRIMSON COMET ROLLER COASTER - Minecraft Bedrock Edition
 # Build size: approximately 101 x 121 x 52 blocks.
 # Stand at ground level at the front-center of a clear area, face a CARDINAL direction,
-# look horizontally, then run: /function theme_park_crimson_comet_roller_coaster
+# look horizontally, then run: /function 9_theme_park_crimson_comet_roller_coaster
 # All placements use Bedrock caret-local coordinates, so the attraction follows your facing.
 # Run once in a clear, flat area. Cheats must be enabled.
 

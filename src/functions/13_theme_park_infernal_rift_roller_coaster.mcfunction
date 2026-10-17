@@ -1,4 +1,5 @@
 # INFERNAL RIFT ROLLER COASTER - Minecraft Bedrock structure loader
+# Run: /function 13_theme_park_infernal_rift_roller_coaster
 # Run as a player at ground level while facing north, south, east, or west and looking horizontally.
 # Stand at the front-center of a clear site; the nearest block is 48 blocks ahead.
 # Size: 460 blocks wide, 313 deep, and 256 high; relative bounds are ^-229 ^-1 ^48 through ^230 ^254 ^360.

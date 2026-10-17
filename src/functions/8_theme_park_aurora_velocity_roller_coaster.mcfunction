@@ -1,7 +1,7 @@
 # AURORA VELOCITY ROLLER COASTER - Minecraft Bedrock Edition
 # Build size: approximately 97 x 97 x 42 blocks.
 # Stand at ground level near the center, face a CARDINAL direction, look horizontally,
-# then run: /function theme_park_aurora_velocity_roller_coaster
+# then run: /function 8_theme_park_aurora_velocity_roller_coaster
 # Caret coordinates make the entire attraction follow the direction you face.
 # Tilde coordinates are used inside positioned execute commands for local scenery modules.
 # The rail loop is placed in travel order so Bedrock automatically forms slopes and corners.

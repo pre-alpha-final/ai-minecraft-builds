@@ -1,4 +1,5 @@
 # VIKING ROCKING SHIP - Minecraft Bedrock Edition
+# Run: /function 5_theme_park_viking_rocking_ship
 # Build size: roughly 77 x 33 x 45 blocks
 # Origin: face a cardinal direction, look horizontally, and run from the CENTER at ground level.
 # The ship is deliberately built at a mid-swing angle.

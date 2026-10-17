@@ -1,5 +1,5 @@
 # THEMED HAUNTED HOUSE - GRAND ESTATE / Minecraft Bedrock Edition 1.21.50+
-# Run /function theme_park_themed_haunted_house as a player at ground level, facing a cardinal direction with a horizontal view.
+# Run /function 16_theme_park_themed_haunted_house as a player at ground level, facing a cardinal direction with a horizontal view.
 # Origin: front-center observation point; nearest blocks start 24 forward. Door: ^0 ^10 ^72.
 # Bounds: ^-112 ^-1 ^24 through ^112 ^96 ^262. Width 225, depth 239, vertical extent 98 blocks.
 # Stand with feet at Overworld Y -63 through 223. Default flat-world ground is supported.

@@ -1,4 +1,5 @@
 # PIRATE COVE PARK ATTRACTION - Minecraft Bedrock Edition
+# Run: /function 3_theme_park_pirate_cove_attraction
 # Stand at ground level at the CENTER, face a cardinal direction, and look horizontally, then run this function.
 # Coordinates use your view: ^left, ^up, ^forward. The main guest entrance is behind you.
 # Approximate footprint: 124 x 124 blocks. Approximate maximum height: 42 blocks.

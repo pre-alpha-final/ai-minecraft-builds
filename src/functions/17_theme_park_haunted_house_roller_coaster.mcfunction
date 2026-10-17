@@ -1,5 +1,5 @@
 # RAVEN MANOR: THE WIDOW'S PLUNGE - Minecraft Bedrock Edition 1.21.50+
-# Run /function theme_park_haunted_house_roller_coaster as a player at ground level, facing a cardinal direction with a horizontal view.
+# Run /function 17_theme_park_haunted_house_roller_coaster as a player at ground level, facing a cardinal direction with a horizontal view.
 # Physical scale matches Pharaoh's Curse: width 352, depth 272, height 101; no rail-count target.
 # Front-center observation origin; nearest blocks begin 32 ahead. Bounds ^-175 ^-1 ^32 to ^176 ^99 ^303.
 # Stand with feet at Overworld Y -63 through 220. Choose a new clear flat site for this larger version.

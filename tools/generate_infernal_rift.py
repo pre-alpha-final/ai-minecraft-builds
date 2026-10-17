@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "src" / "structures" / "ai_minecraft_builds"
 FUNCTIONS = ROOT / "src" / "functions"
 BASE_NAME = "theme_park_infernal_rift_roller_coaster"
+PUBLIC_NAME = f"13_{BASE_NAME}"
 NAMESPACE = "ai_minecraft_builds"
 X_MIN, X_MAX = -229, 230
 Z_MIN, Z_MAX = 48, 360
@@ -449,6 +450,7 @@ def write_functions(
     complete_count = wrapper_count + 1 + len(TICKING_AREAS)
     header = [
         "# INFERNAL RIFT ROLLER COASTER - Minecraft Bedrock structure loader",
+        f"# Run: /function {PUBLIC_NAME}",
         "# Run as a player at ground level while facing north, south, east, or west and looking horizontally.",
         "# Stand at the front-center of a clear site; the nearest block is 48 blocks ahead.",
         "# Size: 460 blocks wide, 313 deep, and 256 high; relative bounds are ^-229 ^-1 ^48 through ^230 ^254 ^360.",
@@ -488,7 +490,7 @@ def write_functions(
         + [f"tickingarea remove {name}" for name, *_ in TICKING_AREAS]
     ) + "\n"
     for output, content in (
-        (FUNCTIONS / f"{BASE_NAME}.mcfunction", public_text),
+        (FUNCTIONS / f"{PUBLIC_NAME}.mcfunction", public_text),
         (FUNCTIONS / f"_{BASE_NAME}_tickingarea_loaded.mcfunction", loaded_text),
         (FUNCTIONS / f"_{BASE_NAME}_remove_tickingarea.mcfunction", cleanup_text),
     ):
@@ -513,7 +515,7 @@ def validate_functions(
     path: list[tuple[int, int, int]],
     best_compression: int,
 ) -> None:
-    public = FUNCTIONS / f"{BASE_NAME}.mcfunction"
+    public = FUNCTIONS / f"{PUBLIC_NAME}.mcfunction"
     loaded = FUNCTIONS / f"_{BASE_NAME}_tickingarea_loaded.mcfunction"
     cleanup = FUNCTIONS / f"_{BASE_NAME}_remove_tickingarea.mcfunction"
     expected_counts = {

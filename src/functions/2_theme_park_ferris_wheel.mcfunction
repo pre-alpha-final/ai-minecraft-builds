@@ -1,4 +1,5 @@
 # GRAND FERRIS WHEEL - Minecraft Bedrock Edition
+# Run: /function 2_theme_park_ferris_wheel
 # Run at ground level from the CENTER while facing a cardinal direction and looking horizontally.
 # Coordinates use your view: ^left, ^up, ^forward. The entrance is behind you; the wheel lies in the left/up plane.
 # Approximate footprint: 89 x 57 blocks. Approximate top height: 69 blocks.

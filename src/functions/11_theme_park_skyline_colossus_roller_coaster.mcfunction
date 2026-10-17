@@ -1,4 +1,5 @@
 # SKYLINE COLOSSUS ROLLER COASTER - Minecraft Bedrock structure loader
+# Run: /function 11_theme_park_skyline_colossus_roller_coaster
 # Run as a player at ground level while facing north, south, east, or west and looking horizontally.
 # Stand at the front-center of a clear site; the nearest block is 48 blocks ahead.
 # Size: 302 blocks wide, 238 deep, and 160 high; relative bounds are ^-150 ^-1 ^48 through ^151 ^158 ^285.

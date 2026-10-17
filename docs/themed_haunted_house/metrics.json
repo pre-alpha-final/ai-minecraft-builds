@@ -1,6 +1,6 @@
 {
   "name": "Themed Haunted House / Grand Estate",
-  "function": "theme_park_themed_haunted_house",
+  "function": "16_theme_park_themed_haunted_house",
   "representation": "native structures",
   "dimensions": {
     "width": 225,

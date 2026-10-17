@@ -9,7 +9,7 @@ A minecart expedition from a launch terminal to the rings of Aurelia and back th
 Rebuild and import `ai-minecraft-builds.mcpack`, activate the behavior pack in a creative Overworld with cheats enabled, and run:
 
 ```mcfunction
-/function theme_park_space_adventure_roller_coaster
+/function 14_theme_park_space_adventure_roller_coaster
 ```
 
 Stand at ground level at the front-center observation point and face a cardinal direction with a horizontal view. The function centers and levels you automatically. Use a clear, flat **352 wide x 272 deep x 169 high** site, starting **32 blocks ahead**. The relative bounds are `^-175 ^-1 ^32` through `^176 ^167 ^303`. Your feet must be at world Y **-63 through 152**; an ordinary low-altitude flat Overworld is suitable.
