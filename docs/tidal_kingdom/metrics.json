@@ -1,0 +1,1214 @@
+{
+  "name": "Tidal Kingdom",
+  "public_function": "18_theme_park_tidal_kingdom",
+  "bounds": [
+    [
+      -319,
+      -5,
+      32
+    ],
+    [
+      320,
+      113,
+      481
+    ]
+  ],
+  "dimensions": {
+    "width": 640,
+    "depth": 450,
+    "height": 119
+  },
+  "plot_area": 288000,
+  "infernal_rift_plot_area": 143980,
+  "plot_area_ratio": 2.0002778163633836,
+  "roller_coasters": 1,
+  "water_slides": 4,
+  "rails": 1632,
+  "powered_rails": 1618,
+  "curves": 14,
+  "major_climbs": 6,
+  "major_drops": 4,
+  "elevation_changes": [
+    40,
+    62,
+    -85,
+    31,
+    25,
+    -61,
+    13,
+    30,
+    -44,
+    20,
+    -31
+  ],
+  "largest_drop": 85,
+  "rail_height": [
+    8,
+    110
+  ],
+  "crossings": [
+    {
+      "left": -70,
+      "forward": 400,
+      "rail_heights": [
+        39,
+        73
+      ],
+      "separation": 34
+    },
+    {
+      "left": 100,
+      "forward": 420,
+      "rail_heights": [
+        28,
+        80
+      ],
+      "separation": 52
+    }
+  ],
+  "non_air_blocks": 1208281,
+  "air_cells": 2560217,
+  "authored_placement_commands": 224513,
+  "maximum_fill_volume": 27888,
+  "exact_cuboid_command_counts": {
+    "XYZ": 17460,
+    "YZX": 18658,
+    "ZXY": 18789
+  },
+  "best_tested_exact_cuboids": 17460,
+  "material_counts": {
+    "minecraft:air": 2560217,
+    "minecraft:birch_fence": 495,
+    "minecraft:birch_planks": 5609,
+    "minecraft:birch_slab": 444,
+    "minecraft:black_concrete": 104,
+    "minecraft:blue_concrete": 17963,
+    "minecraft:cyan_concrete": 21957,
+    "minecraft:dark_oak_planks": 7064,
+    "minecraft:dark_prismarine": 2368,
+    "minecraft:gold_block": 130,
+    "minecraft:golden_rail": 1618,
+    "minecraft:grass_block": 128348,
+    "minecraft:jungle_leaves": 10160,
+    "minecraft:jungle_log": 564,
+    "minecraft:light_blue_concrete": 39052,
+    "minecraft:light_blue_stained_glass": 9384,
+    "minecraft:lime_concrete": 1417,
+    "minecraft:oak_fence": 291,
+    "minecraft:orange_concrete": 10473,
+    "minecraft:prismarine": 144,
+    "minecraft:prismarine_bricks": 22772,
+    "minecraft:quartz_bricks": 76312,
+    "minecraft:rail": 14,
+    "minecraft:red_concrete": 9,
+    "minecraft:redstone_block": 1632,
+    "minecraft:sandstone": 472987,
+    "minecraft:sea_lantern": 627,
+    "minecraft:smooth_quartz": 25482,
+    "minecraft:smooth_quartz_slab": 570,
+    "minecraft:smooth_sandstone": 94745,
+    "minecraft:stone_bricks": 4072,
+    "minecraft:water": 244471,
+    "minecraft:white_concrete": 6932,
+    "minecraft:yellow_concrete": 32,
+    "minecraft:yellow_stained_glass": 39
+  },
+  "reachable_walking_surfaces": 232048,
+  "walking_destinations": [
+    {
+      "name": "Entrance",
+      "left": 0,
+      "forward": 34,
+      "feet_height": 1
+    },
+    {
+      "name": "Guest services",
+      "left": -43,
+      "forward": 53,
+      "feet_height": 1
+    },
+    {
+      "name": "First aid",
+      "left": 43,
+      "forward": 53,
+      "feet_height": 1
+    },
+    {
+      "name": "Harbor market stall",
+      "left": -145,
+      "forward": 56,
+      "feet_height": 1
+    },
+    {
+      "name": "Harbor market stall",
+      "left": -112,
+      "forward": 56,
+      "feet_height": 1
+    },
+    {
+      "name": "Harbor market stall",
+      "left": -79,
+      "forward": 56,
+      "feet_height": 1
+    },
+    {
+      "name": "Changing / locker pavilion",
+      "left": 80,
+      "forward": 56,
+      "feet_height": 1
+    },
+    {
+      "name": "Changing / locker pavilion",
+      "left": 116,
+      "forward": 56,
+      "feet_height": 1
+    },
+    {
+      "name": "Changing / locker pavilion",
+      "left": 152,
+      "forward": 56,
+      "feet_height": 1
+    },
+    {
+      "name": "Fountain plaza",
+      "left": 0,
+      "forward": 95,
+      "feet_height": 1
+    },
+    {
+      "name": "Crescent Beach",
+      "left": -246,
+      "forward": 140,
+      "feet_height": 1
+    },
+    {
+      "name": "Four Falls stairs",
+      "left": 186,
+      "forward": 54,
+      "feet_height": 1
+    },
+    {
+      "name": "Slide launch deck",
+      "left": 198,
+      "forward": 136,
+      "feet_height": 39
+    },
+    {
+      "name": "Poseidon aquarium",
+      "left": 0,
+      "forward": 272,
+      "feet_height": 2
+    },
+    {
+      "name": "Pirate gangway",
+      "left": -271,
+      "forward": 332,
+      "feet_height": 5
+    },
+    {
+      "name": "Reef Rangers beach",
+      "left": 241,
+      "forward": 275,
+      "feet_height": 1
+    },
+    {
+      "name": "Splash fort bridge",
+      "left": 239,
+      "forward": 308,
+      "feet_height": 8
+    },
+    {
+      "name": "Beacon Point steps",
+      "left": -245,
+      "forward": 436,
+      "feet_height": 1
+    },
+    {
+      "name": "Lighthouse observation room",
+      "left": -245,
+      "forward": 457,
+      "feet_height": 86
+    },
+    {
+      "name": "Garden cabana",
+      "left": -150,
+      "forward": 433,
+      "feet_height": 1
+    },
+    {
+      "name": "Garden cabana",
+      "left": -110,
+      "forward": 433,
+      "feet_height": 1
+    },
+    {
+      "name": "Garden cabana",
+      "left": 105,
+      "forward": 433,
+      "feet_height": 1
+    },
+    {
+      "name": "Garden cabana",
+      "left": 145,
+      "forward": 433,
+      "feet_height": 1
+    },
+    {
+      "name": "Tidebreaker boarding platform",
+      "left": 194,
+      "forward": 406,
+      "feet_height": 8
+    }
+  ],
+  "landmarks": [
+    "Entrance / guest services",
+    "Tidal Plaza / fountain",
+    "Crescent Beach / wave-pool basin",
+    "Four Falls / water slides",
+    "Coral Current / lazy river",
+    "Poseidon's Court / aquarium",
+    "Buccaneer Bay / pirate ship",
+    "Reef Rangers / splash fort",
+    "Tidebreaker / coaster station",
+    "Beacon Point / lighthouse",
+    "Harbor Market / food court",
+    "Cabana Gardens / changing rooms"
+  ],
+  "placement_vertical_offset": 1,
+  "placement_bounds": [
+    [
+      -319,
+      -4,
+      32
+    ],
+    [
+      320,
+      114,
+      481
+    ]
+  ],
+  "allowed_feet_y": [
+    -60,
+    205
+  ],
+  "public_commands": 41,
+  "callback_commands": 494,
+  "lifecycle_commands": 535,
+  "structures": 80,
+  "stages": 2,
+  "manual_invocations": 1,
+  "automatic_staging": true,
+  "ticking_areas_per_stage": 8,
+  "origin_ticking_areas": 1,
+  "maximum_active_ticking_areas": 9,
+  "maximum_preload_chunks": 88,
+  "maximum_origin_preload_chunks": 9,
+  "settle_ticks": 600,
+  "area_release_ticks": 2,
+  "stage_timeout_ticks": 3600,
+  "assets": [
+    {
+      "file": "theme_park_tidal_kingdom_x1_z1.mcstructure",
+      "size": [
+        64,
+        23,
+        64
+      ],
+      "cells": 49496,
+      "bytes": 754422,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x2_z1.mcstructure",
+      "size": [
+        64,
+        22,
+        64
+      ],
+      "cells": 49837,
+      "bytes": 721544,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x3_z1.mcstructure",
+      "size": [
+        64,
+        24,
+        64
+      ],
+      "cells": 51778,
+      "bytes": 787437,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x4_z1.mcstructure",
+      "size": [
+        64,
+        23,
+        64
+      ],
+      "cells": 53646,
+      "bytes": 754669,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x5_z1.mcstructure",
+      "size": [
+        64,
+        33,
+        64
+      ],
+      "cells": 52878,
+      "bytes": 1082550,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x6_z1.mcstructure",
+      "size": [
+        64,
+        36,
+        64
+      ],
+      "cells": 53084,
+      "bytes": 1180910,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x7_z1.mcstructure",
+      "size": [
+        64,
+        23,
+        64
+      ],
+      "cells": 53676,
+      "bytes": 754730,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x8_z1.mcstructure",
+      "size": [
+        64,
+        28,
+        64
+      ],
+      "cells": 52009,
+      "bytes": 918723,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x9_z1.mcstructure",
+      "size": [
+        64,
+        22,
+        64
+      ],
+      "cells": 49837,
+      "bytes": 721544,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x10_z1.mcstructure",
+      "size": [
+        64,
+        23,
+        64
+      ],
+      "cells": 49496,
+      "bytes": 754422,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x1_z2.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 50010,
+      "bytes": 492422,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x2_z2.mcstructure",
+      "size": [
+        64,
+        26,
+        64
+      ],
+      "cells": 50565,
+      "bytes": 852959,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x3_z2.mcstructure",
+      "size": [
+        64,
+        28,
+        64
+      ],
+      "cells": 49492,
+      "bytes": 918382,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x4_z2.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 49152,
+      "bytes": 492238,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x5_z2.mcstructure",
+      "size": [
+        64,
+        16,
+        64
+      ],
+      "cells": 49515,
+      "bytes": 525219,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x6_z2.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 49502,
+      "bytes": 492451,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x7_z2.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 49152,
+      "bytes": 492179,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x8_z2.mcstructure",
+      "size": [
+        64,
+        44,
+        64
+      ],
+      "cells": 49979,
+      "bytes": 1442707,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x9_z2.mcstructure",
+      "size": [
+        64,
+        50,
+        64
+      ],
+      "cells": 54116,
+      "bytes": 1639280,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x10_z2.mcstructure",
+      "size": [
+        64,
+        50,
+        64
+      ],
+      "cells": 49853,
+      "bytes": 1639273,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x1_z3.mcstructure",
+      "size": [
+        64,
+        17,
+        64
+      ],
+      "cells": 53497,
+      "bytes": 557957,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x2_z3.mcstructure",
+      "size": [
+        64,
+        22,
+        64
+      ],
+      "cells": 56188,
+      "bytes": 721716,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x3_z3.mcstructure",
+      "size": [
+        64,
+        23,
+        64
+      ],
+      "cells": 49876,
+      "bytes": 754310,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x4_z3.mcstructure",
+      "size": [
+        64,
+        24,
+        64
+      ],
+      "cells": 53839,
+      "bytes": 787149,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x5_z3.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 55636,
+      "bytes": 492388,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x6_z3.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 55624,
+      "bytes": 492388,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x7_z3.mcstructure",
+      "size": [
+        64,
+        27,
+        64
+      ],
+      "cells": 53913,
+      "bytes": 885453,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x8_z3.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 49754,
+      "bytes": 492077,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x9_z3.mcstructure",
+      "size": [
+        64,
+        41,
+        64
+      ],
+      "cells": 57148,
+      "bytes": 1344215,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x10_z3.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 49152,
+      "bytes": 492062,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x1_z4.mcstructure",
+      "size": [
+        64,
+        25,
+        64
+      ],
+      "cells": 50071,
+      "bytes": 820090,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x2_z4.mcstructure",
+      "size": [
+        64,
+        22,
+        64
+      ],
+      "cells": 50346,
+      "bytes": 721605,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x3_z4.mcstructure",
+      "size": [
+        64,
+        24,
+        64
+      ],
+      "cells": 52730,
+      "bytes": 787348,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x4_z4.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 56640,
+      "bytes": 492077,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x5_z4.mcstructure",
+      "size": [
+        64,
+        66,
+        64
+      ],
+      "cells": 72651,
+      "bytes": 2163871,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x6_z4.mcstructure",
+      "size": [
+        64,
+        66,
+        64
+      ],
+      "cells": 72344,
+      "bytes": 2163871,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x7_z4.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 56568,
+      "bytes": 492077,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x8_z4.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 52408,
+      "bytes": 492276,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x9_z4.mcstructure",
+      "size": [
+        64,
+        18,
+        64
+      ],
+      "cells": 51262,
+      "bytes": 590873,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x10_z4.mcstructure",
+      "size": [
+        64,
+        23,
+        64
+      ],
+      "cells": 49634,
+      "bytes": 754670,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x1_z5.mcstructure",
+      "size": [
+        64,
+        47,
+        64
+      ],
+      "cells": 55901,
+      "bytes": 1541820,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x2_z5.mcstructure",
+      "size": [
+        64,
+        72,
+        64
+      ],
+      "cells": 59253,
+      "bytes": 2360894,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x3_z5.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 52000,
+      "bytes": 492077,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x4_z5.mcstructure",
+      "size": [
+        64,
+        27,
+        64
+      ],
+      "cells": 56564,
+      "bytes": 885393,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x5_z5.mcstructure",
+      "size": [
+        64,
+        79,
+        64
+      ],
+      "cells": 66976,
+      "bytes": 2589701,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x6_z5.mcstructure",
+      "size": [
+        64,
+        77,
+        64
+      ],
+      "cells": 66762,
+      "bytes": 2524165,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x7_z5.mcstructure",
+      "size": [
+        64,
+        24,
+        64
+      ],
+      "cells": 56480,
+      "bytes": 787089,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x8_z5.mcstructure",
+      "size": [
+        64,
+        23,
+        64
+      ],
+      "cells": 52127,
+      "bytes": 754381,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x9_z5.mcstructure",
+      "size": [
+        64,
+        20,
+        64
+      ],
+      "cells": 49972,
+      "bytes": 656180,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x10_z5.mcstructure",
+      "size": [
+        64,
+        21,
+        64
+      ],
+      "cells": 49992,
+      "bytes": 689119,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x1_z6.mcstructure",
+      "size": [
+        64,
+        45,
+        64
+      ],
+      "cells": 53507,
+      "bytes": 1476111,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x2_z6.mcstructure",
+      "size": [
+        64,
+        54,
+        64
+      ],
+      "cells": 54854,
+      "bytes": 1771044,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x3_z6.mcstructure",
+      "size": [
+        64,
+        28,
+        64
+      ],
+      "cells": 50109,
+      "bytes": 918382,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x4_z6.mcstructure",
+      "size": [
+        64,
+        90,
+        64
+      ],
+      "cells": 54378,
+      "bytes": 2950435,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x5_z6.mcstructure",
+      "size": [
+        64,
+        65,
+        64
+      ],
+      "cells": 56400,
+      "bytes": 2130941,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x6_z6.mcstructure",
+      "size": [
+        64,
+        65,
+        64
+      ],
+      "cells": 55939,
+      "bytes": 2131196,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x7_z6.mcstructure",
+      "size": [
+        64,
+        85,
+        64
+      ],
+      "cells": 53698,
+      "bytes": 2786413,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x8_z6.mcstructure",
+      "size": [
+        64,
+        25,
+        64
+      ],
+      "cells": 49836,
+      "bytes": 820476,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x9_z6.mcstructure",
+      "size": [
+        64,
+        25,
+        64
+      ],
+      "cells": 50692,
+      "bytes": 820129,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x10_z6.mcstructure",
+      "size": [
+        64,
+        23,
+        64
+      ],
+      "cells": 49611,
+      "bytes": 754885,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x1_z7.mcstructure",
+      "size": [
+        64,
+        103,
+        64
+      ],
+      "cells": 50326,
+      "bytes": 3376303,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x2_z7.mcstructure",
+      "size": [
+        64,
+        108,
+        64
+      ],
+      "cells": 77070,
+      "bytes": 3540240,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x3_z7.mcstructure",
+      "size": [
+        64,
+        90,
+        64
+      ],
+      "cells": 53069,
+      "bytes": 2950487,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x4_z7.mcstructure",
+      "size": [
+        64,
+        90,
+        64
+      ],
+      "cells": 53450,
+      "bytes": 2950556,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x5_z7.mcstructure",
+      "size": [
+        64,
+        15,
+        64
+      ],
+      "cells": 49152,
+      "bytes": 492151,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x6_z7.mcstructure",
+      "size": [
+        64,
+        48,
+        64
+      ],
+      "cells": 49704,
+      "bytes": 1573979,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x7_z7.mcstructure",
+      "size": [
+        64,
+        119,
+        64
+      ],
+      "cells": 54716,
+      "bytes": 3901014,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x8_z7.mcstructure",
+      "size": [
+        64,
+        119,
+        64
+      ],
+      "cells": 53301,
+      "bytes": 3900761,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x9_z7.mcstructure",
+      "size": [
+        64,
+        81,
+        64
+      ],
+      "cells": 50628,
+      "bytes": 2655055,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x10_z7.mcstructure",
+      "size": [
+        64,
+        57,
+        64
+      ],
+      "cells": 50317,
+      "bytes": 1868895,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x1_z8.mcstructure",
+      "size": [
+        64,
+        15,
+        2
+      ],
+      "cells": 1536,
+      "bytes": 15737,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x2_z8.mcstructure",
+      "size": [
+        64,
+        15,
+        2
+      ],
+      "cells": 1536,
+      "bytes": 15737,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x3_z8.mcstructure",
+      "size": [
+        64,
+        15,
+        2
+      ],
+      "cells": 1536,
+      "bytes": 15737,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x4_z8.mcstructure",
+      "size": [
+        64,
+        15,
+        2
+      ],
+      "cells": 1536,
+      "bytes": 15737,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x5_z8.mcstructure",
+      "size": [
+        64,
+        15,
+        2
+      ],
+      "cells": 1536,
+      "bytes": 15737,
+      "stage_number": 1
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x6_z8.mcstructure",
+      "size": [
+        64,
+        15,
+        2
+      ],
+      "cells": 1536,
+      "bytes": 15737,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x7_z8.mcstructure",
+      "size": [
+        64,
+        15,
+        2
+      ],
+      "cells": 1536,
+      "bytes": 15737,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x8_z8.mcstructure",
+      "size": [
+        64,
+        15,
+        2
+      ],
+      "cells": 1536,
+      "bytes": 15737,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x9_z8.mcstructure",
+      "size": [
+        64,
+        15,
+        2
+      ],
+      "cells": 1536,
+      "bytes": 15737,
+      "stage_number": 2
+    },
+    {
+      "file": "theme_park_tidal_kingdom_x10_z8.mcstructure",
+      "size": [
+        64,
+        15,
+        2
+      ],
+      "cells": 1536,
+      "bytes": 15737,
+      "stage_number": 2
+    }
+  ],
+  "validation": {
+    "complete_authored_replay": true,
+    "one_continuous_coaster": true,
+    "supported_powered_rails": true,
+    "no_unintended_junctions": true,
+    "rider_clearance": true,
+    "four_cardinal_voxel_and_material_maps": true,
+    "four_cardinal_rail_states": true,
+    "all_chunk_alignments_preloaded": true,
+    "phase_transition_simulation": true,
+    "automatic_staging": true,
+    "saved_origin_and_rotation": true,
+    "readiness_barriers_and_timeout_cleanup": true,
+    "reentry_guard": true,
+    "nbt_roundtrip": true,
+    "contained_below_deck_water": true,
+    "descending_slides": true,
+    "fountain_catchments": true,
+    "connected_river_with_surface_headroom": true,
+    "guest_destination_walks": true,
+    "exact_three_function_lifecycle": true,
+    "in_game_tested": false
+  }
+}

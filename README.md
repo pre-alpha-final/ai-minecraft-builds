@@ -24,7 +24,7 @@ Minecraft function files are plain-text lists of commands. An LLM can translate 
 
 Public build functions use `<number>_<name>`, with one unique number per build. Type `/function 1_` to narrow suggestions to the first build, or use any other number below. Internal `_` callbacks are scheduled automatically.
 
-Numbers follow creation order in Git history, including the original `functions/` directory; builds first recorded in the same commit are ordered alphabetically. Existing numbers stay fixed, and the next new build will be 18.
+Numbers follow creation order in Git history, including the original `functions/` directory; builds first recorded in the same commit are ordered alphabetically. Existing numbers stay fixed. The retained branch history assigns builds 1 through 17; Tidal Kingdom is build 18, and the next new build will be 19.
 
 | Number | Command |
 | --- | --- |
@@ -45,6 +45,7 @@ Numbers follow creation order in Git history, including the original `functions/
 | 15 | `/function 15_theme_park_pharaohs_curse_roller_coaster` |
 | 16 | `/function 16_theme_park_themed_haunted_house` |
 | 17 | `/function 17_theme_park_haunted_house_roller_coaster` |
+| 18 | `/function 18_theme_park_tidal_kingdom` |
 
 After updating an existing installation, rebuild and reimport the pack to get these numbered commands.
 
@@ -118,9 +119,23 @@ Run `/function 16_theme_park_themed_haunted_house` at ground level from the fron
 
 The build places **680,192 non-air blocks** and 905,324 explicit air cells through **16 native structures**. Its best tested exact cuboid encoding needs **29,980 solid-placement commands**, exceeding the standalone limit. The public loader uses **97 commands**, with four commands across its two internal callbacks. It needs **three free ticking-area slots**, released automatically after loading. Back up first or use a disposable world; the crypt sits inside the raised terrace, so default flat-world ground is supported. Wait for placement and cleanup before rerunning it, and rebuild/reimport the pack after source changes. In-game testing remains outstanding. See the [floor plans, cutaways, metrics, and regeneration instructions](docs/themed_haunted_house/README.md).
 
+## Tidal Kingdom: full water park
+
+A **640 x 450-block plot**, almost exactly **twice Infernal Rift's plot area**, with **one roller coaster**. Tidal Kingdom includes four water slides, a swimming river, central lagoon, Poseidon temple aquarium, beach basin, pirate galleon, splash fort, climbable lighthouse, guest services, changing rooms, market and cabanas. The water and scenery have ordinary static Minecraft behavior; the beach basin does not generate waves.
+
+<p align="center">
+  <img src="docs/tidal_kingdom/overview.png" alt="Tidal Kingdom generated blocks: lagoon and aquarium temple, four slides, pirate harbor, lighthouse, and one supported coaster">
+</p>
+
+Import `packs/18_theme_park_tidal_kingdom.mcpack`, then run `/function 18_theme_park_tidal_kingdom` **once**, facing a cardinal direction with a horizontal view. Both stages and final cleanup are automatic. A temporary anchor saves your starting position and facing, so you may move after starting; keep the world running and leave the original ground/anchor intact until the completion message. The installer needs **nine free ticking-area slots**: eight for the current stage and one for its saved origin. Each stage waits for all eight areas to load, then allows **600 game ticks** for queued placement before advancing. A two-tick delay lets area removal finish before their names are reused.
+
+Stand at ground level at the front-center observation point, **32 blocks before the build**, with feet at Overworld **Y -60 through 205**. Reserve a clear flat **640 x 450 x 119-block envelope**, from `^-319 ^-4 ^32` through `^320 ^114 ^481`; the basins extend four blocks below your feet. The deck is raised one block to fit default flat-world ground. Back up first or use a disposable world. Do not run concurrent installations.
+
+The park places **1,208,281 non-air blocks** and 2,560,217 explicit air cells through **80 structures**, a **41-command public loader** and 494 callback commands. Its single 1,632-rail Tidebreaker circuit has 14 curves, six major climbs, four major drops and an 85-block largest drop. Follow the paths to its rear-left station, board beside `^194 ^9 ^406`, and push toward positive local left. Geometry, walking access, all cardinal placements, NBT and pinned Bedrock block states have been checked. The automatic installer passed a headless Bedrock test on Classic Flat ground; **interactive ride playtesting remains outstanding**. Rebuild and reimport after source changes. See the [installation instructions, attraction plan, route, metrics and regeneration guide](docs/tidal_kingdom/README.md).
+
 ## Placement and compatibility details
 
-- Pack version 1.0.26 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
+- Pack version 1.0.31 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
 - Public build functions automatically move the player to the center of their current block, level the view, and snap the yaw to the closest cardinal direction before placing anything. Stand on the ground block that should be the documented origin and face broadly toward the intended north, south, east, or west build direction before running a function.
 - The snap removes fractional-position, yaw, and pitch drift that can skew large caret-relative builds. Exact diagonal ties resolve consistently to one of the two neighboring cardinal directions.
 - Run public functions as a player. Internal functions whose names begin with `_` are scheduled callbacks and must not be invoked manually.

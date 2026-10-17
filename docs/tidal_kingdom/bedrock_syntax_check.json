@@ -1,0 +1,24 @@
+{
+  "engine": "Mojang Bedrock Dedicated Server",
+  "engine_version": "1.26.52.3",
+  "pack_version": [
+    1,
+    0,
+    30
+  ],
+  "function_parse_errors": 0,
+  "function_count": 3,
+  "negative_control_reproduced_reported_hash_error": true,
+  "plain_named_score_condition_probe": {
+    "holder": "probe_pass",
+    "objective": "tk_probe2",
+    "value": 7
+  },
+  "public_function_registration": true,
+  "full_park_installation_tested": false,
+  "function_sha256": {
+    "functions/_theme_park_tidal_kingdom_remove_tickingarea.mcfunction": "ef78a6b715ad301a4e218e4e0fc8f97b7d2592aec2e61ce5ed014f9e1706c41b",
+    "functions/_theme_park_tidal_kingdom_tickingarea_loaded.mcfunction": "793b00ca738af721a92f87147abc5a487b93bef1c96433d71e1d4152f525d6bc",
+    "functions/18_theme_park_tidal_kingdom.mcfunction": "e7a53f9577e17bf85b4341639f2ede455791621656807d757b2055147b7db2e3"
+  }
+}

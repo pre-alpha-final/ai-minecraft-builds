@@ -6,10 +6,14 @@ These instructions apply to the entire repository.
 
 This repository collects AI-generated Minecraft Bedrock build blueprints. Most public builds are standalone `.mcfunction` files authored from natural-language prompts; imported 3D assets may instead be voxelized into functions or native `.mcstructure` files. Every addition must remain Bedrock-compatible, preserve the intended design or recognizable source geometry, and package cleanly with the existing Windows build script.
 
+## Branches
+
+Use `feature/<feature-name>` for new branches. Do not create Codex-specific branch names.
+
 ## Repository map and conventions
 
 - `README.md` is the user-facing overview, placement guidance, and packaging documentation.
-- `src/manifest.json` defines a behavior pack for Minecraft Bedrock 1.21 or newer. Keep the header and data-module versions identical.
+- `src/manifest.json` defines the behavior pack and its minimum engine version (currently Bedrock 1.21.50). Keep the header and data-module versions identical.
 - `src/functions/` contains all callable functions and internal callbacks. Public function filenames use `<number>_<lowercase_snake_case_name>.mcfunction` and are invoked without the extension, for example `/function 2_theme_park_ferris_wheel`.
 - Most numbered `*_theme_park_*.mcfunction` files are standalone generated builds. They establish the current conventions for section comments, caret-relative placement, large foundations, decorative detail, and optional start/completion messages.
 - `src/structures/ai_minecraft_builds/` is the behavior-pack structure namespace. The folder name and identifiers used by `structure load` must agree.
@@ -23,7 +27,7 @@ Files whose names begin with `_` are internal implementation details, not public
 
 - Every public build has exactly one entry point named `<number>_<lowercase_snake_case_name>.mcfunction`, such as `2_theme_park_ferris_wheel.mcfunction`.
 - Assign positive integers starting at 1, without zero padding, in build creation order. Each number belongs to only one public build, so `/function 1_` matches exactly one entry point.
-- Keep assigned numbers stable when editing or renaming a build. Never reuse a retired number or renumber existing builds after a deletion. Use the next never-assigned number for a new build; the current catalog ends at 17, so the next build is 18. Check Git history as well as the current filenames when choosing the next number.
+- Keep assigned numbers stable when editing or renaming a build. Never reuse a retired number or renumber existing builds after a deletion. Use the next never-assigned number for a new build; the current catalog ends at 18 (Tidal Kingdom), so the next build is 19. Check the current filenames and the retained branch history. An abandoned, unmerged experiment does not reserve a public number merely because it exists on another ref; distinguish it from a build actually assigned and later retired in the retained catalog. Confirm ancestry and user intent before treating an unrelated branch as authoritative.
 - For the initial migration, creation order follows Git history, including the former `functions/` directory. Builds first recorded in the same commit are ordered alphabetically by their unnumbered public filename. The numbered catalog is listed in `README.md`.
 - Keep internal callbacks underscore-prefixed (`_<build_name>_tickingarea_loaded` and `_<build_name>_remove_tickingarea`). Never add a public alias or another function beginning with the same `<number>_` prefix. Structure identifiers and ticking-area names do not need the public number.
 - Generators must retain the assigned public name separately from asset/callback base names. Update generator outputs, validation paths, headers, metrics, and documented `/function` commands whenever an entry point is renamed.
@@ -50,7 +54,7 @@ All generated builds must use Minecraft Bedrock commands, syntax, block identifi
 - Keep the player outside the generated volume by shifting large sculptures forward.
 - Verify every unique command and resource identifier against the current official Bedrock documentation when compatibility is uncertain.
 
-The pack currently declares Minecraft Bedrock 1.21 or newer in `src/manifest.json`.
+Read the current `src/manifest.json` rather than assuming an engine version. Its minimum is currently `[1, 21, 50]`; delayed scheduling requires that version or newer.
 
 ## Public-function cardinal snap
 
@@ -241,11 +245,22 @@ For a theme-first coaster, treat the physical envelope as room for broad runs, o
 
 Every build large enough to require `.mcstructure` assets must use exactly three `.mcfunction` files for its loader lifecycle:
 
-1. `<number>_<build_name>.mcfunction`: the only public entry point. It runs in the player's context, manages stale state and the temporary ticking area or areas, registers the area-loaded callback, and issues all cardinally selected `structure load` commands.
-2. `_<build_name>_tickingarea_loaded.mcfunction`: an internal callback registered with `schedule on_area_loaded`. It schedules the delayed cleanup and does not place structures.
-3. `_<build_name>_remove_tickingarea.mcfunction`: an internal delayed callback that removes only this build's ticking area or areas.
+1. `<number>_<build_name>.mcfunction`: the only public entry point. It runs in the player's context, snaps facing, guards against concurrent runs, and manages startup and stale state. It may issue immediate cardinally selected loads only when it does not remove and recreate their ticking-area names in the same call. Deferred startup or automatic staging must save the original context and schedule the lifecycle dispatcher.
+2. `_<build_name>_tickingarea_loaded.mcfunction`: an internal callback registered with `schedule on_area_loaded`. It counts readiness for the active stage and schedules the settle/cleanup delay. It does not place structures.
+3. `_<build_name>_remove_tickingarea.mcfunction`: an internal delayed cleanup callback. For deferred startup or automatic staging, it also dispatches stage starts and transitions, explicitly restoring saved context before every placement. It removes only this build's areas and temporary marker on completion or failure.
 
 Both internal callback filenames and all command references to them must begin with `_`. Start each internal file with an `INTERNAL CALLBACK - do not run manually` comment. Do not create unprefixed callback aliases, combine the lifecycle into the public loader, or require the player to invoke either callback. Use unique callback paths and a unique ticking-area name for every build.
+
+### World-height bounds and default flat worlds
+
+Validate the complete placement box of every native structure against the target dimension before loading it. In the Overworld, legal block Y is **-64 through 319**, inclusive. The entire asset box must fit, including explicit air and omitted cells; checking only occupied voxels or the visible deck is insufficient. A request outside that box can reject the whole structure while all preload callbacks still report ready.
+
+- Default post-1.18 Classic Flat ground puts the player's feet at **Y -60**. New builds intended for ordinary flat-world use must support this placement without asking the player to create an elevated platform.
+- For each asset, compute `load_min_y = floor(feet_y + relative_load_y)` and `load_max_y = load_min_y + sizeY - 1`. Require `load_min_y >= -64` and `load_max_y <= 319`. Derive and document the supported feet-Y interval from all assets, including any placement lift or deliberately repositioned context.
+- Tidal Kingdom's original load offset `^-5` produced Y -65 from feet Y -60 and was rejected. Raising the placement offset to `^-4` loads from Y -64 and preserves the full geometry. Its actual placement bounds are now Y -4 through 114 relative to the player, supporting feet Y -60 through 205.
+- Raise the build's placement origin when needed; keep a gravity-affected saved marker on its original supported ground. Do not move the marker upward and assume it will remain suspended. Check entrance access after raising a deck.
+- Keep source geometry coordinates and final placement coordinates explicit and separate in metrics. Include the lift in headers, boarding coordinates, clearance, and placement bounds. Reject unsupported heights clearly rather than allowing an apparently successful empty installation.
+- Include a real-engine low-height case at feet Y -60 in loader validation. Successful tests at Y 64 or Y 70 do not establish Classic Flat compatibility.
 
 ### Structure partitioning
 
@@ -317,33 +332,22 @@ Bedrock requires every target chunk for a `structure load` request to be fully l
 Make every structure-backed loader self-contained by managing one or more temporary preloaded ticking areas through the required three-function convention:
 
 1. Choose one unique, static ticking-area name per preload rectangle and unique cleanup function paths per loader. Never use `tickingarea remove_all`, because that would interfere with unrelated builds and world systems.
-2. In the player-executed wrapper, clear any stale callback for that loader and remove only its own stale ticking areas.
+2. In the player-executed wrapper, clear that loader's stale area-loaded and delayed callbacks and remove only its own stale areas. When those names will be recreated, save the placement context and wait at least two game ticks before creation; removal is not complete within the same function call.
 3. Prefer one preloaded rectangular ticking area whose caret-relative corners cover the complete horizontal build footprint: `tickingarea add <from> <to> <unique_name> true`. If the conservative footprint exceeds 100 chunks, partition it into the fewest nonoverlapping rectangles that each remain at or below 100 chunks and give every rectangle a unique name.
 4. Register the same loaded callback for every rectangle with `schedule on_area_loaded add tickingarea <unique_name> <loaded_callback>`.
-5. Issue the cardinally selected `structure load` commands immediately in the original player context. They may queue briefly, but the ticking area will cause their target chunks to load. Do not move placement into the scheduled callback, because a scheduled function does not preserve the player's original position and rotation.
-6. In the loaded callback, schedule a short delayed cleanup with `replace`, such as `schedule delay add <remove_function> 100 replace`. With multiple areas, every area-loaded invocation refreshes the same delayed cleanup, so removal occurs after the final rectangle becomes ready. The cleanup function must remove every name owned by this loader and no others. The delay gives queued placements time to finish after the area becomes fully loaded.
+5. Issue cardinally selected loads in the original player context when immediate placement is safe. For deferred startup or automatic staging, restore dimension, executor, position, rotation, and generation from the saved marker before issuing each command. Scheduled callbacks never implicitly preserve the player's context. A queued placement still needs its entire target area to become loaded.
+6. In the loaded callback, schedule cleanup or advancement with `replace` after readiness is satisfied. A simple single-pass loader may refresh a short settle delay after each area loads. A staged installer must count all expected areas and advance only when all are ready, with a separate loading watchdog for partial failure. The settle delay gives queued placements time to finish; neither readiness nor elapsed time proves successful block placement.
 
-Use this command lifecycle as the reference pattern:
+Use this lifecycle when a name may already exist or is reused between stages:
 
-```mcfunction
-schedule on_area_loaded clear function _<build_name>_tickingarea_loaded
-tickingarea remove <unique_name>
-tickingarea add <from> <to> <unique_name> true
-schedule on_area_loaded add tickingarea <unique_name> _<build_name>_tickingarea_loaded
-# Player-relative, cardinally selected structure load commands follow here.
-```
+1. In the public function, capture the snapped origin/facing and initialize the current installation generation. Clear this loader's pending callbacks and remove its stale areas.
+2. Schedule the delayed lifecycle callback with `schedule delay add <remove_function> 2 replace` and return. Do not recreate removed names in this call.
+3. In the delayed callback, verify the saved marker/generation, restore its context, create the origin and plot preloads, initialize the stage/readiness counters, and install the watchdog before registering loaded callbacks and issuing loads.
+4. Once every plot area is ready, schedule the settle delay. Tidal Kingdom uses 600 ticks (30 seconds at 20 TPS); this is a measured reference, not a universal guarantee for every build or device.
+5. To advance, snapshot the next action, remove the completed stage's plot areas, record a release/wait state, schedule the lifecycle callback two ticks later, and return. Create the next stage's areas and issue its loads only in that later invocation.
+6. On final success or watchdog/anchor failure, cancel this loader's schedules, remove its areas and marker, clear owner tags and active state, and report the actual outcome. An abort does not roll back placed blocks.
 
-`_<build_name>_tickingarea_loaded.mcfunction` contains:
-
-```mcfunction
-schedule delay add _<build_name>_remove_tickingarea 100 replace
-```
-
-`_<build_name>_remove_tickingarea.mcfunction` contains:
-
-```mcfunction
-tickingarea remove <unique_name>
-```
+Do not copy the old same-call `tickingarea remove <name>` followed by `tickingarea add ... <name> true` pattern. In a Bedrock Dedicated Server 1.26.52.3 negative control, a two-command function doing exactly this reported execution success, but the subsequent area list was empty. The replacement was lost because removal finalized after the function returned. Separate the calls with the two-tick barrier, including the initial recovery from a stale installation.
 
 A world supports at most 10 command-created ticking areas, with at most 100 chunks in each area. Account for worst-case world-chunk alignment when checking a rectangular footprint. A conservative maximum chunk count for a `width` by `depth` block rectangle is `ceil((width + 15) / 16) * ceil((depth + 15) / 16)`. Keep each area as small as possible for performance and count every partition against the world limit. The 302 by 238 Skyline Colossus footprint requires four 151 by 119 quadrants; each can touch at most 11 by 9, or 99, chunks, so the loader temporarily consumes four ticking-area slots. A 460 by 313 footprint, such as Jungle Leviathan's, requires eight 115 by 157-or-156 rectangles; each can touch at most 9 by 11, or 99, chunks, so the loader temporarily consumes eight slots and leaves only two available for other systems.
 
@@ -360,6 +364,24 @@ Official references:
 - Ticking-area command and preload option: https://learn.microsoft.com/en-us/minecraft/creator/commands/commands/tickingarea?view=minecraft-bedrock-stable
 - Area-loaded and delayed scheduling: https://learn.microsoft.com/en-us/minecraft/creator/commands/commands/schedule?view=minecraft-bedrock-stable
 - Simulation distance and ticking-area limits: https://learn.microsoft.com/en-us/minecraft/creator/documents/simulationrenderdistanceguide?view=minecraft-bedrock-stable
+
+### Automatic installer state and saved context
+
+Use Tidal Kingdom's current lifecycle as the reference for deferred startup, automatic staging, and recovery, while retaining exactly one public entry point and two internal callbacks:
+
+- `tools/tidal_kingdom_installer.py` generates all three functions; `tools/test_tidal_kingdom_installer.py` models the emitted commands and failure cases.
+- Save the builder's dimension, centered feet position, cardinal yaw, and installation generation before returning from the public function. Restore them with an explicit chain such as `execute in overworld as <marker> if score @s <objective> = <generation_holder> <objective> at @s rotated as @s run ...`. Restrict an Overworld-only installer to the documented dimension; do not rely on callback spawn coordinates or the player's later position.
+- A vanilla armor stand is a workable persistent marker when supported, tagged/named uniquely, and associated with the current generation. It has gravity. Keep its original ground intact, protect it as appropriate, and use narrowly scoped cleanup selectors. Do not globally kill item drops to hide marker cleanup.
+- Preload the marker's origin independently of the plot stages. Tidal Kingdom uses `tickingarea add circle <origin> 1 <origin_name> true`, conservatively at most nine chunks, and one area slot. Include this slot in peak usage: eight plot areas plus one origin area means nine free slots, not eight. Do not assume the marker remains selectable after its chunk unloads.
+- Keep the active flag, stage, readiness, generation, revision, and next-action counters distinct. Initialize a new stage before registering its callbacks. Count callbacks only in the corresponding loading states; ignore them in startup/release states.
+- Snapshot the next action before changing stage/readiness. Several conditional commands in one function must not cascade through multiple stages in one invocation.
+- Arm a per-stage watchdog before registering readiness callbacks. Advance only after every expected area reports ready and the settle period expires. Missing slots, a missing marker, an old marker generation, or partial readiness must produce failure and cleanup, never a completion message or placement at server origin.
+- Repeated calls while active must report busy without replacing the saved origin or resetting progress. A revised installer must recover stale state from older versions once, then restore the normal busy guard. Clear legacy schedules, tags, and owned area names deliberately.
+- Use plain score-holder literals such as `tki_active`, matching `[A-Za-z_][A-Za-z0-9_]*`. Unquoted hash-prefixed holders such as `#active`, `#ready`, and `#next` caused `Unexpected "#"` parse errors in Bedrock `execute if/unless score`, even where scoreboard string arguments accept such names. Validate every operand, including both sides of comparisons and branches that are not selected at runtime.
+- Initialize revision/default counters before conditions. `scoreboard players add <holder> <objective> 0` creates an absent entry while preserving an existing value. Treat an absent score as uninitialized; do not rely on an `unless score` condition as a substitute for initialization. A simulator must model missing-score behavior explicitly.
+- A simulator must model ticking-area removals as pending until the function returns. It must not immediately free and recreate an area in one invocation. Add regressions for the actual engine failure, not just the intended state diagram.
+
+Keep the one-call workflow when requested. Do not silently fall back to asking the player to run the function twice or invoke an internal callback.
 
 ### Validate structures
 
@@ -392,11 +414,34 @@ Run these checks for every changed or new build, regardless of representation:
 
 If Minecraft is available, test the public function in a disposable Bedrock world while facing each supported cardinal direction. Static analysis does not replace an in-game check for rail shapes, fluid flow, block-state behavior, entity spawning, or structure rotation.
 
+## Real-engine validation and silent-installation diagnostics
+
+A clean content log, successful function registration, or `Successfully executed N function entries` is **not placement verification**. Calling a player-only function from the server console without an executor can execute entries while every `@s` branch does nothing. Likewise, all ticking areas can report ready while every structure request fails its Y bounds.
+
+When a loader is added or changed, especially after a reported empty installation:
+
+1. Inspect the newest client content log and the failing world's actual metadata/state. On this Windows setup, logs are under `%APPDATA%\Minecraft Bedrock\logs\ContentLog*.txt`; installed packs can be under `%APPDATA%\Minecraft Bedrock\Users\Shared\games\com.mojang\behavior_packs`, and worlds under `%APPDATA%\Minecraft Bedrock\Users\<user-id>\games\com.mojang\minecraftWorlds`. Legacy installs may use `%LOCALAPPDATA%\Packages\MICROSOFT.MINECRAFTUWP_8wekyb3d8bbwe\LocalState`. Discover existing paths rather than hard-coding an account ID. Content logs often show parse failures but omit runtime command failures; a quiet log does not clear the installer.
+2. Check the active world pack UUID/version, installed copies, manifest minimum engine version, cheats, `functioncommandlimit`, origin/dimension, marker, score counters, area count, and stage readiness. Multiple imported versions can coexist. Confirm the world actually activates the rebuilt version before blaming generation or rerunning old code.
+3. Reproduce on a disposable world or an isolated copy of the failing world. Keep the user's original world untouched during diagnosis. Test both a fresh install and recovery from the old failed state; a clean high-altitude world misses low-Y and stale-area failures. Do not silently reset unrelated world systems.
+4. Trace uncertain command behavior directly with engine console output or a minimal negative control. In particular, reproduce the original syntax failure, world-height rejection, or same-call area-reuse failure before asserting a root cause. Do not record discarded debugging hypotheses as established engine behavior.
+5. Test the real player entry point when a client is available. For headless validation, a clearly documented test-only entity driver may substitute for the player guard, with the production stage commands/timers/assets retained. Never ship the relaxed guard or audit fixtures. A headless test does not establish interactive player, minecart, fluid, or all-version compatibility.
+6. Verify blocks at known coordinates/materials in **every structure region and every stage**, while those regions are still loaded. Choose samples absent from the untouched world, and perform audits before stage-area removal. A sample in one corner cannot establish an entire staged installation. Report whether checks sample regions or compare every voxel.
+7. Verify automatic advancement, readiness barriers, busy reentry, stale-version recovery, missing-area timeout, missing/old marker failure, and final cleanup. On success require all stages, inactive state, no owned ticking areas, and no remaining marker. Reload the origin for a deletion check so an unloaded marker is not mistaken for a deleted marker. Test movement/turning after startup and each cardinal facing where possible; disclose which checks are simulated versus real-engine checks.
+8. Save a concise report with exact engine/pack versions, production function hashes, harness changes, placement height, stage/sample results, and cleanup evidence. Reports describe the tested bytes and must not be silently reused after behavior changes. Do not claim a fix is ready based only on static tests or entry counts after the user reports continued failure.
+
+Confirmed Tidal Kingdom evidence and regression references:
+
+- `docs/tidal_kingdom/bedrock_syntax_check.json`: v1.0.30 parser validation and the hash-holder negative control; it was not a full installation test.
+- `docs/tidal_kingdom/bedrock_runtime_check.json`: v1.0.31 on Bedrock Dedicated Server 1.26.52.3, feet Y -60, recovery from an active failed run with nine stale areas, both stages, one verified block sample in each of 80 regions, zero remaining areas, and marker removal. The headless run took about 73 seconds; do not promise that duration on every device.
+- `python -m unittest discover -s tools -p test_tidal_kingdom_installer.py -v`: emitted-command regressions, including deferred area removal, Classic Flat placement, initialized defaults, busy recovery, and failure cleanup.
+
+When running Python tools, set `$env:PYTHONDONTWRITEBYTECODE='1'` where appropriate to avoid unrelated tracked `tools/__pycache__` changes. Review diffs and never restore pre-existing user changes merely to make the worktree look clean.
+
 ## Packaging and handoff
 
 Keep `build_ai_minecraft_pack.bat` and `README.md` accurate whenever the pack layout or user workflow changes. Preserve their CRLF endings.
 
-- When preparing changed pack contents for reimport, increment the manifest version and keep `header.version` and `modules[0].version` identical. Preserve the existing UUIDs unless intentionally creating a separate pack identity.
+- When preparing changed pack contents for reimport, increment the manifest version and keep `header.version` and `modules[0].version` identical. Preserve the existing UUIDs unless intentionally creating a separate pack identity. Tell the user to import and activate that exact updated version and close/reopen the world so functions reload; importing an archive alone does not prove the active world has switched versions.
 - Treat `src/` as the package source of truth. Do not hand-edit generated `.mcpack` files. Keep the root `ai-minecraft-builds.mcpack` as the complete debug pack and generate exactly one `packs/<public_function_name>.mcpack` for each numbered public entry point. Discover builds automatically; do not maintain a hard-coded catalog in the packager.
 - Each individual archive must contain exactly one numbered public entry point, its recursively referenced underscore-prefixed functions (including scheduled callbacks and delayed cleanup), and only the namespaced structures those functions load. Keep original function names, structure namespaces, relative archive paths, and source file bytes. Standalone builds do not need a `structures/` directory. Reject missing dependencies, duplicate public numbers, cross-build public-function calls, and unsupported scheduling forms before replacing any output. Update dependency discovery when introducing a new scheduling command form.
 - Generate each individual manifest from `src/manifest.json`, retaining the engine requirement and matching header/module versions. Give each build a descriptive pack name and unique header/module UUIDs, distinct from the debug pack and other builds. `tools/package_builds.ps1` derives UUIDv5 identities from the source UUIDs and permanent build number; keep that derivation stable across rebuilds and renames. Do not generate random identities on each run. See the [official manifest reference](https://learn.microsoft.com/en-us/minecraft/creator/reference/content/addonsreference/packmanifest?view=minecraft-bedrock-stable).

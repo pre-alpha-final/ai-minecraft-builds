@@ -1,0 +1,840 @@
+{
+  "engine": "Bedrock Dedicated Server 1.26.52.3",
+  "pack_version": [
+    1,
+    0,
+    31
+  ],
+  "test_world": "isolated copy of Classic Flat world",
+  "feet_y": -60,
+  "old_failure": "Y -65 structure load rejected outside world; Y -64 succeeds",
+  "placement_y": -64,
+  "stale_install_recovered": true,
+  "installer_revision": 31,
+  "stages_completed": 2,
+  "asset_regions_verified": 80,
+  "stage_sample_counts": [
+    40,
+    40
+  ],
+  "temporary_areas_removed": true,
+  "origin_marker_removed": true,
+  "elapsed_seconds": 72.58,
+  "player_context_tested": false,
+  "headless_harness": "Only the player-type guard is changed to an armor-stand driver in a test entry point. Test-only block audits run before each production cleanup. Production stages, timers, structures and state transitions are otherwise unchanged.",
+  "function_sha256": {
+    "18_theme_park_tidal_kingdom.mcfunction": "debbeef7aa3bacac0af119754ef46aa3ab9af7d16543427349ab3d50e60744ad",
+    "_theme_park_tidal_kingdom_tickingarea_loaded.mcfunction": "7fd0adaf2effdd5e64e22b63f88697c09fd945176acfa0aadd01ca92c56dd045",
+    "_theme_park_tidal_kingdom_remove_tickingarea.mcfunction": "94ece78d32ce52857cfcaa9bdb396d47d3f4703c167ba94f3ac722d05a968c07"
+  },
+  "block_samples": [
+    {
+      "asset": "theme_park_tidal_kingdom_x1_z1",
+      "position": [
+        -319,
+        -61,
+        32
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x2_z1",
+      "position": [
+        -255,
+        -61,
+        32
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x3_z1",
+      "position": [
+        -191,
+        -61,
+        32
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x4_z1",
+      "position": [
+        -127,
+        -61,
+        32
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x5_z1",
+      "position": [
+        -63,
+        -61,
+        32
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x1_z2",
+      "position": [
+        -319,
+        -61,
+        96
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x2_z2",
+      "position": [
+        -255,
+        -61,
+        96
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x3_z2",
+      "position": [
+        -191,
+        -61,
+        96
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x4_z2",
+      "position": [
+        -127,
+        -61,
+        96
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x5_z2",
+      "position": [
+        -63,
+        -61,
+        96
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x1_z3",
+      "position": [
+        -319,
+        -61,
+        160
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x2_z3",
+      "position": [
+        -255,
+        -61,
+        160
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x3_z3",
+      "position": [
+        -191,
+        -61,
+        160
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x4_z3",
+      "position": [
+        -127,
+        -61,
+        160
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x5_z3",
+      "position": [
+        -63,
+        -63,
+        197
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x1_z4",
+      "position": [
+        -319,
+        -61,
+        224
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x2_z4",
+      "position": [
+        -255,
+        -61,
+        235
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x3_z4",
+      "position": [
+        -191,
+        -61,
+        224
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x4_z4",
+      "position": [
+        -127,
+        -63,
+        263
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x5_z4",
+      "position": [
+        -63,
+        -63,
+        224
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x1_z5",
+      "position": [
+        -319,
+        -61,
+        288
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x2_z5",
+      "position": [
+        -255,
+        -61,
+        288
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x3_z5",
+      "position": [
+        -191,
+        -61,
+        288
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x4_z5",
+      "position": [
+        -127,
+        -63,
+        288
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x5_z5",
+      "position": [
+        -63,
+        -63,
+        288
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x1_z6",
+      "position": [
+        -319,
+        -61,
+        352
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x2_z6",
+      "position": [
+        -255,
+        -61,
+        381
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x3_z6",
+      "position": [
+        -191,
+        -61,
+        352
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x4_z6",
+      "position": [
+        -127,
+        -61,
+        357
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x5_z6",
+      "position": [
+        -63,
+        -63,
+        352
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x1_z7",
+      "position": [
+        -319,
+        -61,
+        416
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x2_z7",
+      "position": [
+        -255,
+        -61,
+        416
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x3_z7",
+      "position": [
+        -191,
+        -61,
+        416
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x4_z7",
+      "position": [
+        -127,
+        -61,
+        416
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x5_z7",
+      "position": [
+        -63,
+        -61,
+        416
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x1_z8",
+      "position": [
+        -319,
+        -61,
+        480
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x2_z8",
+      "position": [
+        -255,
+        -61,
+        480
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x3_z8",
+      "position": [
+        -191,
+        -61,
+        480
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x4_z8",
+      "position": [
+        -127,
+        -61,
+        480
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x5_z8",
+      "position": [
+        -63,
+        -61,
+        480
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 1
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x6_z1",
+      "position": [
+        1,
+        -61,
+        32
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x7_z1",
+      "position": [
+        65,
+        -61,
+        32
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x8_z1",
+      "position": [
+        129,
+        -61,
+        32
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x9_z1",
+      "position": [
+        193,
+        -61,
+        32
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x10_z1",
+      "position": [
+        257,
+        -61,
+        32
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x6_z2",
+      "position": [
+        1,
+        -61,
+        96
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x7_z2",
+      "position": [
+        65,
+        -61,
+        96
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x8_z2",
+      "position": [
+        129,
+        -61,
+        96
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x9_z2",
+      "position": [
+        193,
+        -61,
+        96
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x10_z2",
+      "position": [
+        257,
+        -61,
+        96
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x6_z3",
+      "position": [
+        1,
+        -63,
+        186
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x7_z3",
+      "position": [
+        65,
+        -63,
+        198
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x8_z3",
+      "position": [
+        129,
+        -61,
+        160
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x9_z3",
+      "position": [
+        193,
+        -61,
+        160
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x10_z3",
+      "position": [
+        257,
+        -61,
+        160
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x6_z4",
+      "position": [
+        1,
+        -63,
+        224
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x7_z4",
+      "position": [
+        65,
+        -63,
+        224
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x8_z4",
+      "position": [
+        129,
+        -63,
+        279
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x9_z4",
+      "position": [
+        193,
+        -61,
+        224
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x10_z4",
+      "position": [
+        257,
+        -61,
+        224
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x6_z5",
+      "position": [
+        1,
+        -63,
+        288
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x7_z5",
+      "position": [
+        65,
+        -63,
+        288
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x8_z5",
+      "position": [
+        129,
+        -61,
+        288
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x9_z5",
+      "position": [
+        193,
+        -61,
+        288
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x10_z5",
+      "position": [
+        257,
+        -61,
+        348
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x6_z6",
+      "position": [
+        1,
+        -63,
+        352
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x7_z6",
+      "position": [
+        65,
+        -63,
+        352
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x8_z6",
+      "position": [
+        129,
+        -61,
+        356
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x9_z6",
+      "position": [
+        193,
+        -61,
+        352
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x10_z6",
+      "position": [
+        257,
+        -61,
+        352
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x6_z7",
+      "position": [
+        1,
+        -61,
+        416
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x7_z7",
+      "position": [
+        65,
+        -61,
+        416
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x8_z7",
+      "position": [
+        129,
+        -61,
+        416
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x9_z7",
+      "position": [
+        193,
+        -61,
+        416
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x10_z7",
+      "position": [
+        257,
+        -61,
+        416
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x6_z8",
+      "position": [
+        1,
+        -61,
+        480
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x7_z8",
+      "position": [
+        65,
+        -61,
+        480
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x8_z8",
+      "position": [
+        129,
+        -61,
+        480
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x9_z8",
+      "position": [
+        193,
+        -61,
+        480
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    },
+    {
+      "asset": "theme_park_tidal_kingdom_x10_z8",
+      "position": [
+        257,
+        -61,
+        480
+      ],
+      "block": "minecraft:sandstone",
+      "stage": 2
+    }
+  ],
+  "area_release_ticks": 2,
+  "same_call_area_reuse_negative_control": {
+    "commands": [
+      "tickingarea remove tk_reuse_probe",
+      "tickingarea add circle 0 -60 0 1 tk_reuse_probe true"
+    ],
+    "observed_result": "No ticking areas exist in any dimension."
+  }
+}
