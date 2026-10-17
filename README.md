@@ -2,7 +2,7 @@
 
 Large language models can generate Minecraft scripts that act as blueprints for buildings and other structures. Describe what you want, ask an LLM for an `.mcfunction` file, and run that function in Minecraft to place the build block by block.
 
-This repository is a collection of those generated blueprints, along with a packaging script that turns them into an `.mcpack` file Minecraft can import.
+This repository is a collection of those generated blueprints, along with a packaging script that creates individual build packs and a complete debug pack Minecraft can import.
 
 <p align="center">
   <img src="docs/demo1.gif" alt="First looping demo of a generated Minecraft build">
@@ -135,4 +135,11 @@ On Windows, double-click `build_ai_minecraft_pack.bat` or run it from a terminal
 build_ai_minecraft_pack.bat
 ```
 
-The script validates the manifest, functions, and structures directories, removes an older generated archive if present, creates a ZIP archive, and renames it to `ai-minecraft-builds.mcpack` for import into Minecraft.
+The script uses Windows PowerShell to create:
+
+- `packs/<public_function_name>.mcpack`: one pack per build, such as `packs/2_theme_park_ferris_wheel.mcpack`. Import the pack for the build you want. Each contains its public function and any required internal callbacks and structure assets.
+- `ai-minecraft-builds.mcpack` at the repository root: the complete collection, kept for debugging.
+
+Individual packs have distinct, stable pack identities so they can be imported separately. Their versions and minimum Minecraft version come from `src/manifest.json`. Function commands remain the same as in the catalog above.
+
+The packager validates dependencies before replacing output, replaces existing generated packs, and removes obsolete numbered packs from `packs/` after a successful run. Generated archives are ignored by Git. Rebuild and reimport the relevant pack after changing its source.

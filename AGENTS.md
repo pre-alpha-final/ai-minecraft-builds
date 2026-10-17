@@ -14,7 +14,8 @@ This repository collects AI-generated Minecraft Bedrock build blueprints. Most p
 - Most numbered `*_theme_park_*.mcfunction` files are standalone generated builds. They establish the current conventions for section comments, caret-relative placement, large foundations, decorative detail, and optional start/completion messages.
 - `src/structures/ai_minecraft_builds/` is the behavior-pack structure namespace. The folder name and identifiers used by `structure load` must agree.
 - Imported source models are optional working inputs and may not be committed after conversion. Record their filenames and relevant metadata in the generated build header; source assets outside `src/` and media under `docs/` are not included by the packager.
-- `build_ai_minecraft_pack.bat` packages only `src/manifest.json`, `src/functions`, and `src/structures` into the repository-root `ai-minecraft-builds.mcpack`.
+- `build_ai_minecraft_pack.bat` runs `tools/package_builds.ps1` using Windows PowerShell. It packages only `src/manifest.json`, `src/functions`, and `src/structures`: the complete debug pack remains at repository-root `ai-minecraft-builds.mcpack`, and one self-contained pack per public build is written to `packs/<number>_<build_name>.mcpack`.
+- `packs/` is the generated individual-pack output folder. Keep its `.gitkeep`; generated `.mcpack` files and temporary archives are ignored by Git.
 
 Files whose names begin with `_` are internal implementation details, not public entry points. Every public build should have one obvious function name for the player to run.
 
@@ -264,7 +265,7 @@ Load them with the matching identifier:
 
 `structure load <namespace>:<structure_name> ...`
 
-The packaging script must include both `src/functions` and `src/structures`.
+The debug pack must include all functions and structures. Each individual build pack must include its public loader, both internal callbacks, and every referenced namespaced structure asset, preserving their paths.
 
 ### Bedrock mcstructure encoding
 
@@ -396,11 +397,13 @@ If Minecraft is available, test the public function in a disposable Bedrock worl
 Keep `build_ai_minecraft_pack.bat` and `README.md` accurate whenever the pack layout or user workflow changes. Preserve their CRLF endings.
 
 - When preparing changed pack contents for reimport, increment the manifest version and keep `header.version` and `modules[0].version` identical. Preserve the existing UUIDs unless intentionally creating a separate pack identity.
-- Treat `src/` as the package source of truth. Do not hand-edit the generated `.mcpack`.
-- Run the Windows packager or create an equivalent temporary ZIP during validation. Confirm the archive root contains `manifest.json`, `functions/`, and `structures/`, not an extra `src/` directory.
-- When inspecting archive entry names on Windows, normalize `\` to `/` before comparing paths. Windows PowerShell's `Compress-Archive` may store directory separators as backslashes even though other ZIP writers and readers expose forward slashes.
-- Confirm every new public function, internal callback, and namespaced structure asset is present in the archive. Source models and `docs/` media must remain outside it.
-- The packager deletes and recreates `ai-minecraft-builds.zip` and `ai-minecraft-builds.mcpack`; do not run it if overwriting a user's uncommitted generated archive would be surprising.
+- Treat `src/` as the package source of truth. Do not hand-edit generated `.mcpack` files. Keep the root `ai-minecraft-builds.mcpack` as the complete debug pack and generate exactly one `packs/<public_function_name>.mcpack` for each numbered public entry point. Discover builds automatically; do not maintain a hard-coded catalog in the packager.
+- Each individual archive must contain exactly one numbered public entry point, its recursively referenced underscore-prefixed functions (including scheduled callbacks and delayed cleanup), and only the namespaced structures those functions load. Keep original function names, structure namespaces, relative archive paths, and source file bytes. Standalone builds do not need a `structures/` directory. Reject missing dependencies, duplicate public numbers, cross-build public-function calls, and unsupported scheduling forms before replacing any output. Update dependency discovery when introducing a new scheduling command form.
+- Generate each individual manifest from `src/manifest.json`, retaining the engine requirement and matching header/module versions. Give each build a descriptive pack name and unique header/module UUIDs, distinct from the debug pack and other builds. `tools/package_builds.ps1` derives UUIDv5 identities from the source UUIDs and permanent build number; keep that derivation stable across rebuilds and renames. Do not generate random identities on each run. See the [official manifest reference](https://learn.microsoft.com/en-us/minecraft/creator/reference/content/addonsreference/packmanifest?view=minecraft-bedrock-stable).
+- Run the Windows packager during validation. Inspect the full debug archive and every individual build archive: `manifest.json` and `functions/` must be at the root, with `structures/` when required and no extra `src/` directory. Confirm dependency completeness, exactly one public entry point in each individual pack, unique stable UUIDs, and version parity.
+- When inspecting archive entry names on Windows, normalize `\` to `/` before comparing paths. The packager writes forward-slash paths.
+- Confirm every new public function, internal callback, and namespaced structure asset is present in both the full debug archive and its individual build archive. Source models, tools, and `docs/` media must remain outside them.
+- The packager replaces generated `.mcpack` files only after each new archive closes successfully and removes obsolete numbered archives from `packs/` after all current packs succeed. This folder is reserved for generated build packs. Preserve unrelated files; do not run the packager if overwriting a user's uncommitted generated archive would be surprising.
 
 Tell the user:
 
@@ -409,5 +412,6 @@ Tell the user:
 - Build dimensions, placement origin, required clearance, and forward offset when applicable.
 - Block and command counts.
 - Whether the implementation is a normal function or structure-backed loader.
-- That they must rebuild and reimport the `.mcpack` after changing any packaged function, structure, or manifest content.
+- The individual pack path under `packs/`; the root pack is the complete debug alternative.
+- That they must rebuild and reimport the relevant `.mcpack` after changing any packaged function, structure, or manifest content.
 - That large builds should be tested in a disposable world or after making a backup.

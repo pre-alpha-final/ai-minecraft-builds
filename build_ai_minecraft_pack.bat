@@ -1,65 +1,32 @@
 @echo off
 setlocal
 
-set "ROOT=%~dp0"
-set "MANIFEST=%ROOT%src\manifest.json"
-set "FUNCTIONS=%ROOT%src\functions"
-set "STRUCTURES=%ROOT%src\structures"
-set "ZIPFILE=%ROOT%ai-minecraft-builds.zip"
-set "PACKFILE=%ROOT%ai-minecraft-builds.mcpack"
+set "PACKAGER=%~dp0tools\package_builds.ps1"
 
 echo.
 echo === AI Minecraft Builds Packager ===
 echo.
 
-if not exist "%MANIFEST%" (
-    echo ERROR: manifest.json was not found in the src folder.
-    echo Expected: "%MANIFEST%"
+if not exist "%PACKAGER%" (
+    echo ERROR: PowerShell packager was not found.
+    echo Expected: "%PACKAGER%"
     pause
     exit /b 1
 )
 
-if not exist "%FUNCTIONS%\" (
-    echo ERROR: functions folder was not found in the src folder.
-    echo Expected: "%FUNCTIONS%"
-    pause
-    exit /b 1
-)
-
-if not exist "%STRUCTURES%\" (
-    echo ERROR: structures folder was not found in the src folder.
-    echo Expected: "%STRUCTURES%"
-    pause
-    exit /b 1
-)
-
-if exist "%ZIPFILE%" del /f /q "%ZIPFILE%"
-if exist "%PACKFILE%" del /f /q "%PACKFILE%"
-
-echo Packaging manifest.json, functions, and structures folders...
-
-powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-  "$ErrorActionPreference='Stop'; Add-Type -AssemblyName System.IO.Compression.FileSystem; [System.IO.Compression.ZipFile]::CreateFromDirectory('%ROOT%src','%ZIPFILE%',[System.IO.Compression.CompressionLevel]::Optimal,$false)"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%PACKAGER%"
 
 if errorlevel 1 (
     echo.
-    echo ERROR: Failed to create ZIP archive.
-    pause
-    exit /b 1
-)
-
-ren "%ZIPFILE%" "ai-minecraft-builds.mcpack"
-
-if not exist "%PACKFILE%" (
-    echo.
-    echo ERROR: Archive was created but could not be renamed.
+    echo ERROR: Failed to package builds. See the error above.
     pause
     exit /b 1
 )
 
 echo.
-echo SUCCESS:
-echo "%PACKFILE%"
+echo SUCCESS: Full debug pack and individual build packs are ready.
+echo Debug pack: "%~dp0ai-minecraft-builds.mcpack"
+echo Build packs: "%~dp0packs"
 echo.
 pause
 endlocal
