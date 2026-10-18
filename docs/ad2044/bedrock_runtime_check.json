@@ -1,0 +1,143 @@
+{
+  "engine": "Bedrock Dedicated Server 1.26.52.3",
+  "pack_version": [
+    1,
+    0,
+    32
+  ],
+  "production_function_sha256": {
+    "19_ad2044": "a1d8e8a9d40b01547841ad21977536b8b42829a37d8d15fd1ceaa6ce5d202fc6",
+    "_ad2044_tickingarea_loaded": "55db6b82263f7dd39c3fb94b5b9b10ccc08be164e7addc9ea6b0138a2294dd43",
+    "_ad2044_remove_tickingarea": "706c9e368f8b4ff77a452a3bf3b1e0040eb5b115eb7864b5d131a3b93be1e0e7"
+  },
+  "harness": "Only player type checks replaced by armor_stand in a separate test entry point; production callbacks, assets, timers and placement samples retained. Separate baseline fixture verifies samples were originally air.",
+  "interactive_player_tested": false,
+  "comparison": "60 samples, three in each of 20 assets; not every engine voxel",
+  "cardinal_installations": [
+    {
+      "yaw": 0,
+      "origin": [
+        4096.5,
+        -60,
+        4096.5
+      ],
+      "absolute_bounds_y": [
+        -59,
+        300
+      ],
+      "baseline_air_samples": 60,
+      "verified_samples": 60,
+      "asset_regions": 20,
+      "stale_owned_areas_recovered": true,
+      "busy_reentry_preserved_generation": true,
+      "driver_moved_and_turned": true,
+      "elapsed_seconds": 35.31,
+      "areas_removed": true,
+      "marker_removed_with_origin_loaded": true,
+      "inactive": true
+    },
+    {
+      "yaw": 90,
+      "origin": [
+        5120.5,
+        -60,
+        4096.5
+      ],
+      "absolute_bounds_y": [
+        -59,
+        300
+      ],
+      "baseline_air_samples": 60,
+      "verified_samples": 60,
+      "asset_regions": 20,
+      "stale_owned_areas_recovered": false,
+      "busy_reentry_preserved_generation": true,
+      "driver_moved_and_turned": true,
+      "elapsed_seconds": 33.54,
+      "areas_removed": true,
+      "marker_removed_with_origin_loaded": true,
+      "inactive": true
+    },
+    {
+      "yaw": 180,
+      "origin": [
+        6144.5,
+        -60,
+        4096.5
+      ],
+      "absolute_bounds_y": [
+        -59,
+        300
+      ],
+      "baseline_air_samples": 60,
+      "verified_samples": 60,
+      "asset_regions": 20,
+      "stale_owned_areas_recovered": false,
+      "busy_reentry_preserved_generation": true,
+      "driver_moved_and_turned": true,
+      "elapsed_seconds": 33.75,
+      "areas_removed": true,
+      "marker_removed_with_origin_loaded": true,
+      "inactive": true
+    },
+    {
+      "yaw": -90,
+      "origin": [
+        7168.5,
+        -60,
+        4096.5
+      ],
+      "absolute_bounds_y": [
+        -59,
+        300
+      ],
+      "baseline_air_samples": 60,
+      "verified_samples": 60,
+      "asset_regions": 20,
+      "stale_owned_areas_recovered": false,
+      "busy_reentry_preserved_generation": true,
+      "driver_moved_and_turned": true,
+      "elapsed_seconds": 33.65,
+      "areas_removed": true,
+      "marker_removed_with_origin_loaded": true,
+      "inactive": true
+    }
+  ],
+  "generation_mismatch_abort": {
+    "areas_removed": true,
+    "marker_removed_with_origin_loaded": true,
+    "inactive": true
+  },
+  "insufficient_area_abort": {
+    "areas_removed": true,
+    "marker_removed_with_origin_loaded": true,
+    "inactive": true
+  },
+  "unrelated_areas_preserved": true,
+  "unsupported_height_rejected": true,
+  "failure_watchdog": "Production dispatcher invoked explicitly after partial readiness or marker-generation mismatch; full 3600-tick timeout not elapsed.",
+  "disposable_runtime": "C:\\Users\\User\\AppData\\Local\\Temp\\ad2044-bedrock-uudl4lg3",
+  "structure_sha256": {
+    "ad2044_x1_y1_z1": "b30a1a3ce20f22665f828ddfc143fd2d99d37202280aea56ebab60d1f75d6192",
+    "ad2044_x1_y1_z2": "6e285b79ed0b7a594cd5e019c7ec6424a8a9ad9684bed8f4dcda083eed0a8e72",
+    "ad2044_x1_y2_z1": "15aa07e03099e705899eee0afe506cbd42da068d866cf86092b71e7e5952f2ef",
+    "ad2044_x1_y2_z2": "8062f443e519bc02b5b1e3ad75cd97b42c7ca9bf8fee6e7b6205d52c37f38a10",
+    "ad2044_x2_y1_z1": "d6a8a8eeb5d904622680261ba2fd413df8fdf7dc9b1c0d47602bf27b1bfd11bb",
+    "ad2044_x2_y1_z2": "66471f58b61698504959ad4e8c3445d570f303ed6c6931b3ba2c501cbef84c74",
+    "ad2044_x2_y2_z1": "f02bb53a0ded689ccc7987c3ed8ab0fc8a4f29905b53c3f6dbbcaa1f652468df",
+    "ad2044_x2_y2_z2": "6e1f480d799beda0789cff8a05af991fe692d817e0d8eb50d0c6d076909a1f65",
+    "ad2044_x3_y1_z1": "732b7af1eae379aa02850ed291f6ae073ae48700bd3a0ef43509c50ed23b2b92",
+    "ad2044_x3_y1_z2": "c433b6d1fceffa3e90cbfe7d081e04e689baff9dc703406df2bc7dee9c74c69e",
+    "ad2044_x3_y2_z1": "2c48ac6cb9f1fc05cda0ffc8623feb806d919e51c8c0e71b74d0c917484b1f99",
+    "ad2044_x3_y2_z2": "fe926702d415902b0bb0db7df5d3529097338fbb8f515d3361f5a0c67d5fcb79",
+    "ad2044_x4_y1_z1": "061e482bdb64a76f19bb8ddbe10a5bdbff412e9cdb929e97d1ca43dc63151f6c",
+    "ad2044_x4_y1_z2": "379c5faf11be0159d2454c8916bea5421f97ac52874138a8d0c22cb81e92c61f",
+    "ad2044_x4_y2_z1": "83ac12108cb34d9870de397d6f6af8cc96bcf09ba9ad7ea7ca7dbba989dfb7eb",
+    "ad2044_x4_y2_z2": "51676d6a7fc4435e7de31c30bab99424f0724e271b4abda33c132c4acf05bd26",
+    "ad2044_x5_y1_z1": "5c08207730e472445e3489adf524ddca5a9f6522e8363e00d34681a890896bb5",
+    "ad2044_x5_y1_z2": "efab513bad90563ca5ad397597cb3c0dfd3d0df8fa4d032e13ce72daefb53051",
+    "ad2044_x5_y2_z1": "2679d67c918086e08861e18e6d5c8eb5aacbf6d39d4240b97f8f49547d988db3",
+    "ad2044_x5_y2_z2": "5e4e0de4055af1ccde579b7731b77f91e79f86893aa6138ab5485c3e6bdf01ea"
+  },
+  "tested_pack_sha256": "f5dc2bde03faadfd58175b8ffa2d317187ab3d186cdbf2eb60047c13d4133a41"
+}

@@ -1,0 +1,496 @@
+{
+  "source": "https://raw.githubusercontent.com/Mojang/bedrock-samples/v1.21.50.7/",
+  "method": "Nearest Euclidean CIELAB (D65, sRGB), no dithering; mean official block texture RGB",
+  "entries": [
+    {
+      "block": "minecraft:black_concrete",
+      "rgb": [
+        8.4023,
+        10.4023,
+        15.4023
+      ],
+      "texture": "concrete_black.png",
+      "texture_sha256": "0a8c4040c07df8e28a9365120bf1450fbd618a190875af2f4e045fb5c513f7bd"
+    },
+    {
+      "block": "minecraft:black_terracotta",
+      "rgb": [
+        37.2188,
+        22.8281,
+        16.3867
+      ],
+      "texture": "hardened_clay_stained_black.png",
+      "texture_sha256": "5770830a5ebaef22cbcb154eb223ca8574b32dc8be778e5c2265885e5cf3680e"
+    },
+    {
+      "block": "minecraft:black_wool",
+      "rgb": [
+        20.6016,
+        21.2969,
+        25.6328
+      ],
+      "texture": "wool_colored_black.png",
+      "texture_sha256": "f6647d98a9df07e496535f1d69145908b40227345e7453437a64c7118bef385c"
+    },
+    {
+      "block": "minecraft:blue_concrete",
+      "rgb": [
+        44.5391,
+        46.5391,
+        143.4219
+      ],
+      "texture": "concrete_blue.png",
+      "texture_sha256": "dff3ff6a9068ed9fb782042c17d600361ff47d919745ce765addd00f5e9b9e75"
+    },
+    {
+      "block": "minecraft:blue_terracotta",
+      "rgb": [
+        74.293,
+        59.6836,
+        91.1094
+      ],
+      "texture": "hardened_clay_stained_blue.png",
+      "texture_sha256": "5e509b197761f7702ec3b9af14ede9381bac63c88ce09c0a41b9fe80bd759202"
+    },
+    {
+      "block": "minecraft:blue_wool",
+      "rgb": [
+        53.0547,
+        57.2539,
+        157.4922
+      ],
+      "texture": "wool_colored_blue.png",
+      "texture_sha256": "3f0fbf12559e6bd81ea36c23e37911802a5b6d7b83c8005f20e25cfea14748da"
+    },
+    {
+      "block": "minecraft:brown_concrete",
+      "rgb": [
+        96.4492,
+        59.5469,
+        31.5977
+      ],
+      "texture": "concrete_brown.png",
+      "texture_sha256": "ac3a0880402c00ee6bb43b92ca062135de8cf29e602c98a057649ab0933f6757"
+    },
+    {
+      "block": "minecraft:brown_terracotta",
+      "rgb": [
+        77.2344,
+        51.1797,
+        35.7031
+      ],
+      "texture": "hardened_clay_stained_brown.png",
+      "texture_sha256": "26f2f8bd78e8fdce0c1353484848e4465072b3808d433f909660be34e47a87ea"
+    },
+    {
+      "block": "minecraft:brown_wool",
+      "rgb": [
+        114.2344,
+        71.6094,
+        40.5859
+      ],
+      "texture": "wool_colored_brown.png",
+      "texture_sha256": "4c02c20464c049b3dbe6b237ffdedb759c3a07dbf34b81b42c7030a7dc20738f"
+    },
+    {
+      "block": "minecraft:cyan_concrete",
+      "rgb": [
+        21.4453,
+        119.2188,
+        136.1875
+      ],
+      "texture": "concrete_cyan.png",
+      "texture_sha256": "2c0f83198904d707a83143f35c9e9eca4f0ec5d4489af8e8d061584a08c4df9e"
+    },
+    {
+      "block": "minecraft:cyan_terracotta",
+      "rgb": [
+        86.7148,
+        91.0117,
+        91.0039
+      ],
+      "texture": "hardened_clay_stained_cyan.png",
+      "texture_sha256": "0a5b6294554ab6152626f48aa9ac35d0a6239302f3e8f5199f90c103393df7d2"
+    },
+    {
+      "block": "minecraft:cyan_wool",
+      "rgb": [
+        21.2461,
+        137.7266,
+        145.3516
+      ],
+      "texture": "wool_colored_cyan.png",
+      "texture_sha256": "56ba84450bc8850faf9c8150e92eb45f3ed3dc2f3adebe053002bc77fe355832"
+    },
+    {
+      "block": "minecraft:gray_concrete",
+      "rgb": [
+        54.6172,
+        57.6172,
+        61.6172
+      ],
+      "texture": "concrete_gray.png",
+      "texture_sha256": "1764b8dd6dd17a9678d74d82e2d9bd3b59b85890b637942f44ccce7ce559b72f"
+    },
+    {
+      "block": "minecraft:gray_terracotta",
+      "rgb": [
+        57.7852,
+        42.4141,
+        35.5625
+      ],
+      "texture": "hardened_clay_stained_gray.png",
+      "texture_sha256": "4723295d1e642aa3968b76b32bb2bac9cd8a3e7f0ef2b7ca644428274349dea4"
+    },
+    {
+      "block": "minecraft:gray_wool",
+      "rgb": [
+        62.7461,
+        68.2344,
+        71.5547
+      ],
+      "texture": "wool_colored_gray.png",
+      "texture_sha256": "6b0525b6aae40735b1a54c68aee84cf2cd1aa578d2e9d41c7d3b72d310a62803"
+    },
+    {
+      "block": "minecraft:green_concrete",
+      "rgb": [
+        73.4062,
+        91.3398,
+        36.4922
+      ],
+      "texture": "concrete_green.png",
+      "texture_sha256": "9626f5419ea91fce53218cbe3596ad909b24e4e880f6454d0b64d7ac7edfacdb"
+    },
+    {
+      "block": "minecraft:green_terracotta",
+      "rgb": [
+        76.0078,
+        83.2891,
+        42.3359
+      ],
+      "texture": "hardened_clay_stained_green.png",
+      "texture_sha256": "4c07c3d298385a973499dc81914134b5bbe144515745cfb6bb20547370e352f8"
+    },
+    {
+      "block": "minecraft:green_wool",
+      "rgb": [
+        84.832,
+        109.5352,
+        27.5039
+      ],
+      "texture": "wool_colored_green.png",
+      "texture_sha256": "f44a0971f54b46e43c30aab572b1089af0c4d31ff59439d0dcc609c8f1150c49"
+    },
+    {
+      "block": "minecraft:hardened_clay",
+      "rgb": [
+        152.1328,
+        94.0156,
+        67.7188
+      ],
+      "texture": "hardened_clay.png",
+      "texture_sha256": "ba19cc57732682301101616ca5a2a0eeda87ab6c9303c3990a13e293ba4f173c"
+    },
+    {
+      "block": "minecraft:light_blue_concrete",
+      "rgb": [
+        35.5977,
+        137.0391,
+        198.9141
+      ],
+      "texture": "concrete_light_blue.png",
+      "texture_sha256": "3f26c5ee694098f168e62f0003ea2dc30d5fee9a1e24c770f8da9d2167fcbae6"
+    },
+    {
+      "block": "minecraft:light_blue_terracotta",
+      "rgb": [
+        113.4844,
+        108.5312,
+        137.9922
+      ],
+      "texture": "hardened_clay_stained_light_blue.png",
+      "texture_sha256": "7df167ab00d7b6bcabc9c541adbdf44251c7a6357de6f76868e9a0cd51bd8fc1"
+    },
+    {
+      "block": "minecraft:light_blue_wool",
+      "rgb": [
+        58.0703,
+        175.0469,
+        217.3164
+      ],
+      "texture": "wool_colored_light_blue.png",
+      "texture_sha256": "51df4a77def4ee889061492868ac0bb3d11524093c309f81f328b915b7ea21a1"
+    },
+    {
+      "block": "minecraft:light_gray_concrete",
+      "rgb": [
+        125.0312,
+        125.0312,
+        115.0312
+      ],
+      "texture": "concrete_silver.png",
+      "texture_sha256": "ed66852c6241bedc840cf6d547c114b713561a31e5be9046109009358648dd43"
+    },
+    {
+      "block": "minecraft:light_gray_terracotta",
+      "rgb": [
+        135.2539,
+        106.8828,
+        97.5
+      ],
+      "texture": "hardened_clay_stained_silver.png",
+      "texture_sha256": "4ccead61e24768e6db02094af6819e4ff25a805f5166bf562851746f36f97da8"
+    },
+    {
+      "block": "minecraft:light_gray_wool",
+      "rgb": [
+        142.0312,
+        142.1641,
+        134.6016
+      ],
+      "texture": "wool_colored_silver.png",
+      "texture_sha256": "3959d83f351e2ed6829b681988f5fc238e04b67746b7369a809e03785883fb55"
+    },
+    {
+      "block": "minecraft:lime_concrete",
+      "rgb": [
+        94.0898,
+        168.8047,
+        24.5
+      ],
+      "texture": "concrete_lime.png",
+      "texture_sha256": "8547b66bfcb5ffbc4a786f745978fb26eb1fd9356a4d154cee800051b1215ab0"
+    },
+    {
+      "block": "minecraft:lime_terracotta",
+      "rgb": [
+        103.5352,
+        117.6758,
+        52.7969
+      ],
+      "texture": "hardened_clay_stained_lime.png",
+      "texture_sha256": "7ccdb3a80e1b103e09c331dcbe58ea9fbc080e12216325ec806cf0abcae5cf83"
+    },
+    {
+      "block": "minecraft:lime_wool",
+      "rgb": [
+        112.2109,
+        185.1953,
+        25.7969
+      ],
+      "texture": "wool_colored_lime.png",
+      "texture_sha256": "75a690fded8fc910580f0417c02499e4276ca35e964207f2944c48d82e2d62f5"
+    },
+    {
+      "block": "minecraft:magenta_concrete",
+      "rgb": [
+        169.207,
+        48.4766,
+        159.2109
+      ],
+      "texture": "concrete_magenta.png",
+      "texture_sha256": "b231af815f7729b6ba9354f4590bfecec60578a65f8dbc43ea52f60d2954ef11"
+    },
+    {
+      "block": "minecraft:magenta_terracotta",
+      "rgb": [
+        149.668,
+        88.1016,
+        108.6797
+      ],
+      "texture": "hardened_clay_stained_magenta.png",
+      "texture_sha256": "cabb48ea5f7d2437fac94ac61b46cef8d35ba44cb2f87252972b39caec25c6ba"
+    },
+    {
+      "block": "minecraft:magenta_wool",
+      "rgb": [
+        189.543,
+        68.7656,
+        179.918
+      ],
+      "texture": "wool_colored_magenta.png",
+      "texture_sha256": "b9d716e870fa12916acf150eb5de7b98abcdbb4396e15897d08b6a9a54efaf5a"
+    },
+    {
+      "block": "minecraft:orange_concrete",
+      "rgb": [
+        224.3438,
+        97.1367,
+        0.6328
+      ],
+      "texture": "concrete_orange.png",
+      "texture_sha256": "0646c68794108102fbca9b820b0746c8f0aea6a5add7c59485d48803b5f7e166"
+    },
+    {
+      "block": "minecraft:orange_terracotta",
+      "rgb": [
+        161.5977,
+        83.8711,
+        37.6719
+      ],
+      "texture": "hardened_clay_stained_orange.png",
+      "texture_sha256": "2d7b05e4e4c61a276fe2dfb8e9278e64b165bd479d0f558893abe225690e5ce4"
+    },
+    {
+      "block": "minecraft:orange_wool",
+      "rgb": [
+        240.6523,
+        118.0781,
+        19.5117
+      ],
+      "texture": "wool_colored_orange.png",
+      "texture_sha256": "eedeb6c6bab9408a4e3061148ad621e49a1dff3c86b7602340eb6421a53c2914"
+    },
+    {
+      "block": "minecraft:pink_concrete",
+      "rgb": [
+        213.5,
+        101.0117,
+        142.8672
+      ],
+      "texture": "concrete_pink.png",
+      "texture_sha256": "d19a8b81799e7e9481053a6022e7d7ef9dbb93d92d762a95609899279c26e623"
+    },
+    {
+      "block": "minecraft:pink_terracotta",
+      "rgb": [
+        161.9258,
+        78.2773,
+        78.668
+      ],
+      "texture": "hardened_clay_stained_pink.png",
+      "texture_sha256": "3c5d2cb4071aaea6730f6c43e46048deacd10ea630f668a869bfee36e561c263"
+    },
+    {
+      "block": "minecraft:pink_wool",
+      "rgb": [
+        237.9141,
+        141.3789,
+        172.3516
+      ],
+      "texture": "wool_colored_pink.png",
+      "texture_sha256": "1fcff6a37f96c15e52d2a9899ed2dcb63d971bc6118fac1bdd97f1e65d3a5164"
+    },
+    {
+      "block": "minecraft:purple_concrete",
+      "rgb": [
+        100.4141,
+        31.6211,
+        156.3828
+      ],
+      "texture": "concrete_purple.png",
+      "texture_sha256": "230453fc027165bba8c86d8ae02aa1342f95f28a503436504c5a41aa1e53ac83"
+    },
+    {
+      "block": "minecraft:purple_terracotta",
+      "rgb": [
+        118.4453,
+        70.2695,
+        86.0898
+      ],
+      "texture": "hardened_clay_stained_purple.png",
+      "texture_sha256": "85ddafeea4c1e40941870b0562d05bc4794deebe5dcb92266f0ed815211ef867"
+    },
+    {
+      "block": "minecraft:purple_wool",
+      "rgb": [
+        121.875,
+        42.2109,
+        172.5078
+      ],
+      "texture": "wool_colored_purple.png",
+      "texture_sha256": "3afa856f3440967df8c6ad85030df293a34ee8852ee9c3518f92ca3626ba757a"
+    },
+    {
+      "block": "minecraft:red_concrete",
+      "rgb": [
+        142.3828,
+        32.8125,
+        32.8125
+      ],
+      "texture": "concrete_red.png",
+      "texture_sha256": "3965d127cf7e67aafc926c6a0c516e3777417c7e0d33a09895104d9a60ca682d"
+    },
+    {
+      "block": "minecraft:red_terracotta",
+      "rgb": [
+        143.1094,
+        61.0195,
+        46.9062
+      ],
+      "texture": "hardened_clay_stained_red.png",
+      "texture_sha256": "b7ca1d112e1e363ad310cea8141689fd1d3dd21bc7900079297e2ec3d0fbf5b0"
+    },
+    {
+      "block": "minecraft:red_wool",
+      "rgb": [
+        160.9688,
+        39.3203,
+        34.6406
+      ],
+      "texture": "wool_colored_red.png",
+      "texture_sha256": "651250e52e328022ee219eabf1ebfc1c05c057ab5e10ad6fdc611368dd790a04"
+    },
+    {
+      "block": "minecraft:white_concrete",
+      "rgb": [
+        207.1094,
+        213.0781,
+        214.0742
+      ],
+      "texture": "concrete_white.png",
+      "texture_sha256": "6ad27d2fa69de165de0aca11f7906d4b3ff25aed635c16a81d4971ce3a93fe73"
+    },
+    {
+      "block": "minecraft:white_terracotta",
+      "rgb": [
+        209.6367,
+        178.0352,
+        161.3477
+      ],
+      "texture": "hardened_clay_stained_white.png",
+      "texture_sha256": "b7e3aa0c87222b33baa1ceabcf4d396f0faffbc361bfc05f9d6c4a29407e3df2"
+    },
+    {
+      "block": "minecraft:white_wool",
+      "rgb": [
+        233.5898,
+        236.2969,
+        236.7734
+      ],
+      "texture": "wool_colored_white.png",
+      "texture_sha256": "c240f74136d8859fb3a2d37bd2786b33c8fcedc27f57db1d2cf228da0e921ea1"
+    },
+    {
+      "block": "minecraft:yellow_concrete",
+      "rgb": [
+        240.9883,
+        175.4102,
+        21.4492
+      ],
+      "texture": "concrete_yellow.png",
+      "texture_sha256": "df7631f475df4f768dc0a95bcc89a58e20fb826f58ea502a5c9cec6c9384b524"
+    },
+    {
+      "block": "minecraft:yellow_terracotta",
+      "rgb": [
+        186.2695,
+        133.1406,
+        35.3633
+      ],
+      "texture": "hardened_clay_stained_yellow.png",
+      "texture_sha256": "9a58331a3f4f0cc1f0d886510a11c62649b4ac20019e45a23b5ebf443c09e316"
+    },
+    {
+      "block": "minecraft:yellow_wool",
+      "rgb": [
+        248.7812,
+        197.9609,
+        39.6328
+      ],
+      "texture": "wool_colored_yellow.png",
+      "texture_sha256": "42f1bbb50b0ae718c39c807e7f36980cae2b6c891b018acf31cf322882586c2e"
+    }
+  ]
+}

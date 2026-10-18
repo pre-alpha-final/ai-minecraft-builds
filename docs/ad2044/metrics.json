@@ -1,0 +1,1089 @@
+{
+  "source": "ad2044.glb",
+  "sha256": "930938be5e72610bb3f1c24151aaa6dd7ea2a05dab31d000e1d1406099159c37",
+  "format": "glTF 2.0 GLB, little-endian",
+  "bytes": 8514256,
+  "vertices": 10062,
+  "triangles": 19136,
+  "primitive_modes": [
+    "TRIANGLES"
+  ],
+  "scene": {
+    "name": "A.D. 2044",
+    "nodes": [
+      0
+    ]
+  },
+  "nodes": [
+    {
+      "extras": {
+        "referenceDimensionsMm": {
+          "width": 212,
+          "height": 260,
+          "depth": 61
+        },
+        "dimensionReference": "https://bigboxgames.pl/bigbox/a-d-2044-pl-big-box/",
+        "damageDepthIsApproximate": true
+      },
+      "mesh": 0,
+      "name": "A.D. 2044 - worn Polish big box"
+    }
+  ],
+  "materials": {
+    "minecraft:black_concrete": 73,
+    "minecraft:black_terracotta": 1337,
+    "minecraft:black_wool": 1768,
+    "minecraft:blue_terracotta": 4603,
+    "minecraft:brown_concrete": 2469,
+    "minecraft:brown_terracotta": 12565,
+    "minecraft:brown_wool": 1629,
+    "minecraft:cyan_concrete": 18108,
+    "minecraft:cyan_terracotta": 16559,
+    "minecraft:cyan_wool": 11007,
+    "minecraft:gray_concrete": 13121,
+    "minecraft:gray_terracotta": 14909,
+    "minecraft:gray_wool": 20303,
+    "minecraft:green_concrete": 61,
+    "minecraft:green_terracotta": 1068,
+    "minecraft:green_wool": 1,
+    "minecraft:hardened_clay": 2433,
+    "minecraft:light_blue_concrete": 8249,
+    "minecraft:light_blue_terracotta": 3234,
+    "minecraft:light_blue_wool": 17827,
+    "minecraft:light_gray_concrete": 7402,
+    "minecraft:light_gray_terracotta": 10458,
+    "minecraft:light_gray_wool": 18731,
+    "minecraft:lime_terracotta": 806,
+    "minecraft:lime_wool": 2,
+    "minecraft:magenta_terracotta": 1697,
+    "minecraft:orange_terracotta": 32,
+    "minecraft:pink_concrete": 437,
+    "minecraft:pink_terracotta": 6905,
+    "minecraft:pink_wool": 1250,
+    "minecraft:purple_terracotta": 3421,
+    "minecraft:red_concrete": 814,
+    "minecraft:red_terracotta": 2485,
+    "minecraft:red_wool": 7838,
+    "minecraft:white_concrete": 82115,
+    "minecraft:white_terracotta": 14410,
+    "minecraft:white_wool": 11385,
+    "minecraft:yellow_terracotta": 5,
+    "minecraft:yellow_wool": 2
+  },
+  "texture_dimensions": [
+    4096,
+    4096
+  ],
+  "excluded_geometry": [],
+  "transforms_applied": true,
+  "source_bounds": [
+    [
+      -0.1062999963760376,
+      -0.12999999523162842,
+      -0.03099999949336052
+    ],
+    [
+      0.1062999963760376,
+      0.12999999523162842,
+      0.031300000846385956
+    ]
+  ],
+  "uniform_scale": 1380.7692814155462,
+  "axis_mapping": "caret left=-model X, up=model Y, forward=-model Z; front is +model Z",
+  "surface_sampling": "Barycentric triangle sampling, at least three samples per longest-edge block; nearest-surface sample wins, stable index ties",
+  "sample_count": 8245130,
+  "bounds": [
+    [
+      -147,
+      1,
+      32
+    ],
+    [
+      147,
+      360,
+      118
+    ]
+  ],
+  "dimensions": {
+    "width": 295,
+    "height": 360,
+    "depth": 87
+  },
+  "non_air_blocks": 321519,
+  "air_cells": 0,
+  "interior": "Unfilled, omitted cells use -1; no exterior air clearing",
+  "exact_run_command_counts": {
+    "x": 134069,
+    "y": 142702,
+    "z": 228289
+  },
+  "exact_cuboid_command_counts": {
+    "xyz": 70823,
+    "xzy": 70674,
+    "yxz": 71965,
+    "yzx": 72071,
+    "zxy": 70889,
+    "zyx": 72008
+  },
+  "assets": [
+    {
+      "name": "ad2044_x1_y1_z1",
+      "low": [
+        -147,
+        1,
+        32
+      ],
+      "high": [
+        -84,
+        257,
+        95
+      ],
+      "size": [
+        64,
+        257,
+        64
+      ],
+      "blocks": 36255,
+      "bytes": 8423579,
+      "samples": [
+        {
+          "position": [
+            -147,
+            45,
+            75
+          ],
+          "block": "minecraft:brown_terracotta"
+        },
+        {
+          "position": [
+            -146,
+            33,
+            83
+          ],
+          "block": "minecraft:blue_terracotta"
+        },
+        {
+          "position": [
+            -121,
+            187,
+            33
+          ],
+          "block": "minecraft:light_blue_wool"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x1_y1_z2",
+      "low": [
+        -147,
+        1,
+        96
+      ],
+      "high": [
+        -84,
+        257,
+        118
+      ],
+      "size": [
+        64,
+        257,
+        23
+      ],
+      "blocks": 23311,
+      "bytes": 3028628,
+      "samples": [
+        {
+          "position": [
+            -147,
+            50,
+            96
+          ],
+          "block": "minecraft:black_terracotta"
+        },
+        {
+          "position": [
+            -139,
+            255,
+            117
+          ],
+          "block": "minecraft:gray_wool"
+        },
+        {
+          "position": [
+            -111,
+            34,
+            117
+          ],
+          "block": "minecraft:purple_terracotta"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x1_y2_z1",
+      "low": [
+        -147,
+        258,
+        32
+      ],
+      "high": [
+        -84,
+        360,
+        95
+      ],
+      "size": [
+        64,
+        103,
+        64
+      ],
+      "blocks": 16825,
+      "bytes": 3377074,
+      "samples": [
+        {
+          "position": [
+            -147,
+            258,
+            43
+          ],
+          "block": "minecraft:gray_concrete"
+        },
+        {
+          "position": [
+            -146,
+            345,
+            64
+          ],
+          "block": "minecraft:white_terracotta"
+        },
+        {
+          "position": [
+            -117,
+            274,
+            33
+          ],
+          "block": "minecraft:gray_wool"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x1_y2_z2",
+      "low": [
+        -147,
+        258,
+        96
+      ],
+      "high": [
+        -84,
+        360,
+        118
+      ],
+      "size": [
+        64,
+        103,
+        23
+      ],
+      "blocks": 10087,
+      "bytes": 1214963,
+      "samples": [
+        {
+          "position": [
+            -147,
+            258,
+            96
+          ],
+          "block": "minecraft:gray_concrete"
+        },
+        {
+          "position": [
+            -137,
+            310,
+            117
+          ],
+          "block": "minecraft:cyan_terracotta"
+        },
+        {
+          "position": [
+            -110,
+            285,
+            118
+          ],
+          "block": "minecraft:cyan_terracotta"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x2_y1_z1",
+      "low": [
+        -83,
+        1,
+        32
+      ],
+      "high": [
+        -20,
+        257,
+        95
+      ],
+      "size": [
+        64,
+        257,
+        64
+      ],
+      "blocks": 20492,
+      "bytes": 8423291,
+      "samples": [
+        {
+          "position": [
+            -83,
+            1,
+            33
+          ],
+          "block": "minecraft:brown_terracotta"
+        },
+        {
+          "position": [
+            -62,
+            37,
+            33
+          ],
+          "block": "minecraft:brown_terracotta"
+        },
+        {
+          "position": [
+            -41,
+            144,
+            32
+          ],
+          "block": "minecraft:cyan_wool"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x2_y1_z2",
+      "low": [
+        -83,
+        1,
+        96
+      ],
+      "high": [
+        -20,
+        257,
+        118
+      ],
+      "size": [
+        64,
+        257,
+        23
+      ],
+      "blocks": 17850,
+      "bytes": 3028747,
+      "samples": [
+        {
+          "position": [
+            -83,
+            1,
+            96
+          ],
+          "block": "minecraft:white_concrete"
+        },
+        {
+          "position": [
+            -62,
+            70,
+            118
+          ],
+          "block": "minecraft:light_gray_concrete"
+        },
+        {
+          "position": [
+            -41,
+            165,
+            118
+          ],
+          "block": "minecraft:light_blue_wool"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x2_y2_z1",
+      "low": [
+        -83,
+        258,
+        32
+      ],
+      "high": [
+        -20,
+        360,
+        95
+      ],
+      "size": [
+        64,
+        103,
+        64
+      ],
+      "blocks": 10637,
+      "bytes": 3376831,
+      "samples": [
+        {
+          "position": [
+            -83,
+            258,
+            32
+          ],
+          "block": "minecraft:gray_concrete"
+        },
+        {
+          "position": [
+            -62,
+            304,
+            33
+          ],
+          "block": "minecraft:white_concrete"
+        },
+        {
+          "position": [
+            -41,
+            360,
+            33
+          ],
+          "block": "minecraft:white_concrete"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x2_y2_z2",
+      "low": [
+        -83,
+        258,
+        96
+      ],
+      "high": [
+        -20,
+        360,
+        118
+      ],
+      "size": [
+        64,
+        103,
+        23
+      ],
+      "blocks": 7997,
+      "bytes": 1214142,
+      "samples": [
+        {
+          "position": [
+            -83,
+            258,
+            118
+          ],
+          "block": "minecraft:light_gray_terracotta"
+        },
+        {
+          "position": [
+            -62,
+            296,
+            118
+          ],
+          "block": "minecraft:gray_wool"
+        },
+        {
+          "position": [
+            -41,
+            337,
+            117
+          ],
+          "block": "minecraft:gray_wool"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x3_y1_z1",
+      "low": [
+        -19,
+        1,
+        32
+      ],
+      "high": [
+        44,
+        257,
+        95
+      ],
+      "size": [
+        64,
+        257,
+        64
+      ],
+      "blocks": 20475,
+      "bytes": 8423227,
+      "samples": [
+        {
+          "position": [
+            -19,
+            1,
+            33
+          ],
+          "block": "minecraft:brown_terracotta"
+        },
+        {
+          "position": [
+            2,
+            46,
+            33
+          ],
+          "block": "minecraft:gray_terracotta"
+        },
+        {
+          "position": [
+            23,
+            153,
+            32
+          ],
+          "block": "minecraft:white_terracotta"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x3_y1_z2",
+      "low": [
+        -19,
+        1,
+        96
+      ],
+      "high": [
+        44,
+        257,
+        118
+      ],
+      "size": [
+        64,
+        257,
+        23
+      ],
+      "blocks": 17827,
+      "bytes": 3028676,
+      "samples": [
+        {
+          "position": [
+            -19,
+            1,
+            96
+          ],
+          "block": "minecraft:white_concrete"
+        },
+        {
+          "position": [
+            2,
+            77,
+            118
+          ],
+          "block": "minecraft:light_gray_wool"
+        },
+        {
+          "position": [
+            23,
+            170,
+            118
+          ],
+          "block": "minecraft:light_gray_terracotta"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x3_y2_z1",
+      "low": [
+        -19,
+        258,
+        32
+      ],
+      "high": [
+        44,
+        360,
+        95
+      ],
+      "size": [
+        64,
+        103,
+        64
+      ],
+      "blocks": 10618,
+      "bytes": 3376888,
+      "samples": [
+        {
+          "position": [
+            -19,
+            258,
+            32
+          ],
+          "block": "minecraft:gray_terracotta"
+        },
+        {
+          "position": [
+            2,
+            312,
+            33
+          ],
+          "block": "minecraft:white_concrete"
+        },
+        {
+          "position": [
+            23,
+            360,
+            41
+          ],
+          "block": "minecraft:white_concrete"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x3_y2_z2",
+      "low": [
+        -19,
+        258,
+        96
+      ],
+      "high": [
+        44,
+        360,
+        118
+      ],
+      "size": [
+        64,
+        103,
+        23
+      ],
+      "blocks": 7972,
+      "bytes": 1214311,
+      "samples": [
+        {
+          "position": [
+            -19,
+            258,
+            118
+          ],
+          "block": "minecraft:cyan_terracotta"
+        },
+        {
+          "position": [
+            2,
+            304,
+            118
+          ],
+          "block": "minecraft:gray_wool"
+        },
+        {
+          "position": [
+            23,
+            346,
+            117
+          ],
+          "block": "minecraft:white_terracotta"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x4_y1_z1",
+      "low": [
+        45,
+        1,
+        32
+      ],
+      "high": [
+        108,
+        257,
+        95
+      ],
+      "size": [
+        64,
+        257,
+        64
+      ],
+      "blocks": 20611,
+      "bytes": 8423396,
+      "samples": [
+        {
+          "position": [
+            45,
+            1,
+            33
+          ],
+          "block": "minecraft:red_wool"
+        },
+        {
+          "position": [
+            66,
+            85,
+            32
+          ],
+          "block": "minecraft:light_gray_wool"
+        },
+        {
+          "position": [
+            87,
+            211,
+            32
+          ],
+          "block": "minecraft:white_terracotta"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x4_y1_z2",
+      "low": [
+        45,
+        1,
+        96
+      ],
+      "high": [
+        108,
+        257,
+        118
+      ],
+      "size": [
+        64,
+        257,
+        23
+      ],
+      "blocks": 17890,
+      "bytes": 3028513,
+      "samples": [
+        {
+          "position": [
+            45,
+            1,
+            96
+          ],
+          "block": "minecraft:white_concrete"
+        },
+        {
+          "position": [
+            66,
+            84,
+            118
+          ],
+          "block": "minecraft:cyan_terracotta"
+        },
+        {
+          "position": [
+            87,
+            187,
+            118
+          ],
+          "block": "minecraft:light_blue_wool"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x4_y2_z1",
+      "low": [
+        45,
+        258,
+        32
+      ],
+      "high": [
+        108,
+        360,
+        95
+      ],
+      "size": [
+        64,
+        103,
+        64
+      ],
+      "blocks": 10612,
+      "bytes": 3376840,
+      "samples": [
+        {
+          "position": [
+            45,
+            258,
+            32
+          ],
+          "block": "minecraft:gray_terracotta"
+        },
+        {
+          "position": [
+            66,
+            305,
+            33
+          ],
+          "block": "minecraft:white_concrete"
+        },
+        {
+          "position": [
+            87,
+            350,
+            33
+          ],
+          "block": "minecraft:gray_wool"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x4_y2_z2",
+      "low": [
+        45,
+        258,
+        96
+      ],
+      "high": [
+        108,
+        360,
+        118
+      ],
+      "size": [
+        64,
+        103,
+        23
+      ],
+      "blocks": 8012,
+      "bytes": 1214144,
+      "samples": [
+        {
+          "position": [
+            45,
+            258,
+            118
+          ],
+          "block": "minecraft:cyan_terracotta"
+        },
+        {
+          "position": [
+            66,
+            306,
+            118
+          ],
+          "block": "minecraft:white_concrete"
+        },
+        {
+          "position": [
+            87,
+            349,
+            117
+          ],
+          "block": "minecraft:cyan_terracotta"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x5_y1_z1",
+      "low": [
+        109,
+        1,
+        32
+      ],
+      "high": [
+        147,
+        257,
+        95
+      ],
+      "size": [
+        39,
+        257,
+        64
+      ],
+      "blocks": 28187,
+      "bytes": 5133856,
+      "samples": [
+        {
+          "position": [
+            109,
+            1,
+            34
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "position": [
+            138,
+            14,
+            34
+          ],
+          "block": "minecraft:brown_terracotta"
+        },
+        {
+          "position": [
+            147,
+            84,
+            76
+          ],
+          "block": "minecraft:light_gray_wool"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x5_y1_z2",
+      "low": [
+        109,
+        1,
+        96
+      ],
+      "high": [
+        147,
+        257,
+        118
+      ],
+      "size": [
+        39,
+        257,
+        23
+      ],
+      "blocks": 16207,
+      "bytes": 1846431,
+      "samples": [
+        {
+          "position": [
+            109,
+            1,
+            96
+          ],
+          "block": "minecraft:white_concrete"
+        },
+        {
+          "position": [
+            127,
+            196,
+            118
+          ],
+          "block": "minecraft:light_blue_wool"
+        },
+        {
+          "position": [
+            145,
+            210,
+            117
+          ],
+          "block": "minecraft:light_blue_wool"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x5_y2_z1",
+      "low": [
+        109,
+        258,
+        32
+      ],
+      "high": [
+        147,
+        360,
+        95
+      ],
+      "size": [
+        39,
+        103,
+        64
+      ],
+      "blocks": 12700,
+      "bytes": 2058619,
+      "samples": [
+        {
+          "position": [
+            109,
+            258,
+            33
+          ],
+          "block": "minecraft:gray_terracotta"
+        },
+        {
+          "position": [
+            134,
+            360,
+            35
+          ],
+          "block": "minecraft:white_terracotta"
+        },
+        {
+          "position": [
+            146,
+            343,
+            80
+          ],
+          "block": "minecraft:white_wool"
+        }
+      ]
+    },
+    {
+      "name": "ad2044_x5_y2_z2",
+      "low": [
+        109,
+        258,
+        96
+      ],
+      "high": [
+        147,
+        360,
+        118
+      ],
+      "size": [
+        39,
+        103,
+        23
+      ],
+      "blocks": 6954,
+      "bytes": 740756,
+      "samples": [
+        {
+          "position": [
+            109,
+            258,
+            118
+          ],
+          "block": "minecraft:white_concrete"
+        },
+        {
+          "position": [
+            127,
+            276,
+            117
+          ],
+          "block": "minecraft:cyan_terracotta"
+        },
+        {
+          "position": [
+            145,
+            353,
+            117
+          ],
+          "block": "minecraft:white_concrete"
+        }
+      ]
+    }
+  ],
+  "public_commands": 39,
+  "callback_commands": 198,
+  "lifecycle_commands": 237,
+  "structure_count": 20,
+  "free_ticking_area_slots": 3,
+  "plot_area_maximum_chunks": 77,
+  "origin_area_maximum_chunks": 9,
+  "settle_ticks": 600,
+  "timeout_ticks": 3600,
+  "release_ticks": 2,
+  "supported_feet_y": [
+    -63,
+    -42
+  ],
+  "asset_legal_feet_y": [
+    -65,
+    -41
+  ],
+  "classic_flat_absolute_bounds_y": [
+    -59,
+    300
+  ],
+  "placement_audit_samples": 60,
+  "function_sha256": {
+    "19_ad2044": "a1d8e8a9d40b01547841ad21977536b8b42829a37d8d15fd1ceaa6ce5d202fc6",
+    "_ad2044_tickingarea_loaded": "55db6b82263f7dd39c3fb94b5b9b10ccc08be164e7addc9ea6b0138a2294dd43",
+    "_ad2044_remove_tickingarea": "706c9e368f8b4ff77a452a3bf3b1e0040eb5b115eb7864b5d131a3b93be1e0e7"
+  },
+  "validated": {
+    "nbt_roundtrip_every_voxel": true,
+    "cardinal_material_maps": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "full_asset_y_bounds": true,
+    "surface_only": true
+  }
+}

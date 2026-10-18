@@ -27,7 +27,7 @@ Files whose names begin with `_` are internal implementation details, not public
 
 - Every public build has exactly one entry point named `<number>_<lowercase_snake_case_name>.mcfunction`, such as `2_theme_park_ferris_wheel.mcfunction`.
 - Assign positive integers starting at 1, without zero padding, in build creation order. Each number belongs to only one public build, so `/function 1_` matches exactly one entry point.
-- Keep assigned numbers stable when editing or renaming a build. Never reuse a retired number or renumber existing builds after a deletion. Use the next never-assigned number for a new build; the current catalog ends at 18 (Tidal Kingdom), so the next build is 19. Check the current filenames and the retained branch history. An abandoned, unmerged experiment does not reserve a public number merely because it exists on another ref; distinguish it from a build actually assigned and later retired in the retained catalog. Confirm ancestry and user intent before treating an unrelated branch as authoritative.
+- Keep assigned numbers stable when editing or renaming a build. Never reuse a retired number or renumber existing builds after a deletion. Use the next never-assigned number for a new build; the current catalog ends at 19 (A.D. 2044), so the next build is 20. Check the current filenames and the retained branch history. An abandoned, unmerged experiment does not reserve a public number merely because it exists on another ref; distinguish it from a build actually assigned and later retired in the retained catalog. Confirm ancestry and user intent before treating an unrelated branch as authoritative.
 - For the initial migration, creation order follows Git history, including the former `functions/` directory. Builds first recorded in the same commit are ordered alphabetically by their unnumbered public filename. The numbered catalog is listed in `README.md`.
 - Keep internal callbacks underscore-prefixed (`_<build_name>_tickingarea_loaded` and `_<build_name>_remove_tickingarea`). Never add a public alias or another function beginning with the same `<number>_` prefix. Structure identifiers and ticking-area names do not need the public number.
 - Generators must retain the assigned public name separately from asset/callback base names. Update generator outputs, validation paths, headers, metrics, and documented `/function` commands whenever an entry point is renamed.
@@ -161,6 +161,8 @@ Useful format notes:
 - Binary `.stl`, `.glb`, `.drc`, and `.usdz`: use a format-aware decoder rather than treating the payload as text.
 
 ### 2. Choose orientation, scale, and placement
+
+Unless the user specifies otherwise, assume imported 3D models will be placed in a new flat world in Minecraft Bedrock Edition and aim for a model height of about 360 blocks. Scale all axes uniformly to preserve proportions, and validate the complete placement bounds from flat-world ground level against the world-height limits below.
 
 Map the model into a Minecraft coordinate system deliberately:
 

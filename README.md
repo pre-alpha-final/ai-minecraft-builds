@@ -24,7 +24,7 @@ Minecraft function files are plain-text lists of commands. An LLM can translate 
 
 Public build functions use `<number>_<name>`, with one unique number per build. Type `/function 1_` to narrow suggestions to the first build, or use any other number below. Internal `_` callbacks are scheduled automatically.
 
-Numbers follow creation order in Git history, including the original `functions/` directory; builds first recorded in the same commit are ordered alphabetically. Existing numbers stay fixed. The retained branch history assigns builds 1 through 17; Tidal Kingdom is build 18, and the next new build will be 19.
+Numbers follow creation order in Git history, including the original `functions/` directory; builds first recorded in the same commit are ordered alphabetically. Existing numbers stay fixed. The retained branch history assigns builds 1 through 17; Tidal Kingdom is build 18, A.D. 2044 is build 19, and the next new build will be 20.
 
 | Number | Command |
 | --- | --- |
@@ -46,6 +46,7 @@ Numbers follow creation order in Git history, including the original `functions/
 | 16 | `/function 16_theme_park_themed_haunted_house` |
 | 17 | `/function 17_theme_park_haunted_house_roller_coaster` |
 | 18 | `/function 18_theme_park_tidal_kingdom` |
+| 19 | `/function 19_ad2044` |
 
 After updating an existing installation, rebuild and reimport the pack to get these numbered commands.
 
@@ -133,9 +134,21 @@ Stand at ground level at the front-center observation point, **32 blocks before 
 
 The park places **1,208,281 non-air blocks** and 2,560,217 explicit air cells through **80 structures**, a **41-command public loader** and 494 callback commands. Its single 1,632-rail Tidebreaker circuit has 14 curves, six major climbs, four major drops and an 85-block largest drop. Follow the paths to its rear-left station, board beside `^194 ^9 ^406`, and push toward positive local left. Geometry, walking access, all cardinal placements, NBT and pinned Bedrock block states have been checked. The automatic installer passed a headless Bedrock test on Classic Flat ground; **interactive ride playtesting remains outstanding**. Rebuild and reimport after source changes. See the [installation instructions, attraction plan, route, metrics and regeneration guide](docs/tidal_kingdom/README.md).
 
+## A.D. 2044: imported game box
+
+A **295 wide x 87 deep x 360 high** static sculpture converted from `glb/ad2044.glb`. The photographed front, back, side lettering, worn edges and damaged cardboard are mapped to 39 vanilla block colors. Its 321,519 surface blocks surround an unfilled interior.
+
+<p align="center">
+  <img src="docs/ad2044/overview.png" alt="Generated Minecraft block preview of the A.D. 2044 game box, showing its front artwork and printed side">
+</p>
+
+Import and activate **`packs/19_ad2044.mcpack` version 1.0.32**, close/reopen the world, then run `/function 19_ad2044` once. Stand at ground level in the Overworld, facing a cardinal direction with a horizontal view, with feet at **Y -63 through -42**. Classic Flat ground at Y -60 works. The front-center observation origin is **32 blocks before the nearest surface**. Reserve `^-147 ^1 ^32` through `^147 ^360 ^118`; the lowest surface is one block above your feet. Back up first or use a disposable world.
+
+Twenty sparse native structures are placed by a **39-command public loader and 198 callback commands**. Keep **three ticking-area slots free** and leave the saved origin/ground intact until completion. You may move after starting. Both plot areas must report loaded, followed by a 600-tick settle period and 60 block checks covering every asset. Temporary areas and the marker are removed automatically. A headless Bedrock 1.26.52.3 test at feet Y -60 verified all four facings, sample blocks in all 20 assets, busy reentry, failure cleanup and stale-area recovery; interactive player testing remains outstanding. The preview shows generated blocks. See the [placement, conversion details and validation report](docs/ad2044/README.md). Rebuild and reimport after changing packaged sources.
+
 ## Placement and compatibility details
 
-- Pack version 1.0.31 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
+- Pack version 1.0.32 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
 - Public build functions automatically move the player to the center of their current block, level the view, and snap the yaw to the closest cardinal direction before placing anything. Stand on the ground block that should be the documented origin and face broadly toward the intended north, south, east, or west build direction before running a function.
 - The snap removes fractional-position, yaw, and pitch drift that can skew large caret-relative builds. Exact diagonal ties resolve consistently to one of the two neighboring cardinal directions.
 - Run public functions as a player. Internal functions whose names begin with `_` are scheduled callbacks and must not be invoked manually.
