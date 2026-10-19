@@ -24,7 +24,7 @@ Minecraft function files are plain-text lists of commands. An LLM can translate 
 
 Public build functions use `<number>_<name>`, with one unique number per build. Type `/function 1_` to narrow suggestions to the first build, or use any other number below. Internal `_` callbacks are scheduled automatically.
 
-Numbers follow creation order in Git history, including the original `functions/` directory; builds first recorded in the same commit are ordered alphabetically. Existing numbers stay fixed. The retained branch history assigns builds 1 through 17; Tidal Kingdom is build 18, A.D. 2044 is build 19, and the next new build will be 20.
+Numbers follow creation order in Git history, including the original `functions/` directory; builds first recorded in the same commit are ordered alphabetically. Existing numbers stay fixed. The retained branch history assigns builds 1 through 17; Tidal Kingdom is build 18, A.D. 2044 is build 19, pink plush bird is build 20, and the next new build will be 21.
 
 | Number | Command |
 | --- | --- |
@@ -47,6 +47,7 @@ Numbers follow creation order in Git history, including the original `functions/
 | 17 | `/function 17_theme_park_haunted_house_roller_coaster` |
 | 18 | `/function 18_theme_park_tidal_kingdom` |
 | 19 | `/function 19_ad2044` |
+| 20 | `/function 20_pink_plush_bird` |
 
 After updating an existing installation, rebuild and reimport the pack to get these numbered commands.
 
@@ -146,9 +147,21 @@ Import and activate **`packs/19_ad2044.mcpack` version 1.0.32**, close/reopen th
 
 Twenty sparse native structures are placed by a **39-command public loader and 198 callback commands**. Keep **three ticking-area slots free** and leave the saved origin/ground intact until completion. You may move after starting. Both plot areas must report loaded, followed by a 600-tick settle period and 60 block checks covering every asset. Temporary areas and the marker are removed automatically. A headless Bedrock 1.26.52.3 test at feet Y -60 verified all four facings, sample blocks in all 20 assets, busy reentry, failure cleanup and stale-area recovery; interactive player testing remains outstanding. The preview shows generated blocks. See the [placement, conversion details and validation report](docs/ad2044/README.md). Rebuild and reimport after changing packaged sources.
 
+## Pink plush bird
+
+Plush sculpture from `glb/pink_plush_bird.glb`: rounded white fleece, a pink face, purple eye rims, bright eye catchlights and hidden fill lighting beneath the head and around the body. Its proportions, wings, tail, webbed feet and care label follow the source model. The build contains **371,768 visible blocks and 18,806 invisible lights**; it places no explicit air blocks.
+
+<p align="center">
+  <img src="docs/pink_plush_bird/overview.png" alt="Generated Minecraft block preview of the plush bird, with a pink face, white fleece and bright eye highlights">
+</p>
+
+Import and activate **`packs/20_pink_plush_bird.mcpack` pack version 1.0.35**, close/reopen the world, then run `/function 20_pink_plush_bird` once. Stand at ground level in the Overworld, facing a cardinal direction with a horizontal view, at feet **Y -63 through -42**; Classic Flat Y -60 works. The front-center observation point is **32 blocks before the nearest block**. Reserve a clear **250 x 178 x 359-block** site, from `^-124 ^2 ^32` through `^125 ^360 ^209`. Back up first or use a disposable world.
+
+The loader uses **24 structures, 40 public commands and 235 callback commands**, with **four free ticking-area slots** required. Leave the saved origin/ground intact until cleanup. It waits for all areas, settles for 600 ticks and checks 72 placed block samples. See the [placement bounds, conversion details, projections, exact metrics and runtime validation](docs/pink_plush_bird/README.md). Rebuild and reimport after packaged source changes.
+
 ## Placement and compatibility details
 
-- Pack version 1.0.32 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
+- Pack version 1.0.35 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
 - Public build functions automatically move the player to the center of their current block, level the view, and snap the yaw to the closest cardinal direction before placing anything. Stand on the ground block that should be the documented origin and face broadly toward the intended north, south, east, or west build direction before running a function.
 - The snap removes fractional-position, yaw, and pitch drift that can skew large caret-relative builds. Exact diagonal ties resolve consistently to one of the two neighboring cardinal directions.
 - Run public functions as a player. Internal functions whose names begin with `_` are scheduled callbacks and must not be invoked manually.
