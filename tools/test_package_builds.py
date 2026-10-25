@@ -25,6 +25,8 @@ class PackageBuildsTests(unittest.TestCase):
         self.functions.mkdir(parents=True)
         self.structures.mkdir(parents=True)
         self.source_manifest = json.loads((REPOSITORY / "src/manifest.json").read_bytes())
+        self.source_manifest["modules"] = [module for module in self.source_manifest["modules"] if module["type"] != "script"]
+        self.source_manifest.pop("dependencies", None)
         self.manifest_path = self.root / "src/manifest.json"
         self.manifest_path.write_text(json.dumps(self.source_manifest), encoding="utf-8")
         sources = {
@@ -177,6 +179,82 @@ class PackageBuildsTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("SUCCESS", result.stdout)
         self.assertTrue((self.root / "packs/2_large.mcpack").is_file())
+
+    def add_script_utility(self):
+        scripts = self.root / "src/scripts"
+        scripts.mkdir()
+        (scripts / "test.js").write_text('import "./input.js";\n', encoding="utf-8")
+        (scripts / "input.js").write_text("export const value = 1;\n", encoding="utf-8")
+        (scripts / "unused.js").write_text("// Debug only\n", encoding="utf-8")
+        manifest = json.loads(self.manifest_path.read_bytes())
+        manifest["modules"].append({
+            "type": "script", "language": "javascript", "entry": "scripts/test.js",
+            "uuid": str(uuid.uuid4()), "version": manifest["header"]["version"],
+        })
+        manifest["dependencies"] = [{"module_name": "@minecraft/server", "version": "1.16.0"}]
+        self.manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+        dependencies = {"fixture:clear": {
+            "entry": "scripts/test.js", "files": ["scripts/test.js", "scripts/input.js"],
+            "functions": ["_sign_start"],
+        }}
+        (self.root / "src/script_dependencies.json").write_text(json.dumps(dependencies), encoding="utf-8")
+        (self.functions / "0_clear_sides_forward_up.mcfunction").write_text(
+            "execute as @s at @s run scriptevent fixture:clear read_sign\n", encoding="utf-8")
+        (self.functions / "_sign_start.mcfunction").write_text("function _details\n", encoding="utf-8")
+        return manifest
+
+    def test_script_dependencies_are_isolated_and_zero_preserves_legacy_identity(self):
+        legacy = self.functions / "21_clear_area.mcfunction"
+        legacy.write_text("say legacy utility\n", encoding="utf-8")
+        self.run_packager()
+        old_manifest = self.pack_manifest("21_clear_area")
+        legacy.unlink()
+        source = self.add_script_utility()
+        self.run_packager()
+        self.assertFalse((self.root / "packs/21_clear_area.mcpack").exists())
+        utility = self.pack_manifest("0_clear_sides_forward_up")
+        self.assertEqual(utility["header"]["uuid"], old_manifest["header"]["uuid"])
+        self.assertEqual(utility["modules"][0]["uuid"], old_manifest["modules"][0]["uuid"])
+        self.assertEqual(len(utility["modules"]), 2)
+        self.assertEqual(utility["dependencies"], source["dependencies"])
+        with zipfile.ZipFile(self.root / "packs/0_clear_sides_forward_up.mcpack") as archive:
+            self.assertEqual(set(archive.namelist()), {
+                "manifest.json", "functions/0_clear_sides_forward_up.mcfunction", "functions/_sign_start.mcfunction",
+                "functions/_details.mcfunction", "structures/test/detail.mcstructure", "scripts/test.js", "scripts/input.js",
+            })
+        small = self.pack_manifest("1_small")
+        self.assertEqual(len(small["modules"]), 1)
+        self.assertNotIn("dependencies", small)
+        with zipfile.ZipFile(self.root / "packs/1_small.mcpack") as archive:
+            self.assertFalse(any(name.startswith("scripts/") for name in archive.namelist()))
+        with zipfile.ZipFile(self.root / "ai-minecraft-builds.mcpack") as archive:
+            self.assertIn("scripts/unused.js", archive.namelist())
+            self.assertNotIn("script_dependencies.json", archive.namelist())
+
+    def test_script_dependency_errors_preserve_previous_archives(self):
+        self.add_script_utility()
+        self.run_packager()
+        before = self.output_snapshot()
+        script = self.root / "src/scripts/input.js"
+        data = script.read_bytes()
+        script.unlink()
+        self.run_packager("references missing script")
+        self.assertEqual(self.output_snapshot(), before)
+        script.write_bytes(data)
+        unknown = self.functions / "3_unknown.mcfunction"
+        unknown.write_text("scriptevent missing:event read_sign\n", encoding="utf-8")
+        self.run_packager("Unknown script event dependency")
+        self.assertEqual(self.output_snapshot(), before)
+        unknown.unlink()
+        for name in ("0_other", "00_clear_sides_forward_up"):
+            path = self.functions / f"{name}.mcfunction"
+            path.write_text("say invalid\n", encoding="utf-8")
+            self.run_packager("Invalid public build filename")
+            self.assertEqual(self.output_snapshot(), before)
+            path.unlink()
+        (self.functions / "21_reused.mcfunction").write_text("say retired\n", encoding="utf-8")
+        self.run_packager("Duplicate permanent build identity")
+        self.assertEqual(self.output_snapshot(), before)
 
 
 if __name__ == "__main__":

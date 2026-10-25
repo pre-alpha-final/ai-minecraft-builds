@@ -69,6 +69,33 @@ function Get-BuildFiles([string]$EntryPoint) {
                 }
                 $pending.Push($functionReference)
             }
+            if ($command -match '^scriptevent\s+(\S+)') {
+                $eventId = $Matches[1]
+                $property = $scriptDependencies.PSObject.Properties[$eventId]
+                if (-not $property) { throw "Unknown script event dependency in '$functionId': $eventId" }
+                $dependency = $property.Value
+                $scriptModules = @($manifest.modules | Where-Object {
+                    $_.type -eq 'script' -and $_.entry -ceq $dependency.entry
+                })
+                if ($scriptModules.Count -ne 1) { throw "Script event '$eventId' needs one manifest module for '$($dependency.entry)'." }
+                foreach ($scriptFile in @($dependency.files)) {
+                    if ($scriptFile -cnotmatch '^scripts/(?:[a-z0-9_]+/)*[a-z0-9_]+\.js$') {
+                        throw "Invalid script dependency path: $scriptFile"
+                    }
+                    $scriptPath = Join-Path $sourcePath $scriptFile
+                    if (-not (Test-Path -LiteralPath $scriptPath -PathType Leaf)) {
+                        throw "Build '$EntryPoint' references missing script '$scriptFile'."
+                    }
+                    $files[$scriptFile] = $scriptPath
+                }
+                if (-not $files.ContainsKey($dependency.entry)) { throw "Script entry '$($dependency.entry)' is missing from its file dependencies." }
+                foreach ($callback in @($dependency.functions)) {
+                    if ($callback -cnotmatch '^(?:[a-z0-9_]+/)*_[a-z0-9_]+$') {
+                        throw "Script event '$eventId' must reference only underscore-prefixed internal functions: $callback"
+                    }
+                    $pending.Push($callback)
+                }
+            }
             if ($command -match '^structure\s+load\s+(\S+)') {
                 $structureId = $Matches[1]
                 if ($structureId -notmatch '^([a-z0-9_]+):([a-z0-9_]+(?:/[a-z0-9_]+)*)$') {
@@ -143,12 +170,20 @@ try {
         }
     }
 
-    $publicNamePattern = '^(?<number>[1-9][0-9]*)_[a-z][a-z0-9]*(?:_[a-z0-9]+)*$'
+    $scriptDependencies = [pscustomobject]@{}
+    $dependencyPath = Join-Path $sourcePath 'script_dependencies.json'
+    if (Test-Path -LiteralPath $dependencyPath -PathType Leaf) {
+        $scriptDependencies = ConvertFrom-Json ([System.IO.File]::ReadAllText($dependencyPath))
+    }
+
+    # Zero is reserved for the user-named clearing utility. Build numbers stay positive.
+    $publicNamePattern = '^(?:(?<number>0)_clear_sides_forward_up|(?<number>[1-9][0-9]*)_[a-z][a-z0-9]*(?:_[a-z0-9]+)*)$'
     $publicFunctions = @(Get-ChildItem -LiteralPath $functionsPath -File -Filter '*.mcfunction' |
         Where-Object { -not $_.BaseName.StartsWith('_') })
     if ($publicFunctions.Count -eq 0) { throw 'No public build functions found.' }
     $numbers = [System.Collections.Generic.HashSet[string]]::new()
     $plans = @()
+    $identityNumbers = [System.Collections.Generic.HashSet[string]]::new()
     # Resolve every dependency before replacing any existing output.
     foreach ($publicFunction in $publicFunctions) {
         if ($publicFunction.BaseName -cnotmatch $publicNamePattern) {
@@ -156,13 +191,25 @@ try {
         }
         $number = $Matches['number']
         if (-not $numbers.Add($number)) { throw "Duplicate public build number: $number" }
+        # Keep the already-shipped utility's pack identity when renaming 21 to 0.
+        $identityNumber = if ($number -eq '0') { '21' } else { $number }
+        if (-not $identityNumbers.Add($identityNumber)) { throw "Duplicate permanent build identity: $identityNumber" }
         $files = Get-BuildFiles $publicFunction.BaseName
         $buildManifest = ConvertFrom-Json $manifestJson
+        $buildManifest.modules = @($buildManifest.modules | Where-Object {
+            $_.type -ne 'script' -or $files.ContainsKey($_.entry)
+        })
+        if (-not @($buildManifest.modules | Where-Object { $_.type -eq 'script' }).Count -and
+            $buildManifest.PSObject.Properties['dependencies']) {
+            $remainingDependencies = @($buildManifest.dependencies | Where-Object { -not $_.PSObject.Properties['module_name'] })
+            if ($remainingDependencies.Count) { $buildManifest.dependencies = $remainingDependencies }
+            else { $buildManifest.PSObject.Properties.Remove('dependencies') }
+        }
         $buildManifest.header.name = "$($manifest.header.name) - $($publicFunction.BaseName)"
         $buildManifest.header.description = "Run /function $($publicFunction.BaseName)"
-        $buildManifest.header.uuid = Get-BuildUuid $manifest.header.uuid $number
+        $buildManifest.header.uuid = Get-BuildUuid $manifest.header.uuid $identityNumber
         foreach ($module in $buildManifest.modules) {
-            $module.uuid = Get-BuildUuid $module.uuid $number
+            $module.uuid = Get-BuildUuid $module.uuid $identityNumber
         }
         $plans += [pscustomobject]@{
             Name = $publicFunction.BaseName
@@ -175,7 +222,10 @@ try {
     $outputPath = Join-Path $Root 'packs'
     $null = [System.IO.Directory]::CreateDirectory($outputPath)
     $debugFiles = @{'manifest.json' = $manifestPath}
-    foreach ($directory in @($functionsPath, $structuresPath)) {
+    $debugDirectories = @($functionsPath, $structuresPath)
+    $scriptsPath = Join-Path $sourcePath 'scripts'
+    if (Test-Path -LiteralPath $scriptsPath -PathType Container) { $debugDirectories += $scriptsPath }
+    foreach ($directory in $debugDirectories) {
         foreach ($file in (Get-ChildItem -LiteralPath $directory -Recurse -File)) {
             $entryName = $file.FullName.Substring($sourcePath.Length + 1).Replace('\', '/')
             $debugFiles[$entryName] = $file.FullName

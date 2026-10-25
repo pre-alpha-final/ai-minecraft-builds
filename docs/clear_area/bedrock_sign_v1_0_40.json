@@ -1,0 +1,281 @@
+{
+  "engine": "Bedrock Dedicated Server 1.26.52.3",
+  "pack_version": [
+    1,
+    0,
+    40
+  ],
+  "source_sha256": {
+    "functions/_clear_area/_box_1_1.mcfunction": "40620a7893dfc99630c6d572369a0859aa8f4769f7d5e156116cef49480bd6bb",
+    "functions/_clear_area/_box_1_16.mcfunction": "eb648028a6b60b7f21feb58a2f9b3e0f7401363a5f5f4f6a4ff0c6ff4b4ec00e",
+    "functions/_clear_area/_box_1_2.mcfunction": "98fe04da0b742bf1db3de90064462df5c865e8cef98eb132f756f92b21f44a82",
+    "functions/_clear_area/_box_1_32.mcfunction": "6c17a9505f15e07f49b1b21f9e9f3326e1bd97a16c9e87c19ad22252460d7fd5",
+    "functions/_clear_area/_box_1_4.mcfunction": "c4656859abb7d45bd5fc128feb6f74eb06050a7b5e81fe3d2d6878b7db981485",
+    "functions/_clear_area/_box_1_8.mcfunction": "db848304a01d9e07547b3e805c09819c055ab040af8b0dab67df7261a5b6862e",
+    "functions/_clear_area/_box_16_1.mcfunction": "18560a66770bc3a9310afad1e666f614ffc08edd893492ec7bad727dd14ec128",
+    "functions/_clear_area/_box_16_16.mcfunction": "4eb78a191b2753912f80b36f5504fd49d1a4be847a30bb1f0f2bc589e163573a",
+    "functions/_clear_area/_box_16_2.mcfunction": "8ed125b05e0d271aee0827dc0b69592163db7d2ff3faec7d1179bcdc65bb5d52",
+    "functions/_clear_area/_box_16_32.mcfunction": "aa1903bf9a23a48b9f14c8fcb4a54f6c088742eca91f89c910abbf1d35f42966",
+    "functions/_clear_area/_box_16_4.mcfunction": "c6243bdbcc4675d260cf8a68c7a6d35c832c52eea1a1375484c6b0781da5110e",
+    "functions/_clear_area/_box_16_8.mcfunction": "015b77f228d282a286572c169992a79f09fbfa54b11e0ea49ae985a42ecab4f0",
+    "functions/_clear_area/_box_2_1.mcfunction": "e61e814d5f7a42261b77331579e28b0bf6031897c5f3103f0233b82ccadce7c2",
+    "functions/_clear_area/_box_2_16.mcfunction": "d8266b9eebb01a974f3dd5ad8149137ae25d3e640e81dec78e4fe39654b805b4",
+    "functions/_clear_area/_box_2_2.mcfunction": "15792ad647ca52df286f096702871442324add6a28062d67d4bd3205acfe9952",
+    "functions/_clear_area/_box_2_32.mcfunction": "ecdeb3279cf1c8fe09384d3ce416f0c82c1e28abfcb3f30dfae0afd7bb1a45b1",
+    "functions/_clear_area/_box_2_4.mcfunction": "2a02cb4f4ac50d7434e7adba3ffa8ed2b67a845b13b4121e8d50260a6b22c5ca",
+    "functions/_clear_area/_box_2_8.mcfunction": "2d3dc4f5c113dccbc858b8e044044eb95450f874d3af2c27b83ab3ad0d22f358",
+    "functions/_clear_area/_box_32_1.mcfunction": "ca77281952e1c85e2f5d39afb5fea1d5d7dc9fb4f26f9b1922a9710cce994998",
+    "functions/_clear_area/_box_32_16.mcfunction": "d258450c0582bdfbbbd8384da1eb265c3e682866430c665db10c410fd3239bae",
+    "functions/_clear_area/_box_32_2.mcfunction": "5c14d3e2da4ca58c43320ddfff8423968f35d52299d4e515c0b8cd8bf3348910",
+    "functions/_clear_area/_box_32_32.mcfunction": "45f2daa79d6d8cff676e607520005bca0e5324561e37c465de79504d1d3b5dd1",
+    "functions/_clear_area/_box_32_4.mcfunction": "3bbf509fa4b2ca4d29cd59cc0d0da77e69fcc45d98fb7473516ac0539be72e28",
+    "functions/_clear_area/_box_32_8.mcfunction": "8c022ac25b08c9e2bd67eb1f893e6496b91398544e08bb615f97266fb3b30e40",
+    "functions/_clear_area/_box_4_1.mcfunction": "3508ea1b2dfb68a152e523a7647a6d6ca7abd21535f5d941a11336ae0571c74b",
+    "functions/_clear_area/_box_4_16.mcfunction": "022b46e4431e82e4a135625b1ecde3ef2b4c8cc39688c7046ae85e87095ef27a",
+    "functions/_clear_area/_box_4_2.mcfunction": "839a532cb3a1b5d1017c50a1024197fa2e43c4b9aa0312482b8d6fbb1797c0ed",
+    "functions/_clear_area/_box_4_32.mcfunction": "cd7ab0249a9187c49eb49e0ea31db663992488ba5b195b6b92c5c814dde6bdcb",
+    "functions/_clear_area/_box_4_4.mcfunction": "03c228537b47f8e75d800879b755c38a9e2f78ab961ec1cdb2f02d0439d5b88b",
+    "functions/_clear_area/_box_4_8.mcfunction": "abe8131c7150a8e300da910ac8323f332d933b2332ba069309985dbd0706b610",
+    "functions/_clear_area/_box_8_1.mcfunction": "4bb033f61a2c40032437df4d691cd188db95b70cb2fec06d6e6315bca1a9ff62",
+    "functions/_clear_area/_box_8_16.mcfunction": "c1251c9ff333934b3ec33e053540b68292efad952506216830cad64659f85c21",
+    "functions/_clear_area/_box_8_2.mcfunction": "dd2f2b4eef97d3b74b551d9a6332a9d6d0881f1cea1be2fc88d0ade4e1ddea85",
+    "functions/_clear_area/_box_8_32.mcfunction": "e04e250e42287006ffeea1c6cbe157bbdb0939d577d547e060656940c6eaaec7",
+    "functions/_clear_area/_box_8_4.mcfunction": "e789598fb6756d5b93933518bdcb54b6b43373659b029332093a4c2b983d64ca",
+    "functions/_clear_area/_box_8_8.mcfunction": "4f5030bbe5ff53d459f8c0ee6c0d90e831323408b700af5d5912b7dcea6e2555",
+    "functions/_clear_area/_count_parts.mcfunction": "3d1c0cea197fc94303625f9d36891ecf22cb71257f55061c55e80cc1a7c33284",
+    "functions/_clear_area/_perform.mcfunction": "cb657ce1536147fb7aacda8ce232f18efaaccf73d3584e097e9248f8a512a282",
+    "functions/_clear_area/_run.mcfunction": "2f0a7c62e8925c65e622cda683f99a0d9a580d62688ef314611d171126ff6686",
+    "functions/_clear_area/_shiftx.mcfunction": "ab0ee122ea48fb7ce743f46ea236aa2c001c856b6dcc76cbbd71fdb47622947e",
+    "functions/_clear_area/_shiftx_1.mcfunction": "eb7bd48ad31005b80defae1fb4eccf88908f68d29bbcc37842c70a969d14b973",
+    "functions/_clear_area/_shiftx_16.mcfunction": "0a7598bd62eb247d7b1a2e1bc18389519505c7b374ac32bd844cfa4ce84c16e5",
+    "functions/_clear_area/_shiftx_2.mcfunction": "7613e2c2c2f482fc56940560e4825360da711fbf3d82dbee0e80d4e809644716",
+    "functions/_clear_area/_shiftx_32.mcfunction": "7f4533ceea1c245d794d07288497b65f2814c3fb8d4b6ab0d17e3c4212b2253f",
+    "functions/_clear_area/_shiftx_4.mcfunction": "3ac02eda830ef0bd6b52d09d2e378fddf94025873c690c17edb4469e83c24932",
+    "functions/_clear_area/_shiftx_8.mcfunction": "e517f6466d3cbbbe3382c84edba898744dee55c54e0bdb47c2bc70adcb697bf5",
+    "functions/_clear_area/_shiftz.mcfunction": "62a53479895d18e55fcd32d723cb004d8347f3b7f499a1a0554daaa70cc4ead5",
+    "functions/_clear_area/_shiftz_1.mcfunction": "2b5d178415ecc81216178f564a7475bd40a2f1300f707e076710a47b29ff019d",
+    "functions/_clear_area/_shiftz_16.mcfunction": "3613efe0bb0c0224de7140a1364a1450d9710891495df1c32cf385899e5b1425",
+    "functions/_clear_area/_shiftz_2.mcfunction": "bc6e4989f9e80cda8a65128b15c14c67f7a101104bb53c0de9601816a6d6e30d",
+    "functions/_clear_area/_shiftz_32.mcfunction": "d6e49f42175a93090ea8c5260aec5603fdf1ebb0b7aca548fe0ce269495acd07",
+    "functions/_clear_area/_shiftz_4.mcfunction": "c5ee323bc5aaa9b7e936516945824cc425184f144cd9084e9606f6968c36f9b9",
+    "functions/_clear_area/_shiftz_8.mcfunction": "9fa33b9cf1748c35f3e6565c50895b1ae078b43bf21fbf021824239b4ef24007",
+    "functions/_clear_area/_validate.mcfunction": "fed1793a82111dcbafa438058b7ec6f8ceea736dc3cbfa0f7cbd8e5fa60acda6",
+    "functions/_clear_area/_walk.mcfunction": "6e8ba045ee364b74887ce767cefeb7a0dbbd3bfcbe2957233084f66d6dd43ecc",
+    "functions/_clear_area/_x.mcfunction": "1583c2c5497f5e4eed30a66b54ee86ac40bc4ec2d8c89c99c07ad847a6270861",
+    "functions/_clear_area/_x_1.mcfunction": "c969f5e141c61eb369731e518fbc293b09901aaf8508027141c49246fdaa0b89",
+    "functions/_clear_area/_x_16.mcfunction": "9b57128dd9346194b8d325ba26162931687e380d552d41608af22bbc02377eed",
+    "functions/_clear_area/_x_2.mcfunction": "7b4dea1c2df7d913c12b38756c2f6aca8c468e1f95926de602d581a8f179f3a3",
+    "functions/_clear_area/_x_32.mcfunction": "b3a2f65df93d82c071e8b1cb780d830efab118513df8242084c7cc6247de2f6d",
+    "functions/_clear_area/_x_4.mcfunction": "f210533606800a3d520647e9c57e9538e1ea99fbd8e99fb0b42f34a2f1ce79ce",
+    "functions/_clear_area/_x_8.mcfunction": "096881ca35349347f0bae6875d38245080ac42f5ee76cb408426f31634a7f514",
+    "functions/_clear_area/_y.mcfunction": "2b9814cbc47a1f57d8a928d0fe7ec9953055672aea63c14efb7c248f9b897279",
+    "functions/_clear_area/_y_1.mcfunction": "05243b9394359af51b4ede43a8dbedf33924ec34b695d11bdb4aa15a39d33168",
+    "functions/_clear_area/_y_16.mcfunction": "2380da4155254e22cb2f2526cc8cf1775845e75e7b1b17c6c788bd10f0eb5431",
+    "functions/_clear_area/_y_2.mcfunction": "b879069f553d83a78d69a0a015eeee295e4670f8f8c83b02ca0646d6e5efddee",
+    "functions/_clear_area/_y_32.mcfunction": "f320fc2eb1f5711cbbb124ef75aa4a26a8ec9c82dd66840ce365ca8f0731d5b2",
+    "functions/_clear_area/_y_4.mcfunction": "e7bbd5416fcf6dd983d479493127735bdf533a1f9fd3101a0a684bd28878e05e",
+    "functions/_clear_area/_y_8.mcfunction": "c04dcceabde48e5782633bdd88fe6d6ae52944a4ac194f7120a570dbf3c35233",
+    "functions/_clear_area/_z.mcfunction": "1bc0cbced7fcab7df24cb541fb2254303dac94e459c0c847e1df8dc69806e88a",
+    "functions/_clear_area/_z_1.mcfunction": "c69d13900dd3bdbdc0a8e151e011f2aa81388ca1a81f4027e05a5a4511b42409",
+    "functions/_clear_area/_z_16.mcfunction": "2a2b871b63866beaf11b52bd9ea8b0a07be563f85f0eb5d8d58804ddb3265f43",
+    "functions/_clear_area/_z_2.mcfunction": "049c11a05a8ea83f5be7a7841a8218df441bfde0ebea6b4c8c97e05a7f6eb3fb",
+    "functions/_clear_area/_z_32.mcfunction": "f7d8b3d150449f3990da839c691d0bb62d88a67faa973f876b42b3d97d742c57",
+    "functions/_clear_area/_z_4.mcfunction": "34f7aa2914560b026af052ab85474e898e6c3e9091bec75793882780ae3f843b",
+    "functions/_clear_area/_z_8.mcfunction": "406958bc6c2bbf562a2fa0d43e6bb6e578b1e7aee76badc16891e36635a7ed0c",
+    "functions/0_clear_sides_forward_up.mcfunction": "f226603356d57f48f93211d7704554576d5033e5f0e7651bcb4e7a10d971fcac",
+    "scripts/clear_area.js": "2e5d1e0e2d674665780aee2726b79978c428c75230e035c3f6a92c4df176cb1b",
+    "scripts/clear_area_input.js": "1128fa8bf5f9ae33c57e75508cf38f65a759c04361b0046ed7ae7f5487ca3c74"
+  },
+  "harness": "Disposable Classic Flat copy. Test entry and script accept armor_stand instead of player; script errors use console output. Extra fixture script only creates signs and logs actor state. Production sign parser, teleport/reset, explicit context, helper arithmetic, preflight and fills retained. No interactive player test.",
+  "results": [
+    {
+      "case": "sign_input_all_cells_air_reset_and_boundaries",
+      "yaw": 0,
+      "cells": 31500,
+      "feet_y": -60,
+      "state": {
+        "location": {
+          "x": 0.5,
+          "y": -60,
+          "z": 0.5
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0
+        },
+        "scores": {
+          "sides": 10,
+          "forward": 50,
+          "up": 30,
+          "ca_cost": 2388,
+          "ca_ready": 36,
+          "ca_tiles": 36
+        }
+      }
+    },
+    {
+      "case": "sign_input_all_cells_air_reset_and_boundaries",
+      "yaw": 90,
+      "cells": 31500,
+      "feet_y": -60,
+      "state": {
+        "location": {
+          "x": 0.5,
+          "y": -60,
+          "z": 0.5
+        },
+        "rotation": {
+          "x": 0,
+          "y": 90
+        },
+        "scores": {
+          "sides": 10,
+          "forward": 50,
+          "up": 30,
+          "ca_cost": 2388,
+          "ca_ready": 36,
+          "ca_tiles": 36
+        }
+      }
+    },
+    {
+      "case": "sign_input_all_cells_air_reset_and_boundaries",
+      "yaw": 180,
+      "cells": 31500,
+      "feet_y": -60,
+      "state": {
+        "location": {
+          "x": 0.5,
+          "y": -60,
+          "z": 0.5
+        },
+        "rotation": {
+          "x": 0,
+          "y": -180
+        },
+        "scores": {
+          "sides": 10,
+          "forward": 50,
+          "up": 30,
+          "ca_cost": 2388,
+          "ca_ready": 36,
+          "ca_tiles": 36
+        }
+      }
+    },
+    {
+      "case": "sign_input_all_cells_air_reset_and_boundaries",
+      "yaw": -90,
+      "cells": 31500,
+      "feet_y": -60,
+      "state": {
+        "location": {
+          "x": 0.5,
+          "y": -60,
+          "z": 0.5
+        },
+        "rotation": {
+          "x": 0,
+          "y": -90
+        },
+        "scores": {
+          "sides": 10,
+          "forward": 50,
+          "up": 30,
+          "ca_cost": 2388,
+          "ca_ready": 36,
+          "ca_tiles": 36
+        }
+      }
+    },
+    {
+      "case": "missing_sign_rejected_without_clearing",
+      "passed": true
+    },
+    {
+      "case": "malformed_sign_rejected_without_clearing",
+      "passed": true
+    },
+    {
+      "case": "range_sign_rejected_without_clearing",
+      "passed": true
+    },
+    {
+      "case": "conflict_sign_rejected_without_clearing",
+      "passed": true
+    },
+    {
+      "case": "back_sign_text_zero_sides",
+      "passed": true
+    },
+    {
+      "case": "raw_sign_text_zero_sides",
+      "passed": true
+    },
+    {
+      "case": "command_budget_guard",
+      "passed": true
+    },
+    {
+      "case": "unloaded_area_aborts_entire_clear",
+      "passed": true
+    },
+    {
+      "case": "out_of_world_height_aborts_entire_clear",
+      "passed": true
+    },
+    {
+      "case": "production_nonplayer_guard",
+      "passed": true
+    }
+  ],
+  "manifest": {
+    "format_version": 2,
+    "header": {
+      "name": "ai-minecraft-builds - 0_clear_sides_forward_up",
+      "description": "Run /function 0_clear_sides_forward_up",
+      "uuid": "cc3734ea-28e1-547d-bb6d-6dc397a53279",
+      "version": [
+        1,
+        0,
+        40
+      ],
+      "min_engine_version": [
+        1,
+        21,
+        50
+      ]
+    },
+    "modules": [
+      {
+        "type": "data",
+        "uuid": "e0fcc905-5df6-528f-8b9b-3ee0ca9d90f8",
+        "version": [
+          1,
+          0,
+          40
+        ]
+      },
+      {
+        "type": "script",
+        "language": "javascript",
+        "uuid": "d453fb62-c716-5f41-b694-062a68482b6a",
+        "version": [
+          1,
+          0,
+          40
+        ],
+        "entry": "scripts/clear_area.js"
+      }
+    ],
+    "dependencies": [
+      {
+        "module_name": "@minecraft/server",
+        "version": "1.16.0"
+      }
+    ]
+  },
+  "verification": "Every one of 31,500 target cells compared with air reference volumes in each facing; sign and five boundary blocks verified. Position center and pitch/yaw checked through the Script API. Exact named audit success outputs rechecked in the engine log.",
+  "validator": "tools/validate_clear_area_bedrock.py",
+  "validator_sha256": "5f519e615e5b45284532e71848fd17eda735490ce9325057ccf91072ca31e61e"
+}

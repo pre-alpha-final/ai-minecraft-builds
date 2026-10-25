@@ -1,0 +1,7 @@
+{
+  "ai_minecraft_builds:clear": {
+    "entry": "scripts/clear_area.js",
+    "files": ["scripts/clear_area.js", "scripts/clear_area_input.js", "scripts/clear_area_loader.js"],
+    "functions": ["_clear_area/_validate"]
+  }
+}

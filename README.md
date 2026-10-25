@@ -22,12 +22,13 @@ Minecraft function files are plain-text lists of commands. An LLM can translate 
 
 ## Build functions
 
-Public build functions use `<number>_<name>`, with one unique number per build. Type `/function 1_` to narrow suggestions to the first build, or use any other number below. Internal `_` callbacks are scheduled automatically.
+Public build functions use `<number>_<name>`, with one unique positive number per build. The clearing utility is the explicit exception: `/function 0_clear_sides_forward_up`. Type `/function 1_` to narrow suggestions to the first build, or use any other number below. Internal `_` callbacks are scheduled automatically.
 
-Numbers follow creation order in Git history, including the original `functions/` directory; builds first recorded in the same commit are ordered alphabetically. Existing numbers stay fixed. The retained branch history assigns builds 1 through 17; Tidal Kingdom is build 18, A.D. 2044 is build 19, pink plush bird is build 20, and the next new build will be 21.
+Numbers follow creation order in Git history, including the original `functions/` directory; builds first recorded in the same commit are ordered alphabetically. Existing numbers stay fixed. The retained branch history assigns builds 1 through 17; Tidal Kingdom is build 18, A.D. 2044 is build 19, pink plush bird is build 20, the clearing utility uses 0 by request, and its former number 21 is retired. The next new build will be 22.
 
 | Number | Command |
 | --- | --- |
+| 0 | `/function 0_clear_sides_forward_up` |
 | 1 | `/function 1_theme_park_aztec_temple_attraction` |
 | 2 | `/function 2_theme_park_ferris_wheel` |
 | 3 | `/function 3_theme_park_pirate_cove_attraction` |
@@ -50,6 +51,32 @@ Numbers follow creation order in Git history, including the original `functions/
 | 20 | `/function 20_pink_plush_bird` |
 
 After updating an existing installation, rebuild and reimport the pack to get these numbered commands.
+
+## Clear blocks in front of you
+
+Import and activate `packs/0_clear_sides_forward_up.mcpack` version **1.0.41**, then close/reopen the world. It replaces the previous `21_clear_area` utility pack using the same pack identity. The script uses stable `@minecraft/server` 1.16.0, compatible with the pack's Bedrock 1.21.50 minimum; Beta APIs are not required.
+
+Place a sign at your starting point and write just three integers on it:
+
+```text
+10 50 30
+```
+
+These mean **sides, forward, up**. Stand in the sign's block (or directly above it), face the area you want to clear, and run:
+
+```mcfunction
+/function 0_clear_sides_forward_up
+```
+
+The function uses the roller coasters' exact reset: center on the current block, level pitch, and snap yaw to the nearest cardinal direction. The handler also centers/levels its player context when the script event arrives. Direction follows the player, independently of the sign's orientation. Text is read from either face; leave the other face blank or use the same numbers. Spaces and line breaks are accepted, but extra labels, missing values, decimals, and conflicting faces abort without clearing. The sign is read on every call; no scoreboard setup is needed.
+
+The example clears **10 blocks on each side, 50 forward, and 30 high**: a **21 x 50 x 30** box containing **31,500 cells**, from `^-10 ^0 ^1` through `^10 ^29 ^50`. Clearing begins one block ahead at foot level, preserving the sign/origin column and the ground below foot level. Edit the numbers and run the same function again.
+
+The utility automatically preloads the entire selected box using one to six temporary ticking areas, with at most 100 chunks per rectangle. It saves the sign values, dimension, starting position, and facing before loading, so you may move, turn, or edit the sign afterward without moving the clear. Keep the world running until the completion or failure message. Only one clear runs at a time. The selected height must fit the dimension; a read-only pass still checks every tile before any fill. Each fill affects at most 32,768 cells. The runtime budget check includes both passes and nested helpers and rejects requests exceeding 10,000 commands. Hard bounds are sides 0..128, forward 1..512, and up 1..384, with tighter limits when the command budget requires them. Smaller sizes or forward/up counts divisible by 32 cost fewer commands. At Classic Flat feet Y -60, up must be at most 380; the example supports Overworld feet Y -64 through 290.
+
+The public entry has **six commands**, including all five reset commands, and the example uses **36 air fills** through internal helpers. The helpers restore the saved dimension, position, and rotation and do not need a player executor. The origin does not need a marker or an extra ticking area. Startup waits two game ticks after removing stale owned names before reusing them; readiness polls every five ticks, with a 1,200-tick loading timeout. Cleanup removes only `ai_clear_area_0` through `ai_clear_area_5`, including after partial startup failure. These slots must be free within the world's ten-area limit; wait for other loaders to finish if capacity is unavailable. **Back up first or use a disposable world:** blocks are permanently replaced with air, and fluids/gravity can update afterward. The full debug archive also includes the utility. See the [current headless Bedrock validation report](docs/clear_area/bedrock_runtime_check.json); earlier scoreboard-only and sign-reader evidence is retained separately. The current engine test also starts with unloaded chunks, preloads six rectangles, compares every cell of a 257 x 512 x 1 clear, and checks movement, sign edits, busy reentry, stale-name recovery, partial capacity failure, and cleanup.
+
+For development, use `python tools/generate_clear_area.py --check` to check generated functions, `node --test tools/test_clear_area_sign.mjs tools/test_clear_area_loader.mjs` for sign parsing, preload lifecycle, and failure tests, and `python -m unittest discover -s tools -p test_clear_area.py -v` for geometry/budget checks. `src/script_dependencies.json` declares the event's script files and internal function dependencies. Rebuild/reimport after changing packaged source; editing sign text requires no reimport.
 
 ## Huge structure-based roller coasters
 
@@ -161,7 +188,7 @@ The loader uses **24 structures, 40 public commands and 235 callback commands**,
 
 ## Placement and compatibility details
 
-- Pack version 1.0.35 requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
+- The pack requires Bedrock 1.21.50 or newer. Its structure loaders use delayed scheduling, introduced in the [1.21.50 release](https://feedback.minecraft.net/hc/en-us/articles/32344904160397-Minecraft-Bedrock-Edition-1-21-50-The-Garden-Awakens).
 - Public build functions automatically move the player to the center of their current block, level the view, and snap the yaw to the closest cardinal direction before placing anything. Stand on the ground block that should be the documented origin and face broadly toward the intended north, south, east, or west build direction before running a function.
 - The snap removes fractional-position, yaw, and pitch drift that can skew large caret-relative builds. Exact diagonal ties resolve consistently to one of the two neighboring cardinal directions.
 - Run public functions as a player. Internal functions whose names begin with `_` are scheduled callbacks and must not be invoked manually.
@@ -178,7 +205,7 @@ build_ai_minecraft_pack.bat
 
 The script uses Windows PowerShell to create:
 
-- `packs/<public_function_name>.mcpack`: one pack per build, such as `packs/2_theme_park_ferris_wheel.mcpack`. Import the pack for the build you want. Each contains its public function and any required internal callbacks and structure assets.
+- `packs/<public_function_name>.mcpack`: one pack per build, such as `packs/2_theme_park_ferris_wheel.mcpack`. Import the pack for the build you want. Each contains its public function and any required internal callbacks and structure assets. The clearing utility also includes its three script files and Script API module; other individual packs remain data-only.
 - `ai-minecraft-builds.mcpack` at the repository root: the complete collection, kept for debugging.
 
 Individual packs have distinct, stable pack identities so they can be imported separately. Their versions and minimum Minecraft version come from `src/manifest.json`. Function commands remain the same as in the catalog above.
