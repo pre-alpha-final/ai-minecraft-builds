@@ -24,7 +24,7 @@ Minecraft function files are plain-text lists of commands. An LLM can translate 
 
 Public build functions use `<number>_<name>`, with one unique positive number per build. The clearing utility is the explicit exception: `/function 0_clear_sides_forward_up`. Type `/function 1_` to narrow suggestions to the first build, or use any other number below. Internal `_` callbacks are scheduled automatically.
 
-Numbers follow creation order in Git history, including the original `functions/` directory; builds first recorded in the same commit are ordered alphabetically. Existing numbers stay fixed. The retained branch history assigns builds 1 through 17; Tidal Kingdom is build 18, A.D. 2044 is build 19, pink plush bird is build 20, the clearing utility uses 0 by request, and its former number 21 is retired. The next new build will be 22.
+Numbers follow creation order in Git history, including the original `functions/` directory; builds first recorded in the same commit are ordered alphabetically. Existing numbers stay fixed. The retained branch history assigns builds 1 through 17; Tidal Kingdom is build 18, A.D. 2044 is build 19, pink plush bird is build 20, the clearing utility uses 0 by request, and its former number 21 is retired. Glacier Run Alpine Park uses 22. The next new build will be 23.
 
 | Number | Command |
 | --- | --- |
@@ -49,6 +49,7 @@ Numbers follow creation order in Git history, including the original `functions/
 | 18 | `/function 18_theme_park_tidal_kingdom` |
 | 19 | `/function 19_ad2044` |
 | 20 | `/function 20_pink_plush_bird` |
+| 22 | `/function 22_theme_park_glacier_run_alpine_park` |
 
 After updating an existing installation, rebuild and reimport the pack to get these numbered commands.
 
@@ -161,6 +162,18 @@ Import `packs/18_theme_park_tidal_kingdom.mcpack`, then run `/function 18_theme_
 Stand at ground level at the front-center observation point, **32 blocks before the build**, with feet at Overworld **Y -60 through 205**. Reserve a clear flat **640 x 450 x 119-block envelope**, from `^-319 ^-4 ^32` through `^320 ^114 ^481`; the basins extend four blocks below your feet. The deck is raised one block to fit default flat-world ground. Back up first or use a disposable world. Do not run concurrent installations.
 
 The park places **1,208,281 non-air blocks** and 2,560,217 explicit air cells through **80 structures**, a **41-command public loader** and 494 callback commands. Its single 1,632-rail Tidebreaker circuit has 14 curves, six major climbs, four major drops and an 85-block largest drop. Follow the paths to its rear-left station, board beside `^194 ^9 ^406`, and push toward positive local left. Geometry, walking access, all cardinal placements, NBT and pinned Bedrock block states have been checked. The automatic installer passed a headless Bedrock test on Classic Flat ground; **interactive ride playtesting remains outstanding**. Rebuild and reimport after source changes. See the [installation instructions, attraction plan, route, metrics and regeneration guide](docs/tidal_kingdom/README.md).
+
+## Glacier Run Alpine Park
+
+A snowy village opens onto a frozen lake below a summit observatory. The powered minecart circuit climbs through spruce woods, tunnels through blue ice, and drops 66 blocks to a trestle over the ice-boat loop. A separate glacier cave has a lit walk-through route and two entrances.
+
+<p align="center">
+  <img src="docs/glacier_run/overview.png" alt="Glacier Run's snowy alpine village, frozen lake, ridge-top observatory, and coaster trestle">
+</p>
+
+Import and activate **`packs/22_theme_park_glacier_run_alpine_park.mcpack` version 1.0.42**, close and reopen the world, then run `/function 22_theme_park_glacier_run_alpine_park` once. Stand at ground level in the Overworld at the front-center of the plot, face a cardinal direction and look horizontally. Reserve **224 wide × 192 deep × 91 high** blocks from `^-112 ^-2 ^24` through `^111 ^88 ^215`. Feet Y **-62 through 231** are supported, including Classic Flat Y -60. Keep **four ticking-area slots** free and back up the world or use a disposable one.
+
+Wait for the completion message. Follow the station path to your right, place a plain minecart on the flat station rail, and push toward local right. Cross the central footbridge to reach the boat dock and follow the path on your left to the walk-through cave. Bring a plain boat for the blue-ice lane. The park places **606,593 non-air blocks** in **12 native structures** using a **40-command public loader** and **123 callback commands**. Rebuild and reimport after source changes. [Attraction map, coordinates, and regeneration instructions](docs/glacier_run/README.md)
 
 ## A.D. 2044: imported game box
 

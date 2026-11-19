@@ -1,0 +1,140 @@
+{
+  "engine": "Bedrock Dedicated Server 1.26.52.3",
+  "pack_version": [
+    1,
+    0,
+    42
+  ],
+  "pack_sha256": "115321e3cd4c3c4f23c0b34a8ae67601df4d2debab5b057d63367be294bcb4b7",
+  "production_function_sha256": {
+    "22_theme_park_glacier_run_alpine_park": "05bde98a7b1faf13957a9a5a98a6be43beb5b74a096f35dc13eb4bc7f6316923",
+    "_theme_park_glacier_run_alpine_park_tickingarea_loaded": "52e1efbf172dde8de5fad1ec343d1bacfa6092b92f4ad8f163359027a8251584",
+    "_theme_park_glacier_run_alpine_park_remove_tickingarea": "987fd8853fdb717d17814cc11c9d47c774e87d36559cca362c06df90d3140baf"
+  },
+  "harness": "Disposable Classic Flat world generated from flat settings. A separate test entry replaced the public player selectors with armor stand selectors. Production assets and callbacks retained. Placement sample materials were absent before each install.",
+  "cardinal_installations": [
+    {
+      "yaw": 0,
+      "feet_y": -60,
+      "placement_samples": 28,
+      "asset_regions": 12,
+      "engine_rail_states": 538,
+      "stale_area_recovery": true,
+      "busy_reentry": true,
+      "driver_moved_and_turned": true,
+      "areas_and_saved_marker_removed": true,
+      "elapsed_seconds": 10.37
+    },
+    {
+      "yaw": 90,
+      "feet_y": -60,
+      "placement_samples": 28,
+      "asset_regions": 12,
+      "engine_rail_states": 538,
+      "stale_area_recovery": false,
+      "busy_reentry": true,
+      "driver_moved_and_turned": true,
+      "areas_and_saved_marker_removed": true,
+      "elapsed_seconds": 9.91
+    },
+    {
+      "yaw": 180,
+      "feet_y": -60,
+      "placement_samples": 28,
+      "asset_regions": 12,
+      "engine_rail_states": 538,
+      "stale_area_recovery": false,
+      "busy_reentry": true,
+      "driver_moved_and_turned": true,
+      "areas_and_saved_marker_removed": true,
+      "elapsed_seconds": 9.97
+    },
+    {
+      "yaw": -90,
+      "feet_y": -60,
+      "placement_samples": 28,
+      "asset_regions": 12,
+      "engine_rail_states": 538,
+      "stale_area_recovery": false,
+      "busy_reentry": true,
+      "driver_moved_and_turned": true,
+      "areas_and_saved_marker_removed": true,
+      "elapsed_seconds": 10.45
+    }
+  ],
+  "insufficient_slots_aborted_and_preserved_unrelated_areas": true,
+  "stale_marker_generation_aborted": true,
+  "height_boundary_admission": {
+    "232": false,
+    "231": true,
+    "-63": false,
+    "-62": true
+  },
+  "watchdog": "The production dispatcher was invoked directly for the two failure cases.",
+  "interactive_player_rides_tested": false,
+  "empty_minecart_lap": {
+    "empty_cart_completed": true,
+    "fixture": "An empty minecart was started by a temporary bumper on the station rail. The altered rail was restored once the cart left the station.",
+    "checkpoints": [
+      [
+        -65,
+        0,
+        49
+      ],
+      [
+        -65,
+        27,
+        88
+      ],
+      [
+        -35,
+        34,
+        106
+      ],
+      [
+        -32,
+        53,
+        143
+      ],
+      [
+        -29,
+        63,
+        172
+      ],
+      [
+        26,
+        71,
+        170
+      ],
+      [
+        26,
+        42,
+        129
+      ],
+      [
+        26,
+        5,
+        78
+      ],
+      [
+        69,
+        5,
+        78
+      ],
+      [
+        46,
+        9,
+        56
+      ],
+      [
+        -39,
+        0,
+        40
+      ]
+    ],
+    "elapsed_seconds": 66.72,
+    "tested_yaw": 0,
+    "feet_y": -60,
+    "interactive_player_rides_tested": false
+  }
+}

@@ -1,0 +1,555 @@
+{
+  "rails": 538,
+  "curves": 10,
+  "track_y": [
+    0,
+    71
+  ],
+  "major_climbs": [
+    32,
+    29,
+    8
+  ],
+  "major_drops": [
+    66,
+    9
+  ],
+  "boat_lane_blocks": 2576,
+  "boat_underpass_min_rail_y": 5,
+  "spruce_trees": 82,
+  "walkable_surfaces_reached": 23071,
+  "verified_block_variants": 39,
+  "footprint": [
+    224,
+    192
+  ],
+  "relative_y": [
+    -2,
+    88
+  ],
+  "feet_y": [
+    -62,
+    231
+  ],
+  "non_air_blocks": 606593,
+  "explicit_air": 34322,
+  "exact_cuboid_commands": 19080,
+  "materials": {
+    "minecraft:andesite": 384896,
+    "minecraft:blue_ice": 4068,
+    "minecraft:brick_block": 100,
+    "minecraft:cut_copper": 254,
+    "minecraft:cyan_concrete": 61,
+    "minecraft:dark_oak_fence": 6,
+    "minecraft:dark_oak_log": 506,
+    "minecraft:dark_oak_planks": 31,
+    "minecraft:deepslate_tiles": 1293,
+    "minecraft:golden_rail": 528,
+    "minecraft:light_blue_concrete": 1062,
+    "minecraft:light_blue_stained_glass": 1016,
+    "minecraft:oxidized_copper": 260,
+    "minecraft:oxidized_cut_copper": 218,
+    "minecraft:packed_ice": 8584,
+    "minecraft:quartz_block": 172,
+    "minecraft:rail": 10,
+    "minecraft:red_concrete": 48,
+    "minecraft:redstone_block": 528,
+    "minecraft:sea_lantern": 61,
+    "minecraft:snow": 25058,
+    "minecraft:spruce_fence": 80,
+    "minecraft:spruce_leaves": 11952,
+    "minecraft:spruce_log": 973,
+    "minecraft:spruce_planks": 2945,
+    "minecraft:spruce_slab": 72,
+    "minecraft:stone": 154371,
+    "minecraft:stone_bricks": 6624,
+    "minecraft:tuff_bricks": 553,
+    "minecraft:waxed_weathered_cut_copper": 143,
+    "minecraft:yellow_stained_glass": 120
+  },
+  "structures": [
+    {
+      "name": "theme_park_glacier_run_alpine_park_x1_z1",
+      "low": [
+        -112,
+        -2,
+        24
+      ],
+      "high": [
+        -49,
+        30,
+        87
+      ],
+      "size": [
+        64,
+        33,
+        64
+      ],
+      "written_cells": 15499,
+      "samples": [
+        {
+          "position": [
+            -81,
+            10,
+            41
+          ],
+          "block": "minecraft:deepslate_tiles"
+        },
+        {
+          "position": [
+            -65,
+            26,
+            87
+          ],
+          "block": "minecraft:golden_rail"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x1_z2",
+      "low": [
+        -112,
+        -2,
+        88
+      ],
+      "high": [
+        -49,
+        58,
+        151
+      ],
+      "size": [
+        64,
+        61,
+        64
+      ],
+      "written_cells": 58841,
+      "samples": [
+        {
+          "position": [
+            -70,
+            5,
+            150
+          ],
+          "block": "minecraft:andesite"
+        },
+        {
+          "position": [
+            -53,
+            58,
+            139
+          ],
+          "block": "minecraft:spruce_leaves"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x1_z3",
+      "low": [
+        -112,
+        -2,
+        152
+      ],
+      "high": [
+        -49,
+        54,
+        215
+      ],
+      "size": [
+        64,
+        57,
+        64
+      ],
+      "written_cells": 62948,
+      "samples": [
+        {
+          "position": [
+            -74,
+            3,
+            166
+          ],
+          "block": "minecraft:andesite"
+        },
+        {
+          "position": [
+            -49,
+            54,
+            152
+          ],
+          "block": "minecraft:snow"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x2_z1",
+      "low": [
+        -48,
+        -2,
+        24
+      ],
+      "high": [
+        15,
+        13,
+        87
+      ],
+      "size": [
+        64,
+        16,
+        64
+      ],
+      "written_cells": 17603,
+      "samples": [
+        {
+          "position": [
+            -39,
+            0,
+            40
+          ],
+          "block": "minecraft:golden_rail"
+        },
+        {
+          "position": [
+            -15,
+            13,
+            49
+          ],
+          "block": "minecraft:snow"
+        },
+        {
+          "position": [
+            -14,
+            -1,
+            65
+          ],
+          "block": "minecraft:blue_ice"
+        },
+        {
+          "position": [
+            2,
+            -1,
+            63
+          ],
+          "block": "minecraft:blue_ice"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x2_z2",
+      "low": [
+        -48,
+        -2,
+        88
+      ],
+      "high": [
+        15,
+        71,
+        151
+      ],
+      "size": [
+        64,
+        74,
+        64
+      ],
+      "written_cells": 78907,
+      "samples": [
+        {
+          "position": [
+            -34,
+            71,
+            141
+          ],
+          "block": "minecraft:snow"
+        },
+        {
+          "position": [
+            -28,
+            21,
+            127
+          ],
+          "block": "minecraft:andesite"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x2_z3",
+      "low": [
+        -48,
+        -2,
+        152
+      ],
+      "high": [
+        15,
+        74,
+        215
+      ],
+      "size": [
+        64,
+        77,
+        64
+      ],
+      "written_cells": 138789,
+      "samples": [
+        {
+          "position": [
+            -8,
+            7,
+            205
+          ],
+          "block": "minecraft:andesite"
+        },
+        {
+          "position": [
+            1,
+            71,
+            172
+          ],
+          "block": "minecraft:golden_rail"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x3_z1",
+      "low": [
+        16,
+        -2,
+        24
+      ],
+      "high": [
+        79,
+        14,
+        87
+      ],
+      "size": [
+        64,
+        17,
+        64
+      ],
+      "written_cells": 17228,
+      "samples": [
+        {
+          "position": [
+            16,
+            14,
+            47
+          ],
+          "block": "minecraft:snow"
+        },
+        {
+          "position": [
+            42,
+            -1,
+            24
+          ],
+          "block": "minecraft:snow"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x3_z2",
+      "low": [
+        16,
+        -2,
+        88
+      ],
+      "high": [
+        79,
+        68,
+        151
+      ],
+      "size": [
+        64,
+        71,
+        64
+      ],
+      "written_cells": 28898,
+      "samples": [
+        {
+          "position": [
+            26,
+            64,
+            151
+          ],
+          "block": "minecraft:golden_rail"
+        },
+        {
+          "position": [
+            39,
+            -1,
+            119
+          ],
+          "block": "minecraft:blue_ice"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x3_z3",
+      "low": [
+        16,
+        -2,
+        152
+      ],
+      "high": [
+        79,
+        88,
+        215
+      ],
+      "size": [
+        64,
+        91,
+        64
+      ],
+      "written_cells": 180465,
+      "samples": [
+        {
+          "position": [
+            31,
+            84,
+            188
+          ],
+          "block": "minecraft:oxidized_cut_copper"
+        },
+        {
+          "position": [
+            39,
+            5,
+            168
+          ],
+          "block": "minecraft:andesite"
+        },
+        {
+          "position": [
+            40,
+            88,
+            174
+          ],
+          "block": "minecraft:quartz_block"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x4_z1",
+      "low": [
+        80,
+        -2,
+        24
+      ],
+      "high": [
+        111,
+        4,
+        87
+      ],
+      "size": [
+        32,
+        7,
+        64
+      ],
+      "written_cells": 6182,
+      "samples": [
+        {
+          "position": [
+            84,
+            4,
+            53
+          ],
+          "block": "minecraft:dark_oak_planks"
+        },
+        {
+          "position": [
+            95,
+            -1,
+            83
+          ],
+          "block": "minecraft:snow"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x4_z2",
+      "low": [
+        80,
+        -2,
+        88
+      ],
+      "high": [
+        111,
+        24,
+        151
+      ],
+      "size": [
+        32,
+        27,
+        64
+      ],
+      "written_cells": 14333,
+      "samples": [
+        {
+          "position": [
+            87,
+            24,
+            151
+          ],
+          "block": "minecraft:andesite"
+        },
+        {
+          "position": [
+            89,
+            -1,
+            151
+          ],
+          "block": "minecraft:tuff_bricks"
+        },
+        {
+          "position": [
+            93,
+            3,
+            141
+          ],
+          "block": "minecraft:andesite"
+        }
+      ]
+    },
+    {
+      "name": "theme_park_glacier_run_alpine_park_x4_z3",
+      "low": [
+        80,
+        -2,
+        152
+      ],
+      "high": [
+        111,
+        29,
+        215
+      ],
+      "size": [
+        32,
+        32,
+        64
+      ],
+      "written_cells": 21222,
+      "samples": [
+        {
+          "position": [
+            88,
+            29,
+            157
+          ],
+          "block": "minecraft:andesite"
+        },
+        {
+          "position": [
+            92,
+            2,
+            167
+          ],
+          "block": "minecraft:andesite"
+        }
+      ]
+    }
+  ],
+  "public_commands": 40,
+  "callback_commands": 123,
+  "placement_samples": 28,
+  "ticking_area_slots": 4,
+  "plot_area_max_chunks": 75,
+  "settle_ticks": 120,
+  "preload_timeout_ticks": 1800
+}
